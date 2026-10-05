@@ -38,8 +38,4 @@ statistics, configurable limits, one-shot reads, and ioctl.
 - Linux Kernel: 5.15
 - BusyBox: 1.35.0
 
-## Note About Kernel Modules
 
-The included `.ko` files were compiled for the LAB target kernel
-and ARM architecture. If the target kernel or configuration changes,
-the module should be rebuilt from source using the included Makefile.
