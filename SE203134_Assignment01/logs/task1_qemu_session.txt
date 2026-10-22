@@ -1,0 +1,596 @@
+Script started on 2026-10-22 11:16:23+07:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="80" LINES="55"]
+[?2004h]0;minh@hayaminlinux: ~/embedded_asgn1/rootfs/initramfs[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_asgn1/rootfs/initramfs[00m$ [7mqemu-system-arm \[27m
+[7m  -M vexpress-a9 \[27m
+[7m  -cpu cortex-a9 \[27m
+[7m  -m 512M \[27m
+[7m  -smp 2 \[27m
+[7m  -nographic \[27m
+[7m  -kernel ~/embedded_lab1/output/zImage \[27m
+[7m  -dtb ~/embedded_lab1/output/vexpress-v2p-ca9.dtb \[27m
+[7m  -initrd ~/embedded_asgn1/output/initramfs_asgn1.cpio.gz \[27m
+[7m  -append 'console=ttyAMA0,115200 rdinit=/sbin/init mem=512M'[27m[A[A[A[A[A[A[A[A[Aqemu-system-arm \
+  -M vexpress-a9 \
+  -cpu cortex-a9 \
+  -m 512M \
+  -smp 2 \
+  -nographic \
+  -kernel ~/embedded_lab1/output/zImage \
+  -dtb ~/embedded_lab1/output/vexpress-v2p-ca9.dtb \
+  -initrd ~/embedded_asgn1/output/initramfs_asgn1.cpio.gz \
+  -append 'console=ttyAMA0,115200 rdinit=/sbin/init mem=512M'
+[?2004lpulseaudio: set_sink_input_volume() failed
+pulseaudio: Reason: Invalid argument
+pulseaudio: set_sink_input_mute() failed
+pulseaudio: Reason: Invalid argument
+Booting Linux on physical CPU 0x0
+Linux version 5.15.0 (minh@minh-LOQ-15IAX9) (arm-linux-gnueabihf-gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #1 SMP Fri Sep 11 21:21:59 +07 2026
+CPU: ARMv7 Processor [410fc090] revision 0 (ARMv7), cr=10c5387d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+OF: fdt: Machine model: V2P-CA9
+Memory policy: Data cache writealloc
+Reserved memory: created DMA memory pool at 0x4c000000, size 8 MiB
+OF: reserved mem: initialized node vram@4c000000, compatible id shared-dma-pool
+cma: Reserved 16 MiB at 0x7f000000
+Zone ranges:
+  Normal   [mem 0x0000000060000000-0x000000007fffffff]
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000060000000-0x000000007fffffff]
+Initmem setup node 0 [mem 0x0000000060000000-0x000000007fffffff]
+percpu: Embedded 15 pages/cpu s30156 r8192 d23092 u61440
+Built 1 zonelists, mobility grouping on.  Total pages: 130048
+Kernel command line: console=ttyAMA0,115200 rdinit=/sbin/init mem=512M
+printk: log_buf_len individual max cpu contribution: 4096 bytes
+printk: log_buf_len total cpu_extra contributions: 12288 bytes
+printk: log_buf_len min size: 16384 bytes
+printk: log_buf_len: 32768 bytes
+printk: early log buf free: 14984(91%)
+Dentry cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+Inode-cache hash table entries: 32768 (order: 5, 131072 bytes, linear)
+mem auto-init: stack:off, heap alloc:off, heap free:off
+Memory: 489448K/524288K available (8192K kernel code, 593K rwdata, 1768K rodata, 1024K init, 150K bss, 18456K reserved, 16384K cma-reserved)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+trace event string verifier disabled
+rcu: Hierarchical RCU implementation.
+rcu: 	RCU event tracing is enabled.
+rcu: 	RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=4.
+rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+L2C: platform modifies aux control register: 0x02020000 -> 0x02420000
+L2C: DT/platform modifies aux control register: 0x02020000 -> 0x02420000
+L2C-310 enabling early BRESP for Cortex-A9
+L2C-310 full line of zeros enabled for Cortex-A9
+L2C-310 dynamic clock gating disabled, standby mode disabled
+L2C-310 cache controller enabled, 8 ways, 128 kB
+L2C-310: CACHE_ID 0x410000c8, AUX_CTRL 0x46420001
+random: get_random_bytes called from start_kernel+0x4e4/0x69c with crng_init=0
+sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 89478484971ns
+clocksource: arm,sp804: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275 ns
+Failed to initialize '/bus@40000000/motherboard-bus@40000000/iofpga@7,00000000/timer@12000': -22
+smp_twd: clock not found -2
+Console: colour dummy device 80x30
+Calibrating local timer... 95.88MHz.
+Calibrating delay loop... 1705.57 BogoMIPS (lpj=8527872)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+CPU: Testing write buffer coherency: ok
+CPU0: Spectre v2: using BPIALL workaround
+CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+Setting up static identity map for 0x60100000 - 0x60100060
+rcu: Hierarchical SRCU implementation.
+smp: Bringing up secondary CPUs ...
+CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+CPU1: Spectre v2: using BPIALL workaround
+CPU2: failed to boot: -38
+CPU3: failed to boot: -38
+smp: Brought up 1 node, 2 CPUs
+SMP: Total of 2 processors activated (3411.14 BogoMIPS).
+CPU: All CPU(s) started in SVC mode.
+devtmpfs: initialized
+VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 0
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+NET: Registered PF_NETLINK/PF_ROUTE protocol family
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+cpuidle: using governor ladder
+hw-breakpoint: debug architecture 0x4 unsupported.
+Serial: AMBA PL011 UART driver
+irq: type mismatch, failed to map hwirq-75 for interrupt-controller@1e001000!
+SCSI subsystem initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+Advanced Linux Sound Architecture Driver Initialized.
+clocksource: Switched to clocksource arm,sp804
+NET: Registered PF_INET protocol family
+IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 6144 bytes, linear)
+TCP established hash table entries: 4096 (order: 2, 16384 bytes, linear)
+TCP bind hash table entries: 4096 (order: 3, 32768 bytes, linear)
+TCP: Hash tables configured (established 4096 bind 4096)
+UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
+UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)
+NET: Registered PF_UNIX/PF_LOCAL protocol family
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+Unpacking initramfs...
+hw perfevents: enabled with armv7_cortex_a9 PMU driver, 5 counters available
+workingset: timestamp_bits=30 max_order=17 bucket_order=0
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+9p: Installing v9fs 9p2000 file system support
+io scheduler mq-deadline registered
+io scheduler kyber registered
+sii902x 0-0060: supply iovcc not found, using dummy regulator
+sii902x 0-0060: supply cvcc12 not found, using dummy regulator
+Freeing initrd memory: 1432K
+physmap-flash 40000000.flash: physmap platform flash device: [mem 0x40000000-0x43ffffff]
+40000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+Intel/Sharp Extended Query Table at 0x0031
+Using buffer write method
+physmap-flash 40000000.flash: physmap platform flash device: [mem 0x44000000-0x47ffffff]
+40000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+Intel/Sharp Extended Query Table at 0x0031
+Using buffer write method
+Concatenating MTD devices:
+(0): "40000000.flash"
+(1): "40000000.flash"
+into device "40000000.flash"
+physmap-flash 48000000.psram: physmap platform flash device: [mem 0x48000000-0x49ffffff]
+libphy: Fixed MDIO Bus: probed
+libphy: smsc911x-mdio: probed
+smsc911x 4e000000.ethernet eth0: MAC Address: 52:54:00:12:34:56
+isp1760 4f000000.usb: isp1760 bus width: 32, oc: digital
+isp1760 4f000000.usb: NXP ISP1760 USB Host Controller
+isp1760 4f000000.usb: new USB bus registered, assigned bus number 1
+isp1760 4f000000.usb: Scratch test failed. 0x00000000
+isp1760 4f000000.usb: can't setup: -19
+isp1760 4f000000.usb: USB bus 1 deregistered
+usbcore: registered new interface driver usb-storage
+ledtrig-cpu: registered to indicate activity on CPUs
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+NET: Registered PF_PACKET protocol family
+9pnet: Installing 9P2000 support
+Registering SWP/SWPB emulation handler
+aaci-pl041 10004000.aaci: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 32
+aaci-pl041 10004000.aaci: FIFO 512 entries
+mmci-pl18x 10005000.mmci: Got CD GPIO
+mmci-pl18x 10005000.mmci: Got WP GPIO
+mmci-pl18x 10005000.mmci: mmc0: PL181 manf 41 rev0 at 0x10005000 irq 33,34 (pio)
+10009000.uart: ttyAMA0 at MMIO 0x10009000 (irq = 37, base_baud = 0) is a PL011 rev1
+printk: console [ttyAMA0] enabled
+1000a000.uart: ttyAMA1 at MMIO 0x1000a000 (irq = 38, base_baud = 0) is a PL011 rev1
+1000b000.uart: ttyAMA2 at MMIO 0x1000b000 (irq = 39, base_baud = 0) is a PL011 rev1
+1000c000.uart: ttyAMA3 at MMIO 0x1000c000 (irq = 40, base_baud = 0) is a PL011 rev1
+rtc-pl031 10017000.rtc: registered as rtc0
+rtc-pl031 10017000.rtc: setting system clock to 2026-10-22T04:16:31 UTC (1792642591)
+amba 10020000.clcd: Fixing up cyclic dependency with 0-0039
+drm-clcd-pl111 10020000.clcd: DVI muxed to daughterboard 1 (core tile) CLCD
+drm-clcd-pl111 10020000.clcd: initializing Versatile Express PL111
+sii902x 0-0039: supply iovcc not found, using dummy regulator
+sii902x 0-0039: supply cvcc12 not found, using dummy regulator
+i2c i2c-0: Added multiplexed i2c bus 2
+drm-clcd-pl111 1001f000.clcd: assigned reserved memory node vram@4c000000
+drm-clcd-pl111 1001f000.clcd: using device-specific reserved memory
+drm-clcd-pl111 1001f000.clcd: core tile graphics present
+drm-clcd-pl111 1001f000.clcd: this device will be deactivated
+drm-clcd-pl111 1001f000.clcd: Versatile Express init failed - -19
+drm-clcd-pl111 10020000.clcd: DVI muxed to daughterboard 1 (core tile) CLCD
+drm-clcd-pl111 10020000.clcd: initializing Versatile Express PL111
+drm-clcd-pl111 10020000.clcd: found bridge on endpoint 0
+drm-clcd-pl111 10020000.clcd: Using non-panel bridge
+[drm] Initialized pl111 1.0.0 20170317 for 10020000.clcd on minor 0
+input: AT Raw Set 2 keyboard as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10006000.kmi/serio0/input/input0
+Console: switching to colour frame buffer device 128x48
+drm-clcd-pl111 10020000.clcd: [drm] fb0: pl111 frame buffer device
+ALSA device list:
+  #0: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 32
+Freeing unused kernel image (initmem) memory: 1024K
+Run /sbin/init as init process
+Boot completed! Welcome to Embedded Linux Lab 1
+
+Please press Enter to activate this console. input: ImExPS/2 Generic Explorer Mouse as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10007000.kmi/serio1/input/input2
+random: fast init done
+sh /usr/bin/test_asgn1.sh                         
+/ # sh /usr/bin/test_asgn1.sh
+======================================
+   ASSIGNMENT 01 - DRIVER TEST
+======================================
+
+[1] Loading asgn1_driver...
+asgn1_driver: loading out-of-tree module taints kernel.
+asgn1_driver: initializing module
+asgn1_driver: /proc/asgn1_info created
+asgn1_driver: loaded, major=241
+Module loaded successfully.
+
+[2] Checking device node...
+crw-r--r--    1 root     0         241,   0 Oct 22 04:16 [1;35m/dev/asgn1[m
+
+[3] Checking loaded modules...
+asgn1_driver 16384 0 - Live 0x7f000000 (O)
+
+[4] Running ioctl tests...
+asgn1_driver: device opened (count=1)
+=== ASSIGNMENT 01 IOCTL TEST ===
+
+[1] Testing GET_VERSION
+asgn1_driver: ioctl GET_VERSION executed
+Driver version: asgn1_driver v1.0 - SE203134
+asgn1_driver: ioctl RESET_BUFFER executed
+
+[2] Testing ECHO MODE
+asgn1_driver: ioctl SET_MODE = 1
+asgn1_driver: wrote 5 user bytes
+asgn1_driver: device opened (count=2)
+asgn1_driver: sent 5 bytes to user
+asgn1_driver: device closed
+Read result: [Hello]
+
+[3] Testing KERNEL MODE
+asgn1_driver: ioctl SET_MODE = 0
+asgn1_driver: wrote 5 user bytes
+asgn1_driver: device opened (count=3)
+asgn1_driver: sent 13 bytes to user
+asgn1_driver: device closed
+Read result: [[KERNEL]World]
+
+[4] Testing GET_STATS
+asgn1_driver: ioctl GET_STATS executed
+Open count      : 3
+Write count     : 2
+Read count      : 2
+Buffer length   : 13
+Last write size : 5
+
+[5] Testing RESET_BUFFER
+asgn1_driver: ioctl RESET_BUFFER executed
+asgn1_driver: ioctl GET_STATS executed
+Buffer length after reset : 0
+Read count after reset    : 0
+Write count after reset   : 0
+asgn1_driver: device opened (count=4)
+asgn1_driver: device closed
+Read result: []
+
+=== ALL IOCTL TESTS PASSED ===
+asgn1_driver: device closed
+
+[5] Checking kernel messages...
+asgn1_driver: loading out-of-tree module taints kernel.
+asgn1_driver: initializing module
+asgn1_driver: /proc/asgn1_info created
+asgn1_driver: loaded, major=241
+asgn1_driver: device opened (count=1)
+asgn1_driver: ioctl GET_VERSION executed
+asgn1_driver: ioctl RESET_BUFFER executed
+asgn1_driver: ioctl SET_MODE = 1
+asgn1_driver: wrote 5 user bytes
+asgn1_driver: device opened (count=2)
+asgn1_driver: sent 5 bytes to user
+asgn1_driver: device closed
+asgn1_driver: ioctl SET_MODE = 0
+asgn1_driver: wrote 5 user bytes
+asgn1_driver: device opened (count=3)
+asgn1_driver: sent 13 bytes to user
+asgn1_driver: device closed
+asgn1_driver: ioctl GET_STATS executed
+asgn1_driver: ioctl RESET_BUFFER executed
+asgn1_driver: ioctl GET_STATS executed
+asgn1_driver: device opened (count=4)
+asgn1_driver: device closed
+asgn1_driver: device closed
+
+[6] Unloading driver...
+asgn1_driver: module unloaded
+
+[7] Checking cleanup...
+Module unloaded successfully.
+Cleanup verified.
+
+======================================
+   ALL ASSIGNMENT 01 TESTS PASSED
+======================================
+/ # echo "Task 1 exit code: $?"
+Task 1 exit code: 0
+/ # exit
+
+Please press Enter to activate this console. 
+/ # ~/embedded_asgn1/logs/task1_qemu_session.txt
+-/bin/sh: //embedded_asgn1/logs/task1_qemu_session.txt: not found
+/ # QEMU: Terminated
+[?2004h]0;minh@hayaminlinux: ~/embedded_asgn1/rootfs/initramfs[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_asgn1/rootfs/initramfs[00m$ [7mgrep -aE 'PASS|FAIL|TESTS P[27m[7mA[27m[7mSSED|exit code' \ [27m
+[7m~/embedded_asgn1/logs/task1_qemu_session.txt[27m[A[A]0;minh@hayaminlinux: ~/embedded_asgn1/rootfs/initramfs[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_asgn1/rootfs/initramfs[00m$ grep -aE 'PASS|FAIL|TESTS PASSED|exit code' \
+~/embedded_asgn1/logs/task1_qemu_session.txt
+[?2004l=== ALL IOCTL [01;31m[KTESTS PASSED[m[K ===
+   ALL ASSIGNMENT 01 [01;31m[KTESTS PASSED[m[K
+/ # echo "Task 1 [01;31m[Kexit code[m[K: $?"
+Task 1 [01;31m[Kexit code[m[K: 0
+[?2004h]0;minh@hayaminlinux: ~/embedded_asgn1/rootfs/initramfs[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_asgn1/rootfs/initramfs[00m$ [7mgrep -aE '[01;31m[KPASS[m[K|[01;31m[KFAIL[m[K|TESTS P[27m[7mA[27m[7mSSED|[01;31m[Kexit code[m[K' \ [27m
+[7m~/embedded_asgn1/logs/task1_qemu_session.txt[27m[A[A]0;minh@hayaminlinux: ~/embedded_asgn1/rootfs/initramfs[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_asgn1/rootfs/initramfs[00m$ grep -aE '[01;31m[KPASS[m[K|[01;31m[KFAIL[m[K|[01;31m[KTESTS PASSED[m[K|[01;31m[Kexit code[m[K' \
+[?2004l=== ALL IOCTL [01;31m[K[01;31m[KTESTS PASSED[m[K[m[K ===
+   ALL ASSIGNMENT 01 [01;31m[K[01;31m[KTESTS PASSED[m[K[m[K
+/ # echo "Task 1 [01;31m[K[01;31m[Kexit code[m[K[m[K: $?"
+Task 1 [01;31m[K[01;31m[Kexit code[m[K[m[K: 0
+[?2004h]0;minh@hayaminlinux: ~/embedded_asgn1/rootfs/initramfs[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_asgn1/rootfs/initramfs[00m$ [7mgrep -aE '[01;31m[K[01;31m[KPASS[m[K[m[K|[01;31m[K[01;31m[KFAIL[m[K[m[K|TESTS P[27m[7mA[27m[7mSSED|[01;31m[K[01;31m[Kexit code[m[K[m[K' \ [27m
+[7m~/embedded_asgn1/logs/task1_qemu_session.txt[27m[A[A]0;minh@hayaminlinux: ~/embedded_asgn1/rootfs/initramfs[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_asgn1/rootfs/initramfs[00m$ grep -aE '[01;31m[K[01;31m[KPASS[m[K[m[K|[01;31m[K[01;31m[KFAIL[m[K[m[K|[01;31m[K[01;31m[KTESTS PASSED[m[K[m[K|[01;31m[K[01;31m[Kexit code[m[K[m[K' \
+[?2004l=== ALL IOCTL [01;31m[K[01;31m[K[01;31m[KTESTS PASSED[m[K[m[K[m[K ===
+   ALL ASSIGNMENT 01 [01;31m[K[01;31m[K[01;31m[KTESTS PASSED[m[K[m[K[m[K
+/ # echo "Task 1 [01;31m[K[01;31m[K[01;31m[Kexit code[m[K[m[K[m[K: $?"
+Task 1 [01;31m[K[01;31m[K[01;31m[Kexit code[m[K[m[K[m[K: 0
+[?2004h]0;minh@hayaminlinux: ~/embedded_asgn1/rootfs/initramfs[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_asgn1/rootfs/initramfs[00m$ [7mgrep -aE '[01;31m[K[01;31m[K[01;31m[KPASS[m[K[m[K[m[K|[01;31m[K[01;31m[K[01;31m[KFAIL[m[K[m[K[m[K|TESTS P[27m[7mA[27m[7mSSED|[01;31m[K[01;31m[K[01;31m[Kexit code[m[K[m[K[m[K' \ [27m
+[?2004h]0;minh@hayaminlinux: ~/embedded_asgn1/rootfs/initramfs[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_asgn1/rootfs/initramfs[00m$ [7mecho "===== ASSIGNMENT 01 T[27m[7mE[27m[7mST LOGS =====" [27m
+
+[7mls -lh \[27m
+[7m  ~/embedded_asgn1/logs/task1_qemu_session.txt \[27m
+[7m  ~/embedded_asgn1/logs/test_counter_output.txt[27m
+
+[7mecho[27m
+[7mecho "===== TASK 1 PASS ====="[27m
+
+[7mgrep -aE \[27m
+[7m  'ALL IOCTL TESTS PASSED|ALL ASSIGNMENT 01 TESTS PASSED|Task 1 exit code' \[27m
+[7m  ~/embedded_asgn1/logs/task1_qemu_session.txt[27m
+
+[7mecho[27m
+[7mecho "===== TASK 2 PASS ====="[27m
+
+[7mgrep -a 'ALL COUNTER TESTS PASSED' \[27m
+[7m  ~/embedded_asgn1/logs/test_counter_output.txt[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A]0;minh@hayaminlinux: ~/embedded_asgn1/rootfs/initramfs[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_asgn1/rootfs/initramfs[00m$ echo "===== ASSIGNMENT 01 TEST LOGS ====="
+
+ls -lh \
+  ~/embedded_asgn1/logs/task1_qemu_session.txt \
+  ~/embedded_asgn1/logs/test_counter_output.txt
+
+echo
+echo "===== TASK 1 PASS ====="
+
+grep -aE \
+  'ALL IOCTL TESTS PASSED|ALL ASSIGNMENT 01 TESTS PASSED|Task 1 exit code' \
+  ~/embedded_asgn1/logs/task1_qemu_session.txt
+
+echo
+echo "===== TASK 2 PASS ====="
+
+grep -a 'ALL COUNTER TESTS PASSED' \
+  ~/embedded_asgn1/logs/test_counter_output.txt
+[?2004l===== ASSIGNMENT 01 TEST LOGS =====
+-rw-rw-r-- 1 minh minh  19K Oct 22 11:19 /home/minh/embedded_asgn1/logs/task1_qemu_session.txt
+-rw-rw-r-- 1 minh minh 1.8K Oct 12 08:55 /home/minh/embedded_asgn1/logs/test_counter_output.txt
+
+===== TASK 1 PASS =====
+=== [01;31m[KALL IOCTL TESTS PASSED[m[K ===
+   [01;31m[KALL ASSIGNMENT 01 TESTS PASSED[m[K
+/ # echo "[01;31m[KTask 1 exit code[m[K: $?"
+[01;31m[KTask 1 exit code[m[K: 0
+[7m  '[01;31m[KALL IOCTL TESTS PASSED[m[K|[01;31m[KALL ASSIGNMENT 01 TESTS PASSED[m[K|[01;31m[KTask 1 exit code[m[K' \[27m
+  '[01;31m[KALL IOCTL TESTS PASSED[m[K|[01;31m[KALL ASSIGNMENT 01 TESTS PASSED[m[K|[01;31m[KTask 1 exit code[m[K' \
+=== [01;31m[K[01;31m[KALL IOCTL TESTS PASSED[m[K[m[K ===
+   [01;31m[K[01;31m[KALL ASSIGNMENT 01 TESTS PASSED[m[K[m[K
+/ # echo "[01;31m[K[01;31m[KTask 1 exit code[m[K[m[K: $?"
+[01;31m[K[01;31m[KTask 1 exit code[m[K[m[K: 0
+
+===== TASK 2 PASS =====
+   [01;31m[KALL COUNTER TESTS PASSED[m[K
+[?2004h]0;minh@hayaminlinux: ~/embedded_asgn1/rootfs/initramfs[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_asgn1/rootfs/initramfs[00m$ [7mcd ~/LOS201_IC2009[27m
+
+[7mgit status --short[27m
+[7mgit pull --ff-only origin main[27m[A[A[A]0;minh@hayaminlinux: ~/embedded_asgn1/rootfs/initramfs[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_asgn1/rootfs/initramfs[00m$ cd ~/LOS201_IC2009
+
+git status --short
+git pull --ff-only origin main
+[?2004lremote: Enumerating objects: 35, done.[K
+remote: Counting objects:   2% (1/35)[Kremote: Counting objects:   5% (2/35)[Kremote: Counting objects:   8% (3/35)[Kremote: Counting objects:  11% (4/35)[Kremote: Counting objects:  14% (5/35)[Kremote: Counting objects:  17% (6/35)[Kremote: Counting objects:  20% (7/35)[Kremote: Counting objects:  22% (8/35)[Kremote: Counting objects:  25% (9/35)[Kremote: Counting objects:  28% (10/35)[Kremote: Counting objects:  31% (11/35)[Kremote: Counting objects:  34% (12/35)[Kremote: Counting objects:  37% (13/35)[Kremote: Counting objects:  40% (14/35)[Kremote: Counting objects:  42% (15/35)[Kremote: Counting objects:  45% (16/35)[Kremote: Counting objects:  48% (17/35)[Kremote: Counting objects:  51% (18/35)[Kremote: Counting objects:  54% (19/35)[Kremote: Counting objects:  57% (20/35)[Kremote: Counting objects:  60% (21/35)[Kremote: Counting objects:  62% (22/35)[Kremote: Counting objects:  65% (23/35)[Kremote: Counting objects:  68% (24/35)[Kremote: Counting objects:  71% (25/35)[Kremote: Counting objects:  74% (26/35)[Kremote: Counting objects:  77% (27/35)[Kremote: Counting objects:  80% (28/35)[Kremote: Counting objects:  82% (29/35)[Kremote: Counting objects:  85% (30/35)[Kremote: Counting objects:  88% (31/35)[Kremote: Counting objects:  91% (32/35)[Kremote: Counting objects:  94% (33/35)[Kremote: Counting objects:  97% (34/35)[Kremote: Counting objects: 100% (35/35)[Kremote: Counting objects: 100% (35/35), done.[K
+remote: Compressing objects:   3% (1/28)[Kremote: Compressing objects:   7% (2/28)[Kremote: Compressing objects:  10% (3/28)[Kremote: Compressing objects:  14% (4/28)[Kremote: Compressing objects:  17% (5/28)[Kremote: Compressing objects:  21% (6/28)[Kremote: Compressing objects:  25% (7/28)[Kremote: Compressing objects:  28% (8/28)[Kremote: Compressing objects:  32% (9/28)[Kremote: Compressing objects:  35% (10/28)[Kremote: Compressing objects:  39% (11/28)[Kremote: Compressing objects:  42% (12/28)[Kremote: Compressing objects:  46% (13/28)[Kremote: Compressing objects:  50% (14/28)[Kremote: Compressing objects:  53% (15/28)[Kremote: Compressing objects:  57% (16/28)[Kremote: Compressing objects:  60% (17/28)[Kremote: Compressing objects:  64% (18/28)[Kremote: Compressing objects:  67% (19/28)[Kremote: Compressing objects:  71% (20/28)[Kremote: Compressing objects:  75% (21/28)[Kremote: Compressing objects:  78% (22/28)[Kremote: Compressing objects:  82% (23/28)[Kremote: Compressing objects:  85% (24/28)[Kremote: Compressing objects:  89% (25/28)[Kremote: Compressing objects:  92% (26/28)[Kremote: Compressing objects:  96% (27/28)[Kremote: Compressing objects: 100% (28/28)[Kremote: Compressing objects: 100% (28/28), done.[K
+Unpacking objects:   3% (1/32)Unpacking objects:   6% (2/32)Unpacking objects:   9% (3/32)Unpacking objects:  12% (4/32)Unpacking objects:  15% (5/32)Unpacking objects:  18% (6/32)Unpacking objects:  21% (7/32)Unpacking objects:  25% (8/32)Unpacking objects:  28% (9/32)Unpacking objects:  31% (10/32)Unpacking objects:  34% (11/32)Unpacking objects:  37% (12/32)Unpacking objects:  40% (13/32)Unpacking objects:  43% (14/32)Unpacking objects:  46% (15/32)Unpacking objects:  50% (16/32)Unpacking objects:  53% (17/32)Unpacking objects:  56% (18/32)Unpacking objects:  59% (19/32)Unpacking objects:  62% (20/32)Unpacking objects:  65% (21/32)Unpacking objects:  68% (22/32)Unpacking objects:  71% (23/32)remote: Total 32 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0)[K
+Unpacking objects:  75% (24/32)Unpacking objects:  78% (25/32)Unpacking objects:  81% (26/32)Unpacking objects:  84% (27/32)Unpacking objects:  87% (28/32)Unpacking objects:  90% (29/32)Unpacking objects:  93% (30/32)Unpacking objects:  96% (31/32)Unpacking objects: 100% (32/32)Unpacking objects: 100% (32/32), 338.74 KiB | 1.06 MiB/s, done.
+From https://github.com/ttminhhayamin/LOS201_IC2009
+ * branch            main       -> FETCH_HEAD
+   402ba5a..d0eadfb  main       -> origin/main
+Updating 402ba5a..d0eadfb
+Fast-forward
+ .gitignore                                         |  26 [31m---[m
+ README.md                                          |  21 [32m+[m[31m-[m
+ README_SORTING.txt                                 |  79 [31m-------[m
+ .../Output/03_kernel_build_float_abi_error.png     | Bin
+ .../05_make_run_from_wrong_directory_error.png     | Bin
+ .../06_kernel_build_configuration_prompt_debug.png | Bin
+ ..._cross_compile_environment_and_target_check.png | Bin
+ .../10_compiler_architecture_flags_diagnostic.png  | Bin
+ .../Output/02_verify_vexpress_config.png           | Bin
+ .../08_defconfig_attempt_and_platform_check.png    | Bin
+ .../09_defconfig_and_vexpress_verification.png     | Bin
+ .../Input/01_menuconfig_kernel_configuration.png   | Bin
+ .../Output/04_verify_cpu_v7_and_smp_config.png     | Bin
+ .../07_verify_initramfs_smp_and_pl011_options.png  | Bin
+ .../Output/11_kernel_zimage_build_success.png      | Bin
+ .../Output/12_copy_and_verify_zimage_dtb_armv7.png | Bin
+ .../Input/13_uboot_defconfig_and_build_command.png | Bin
+ .../14_uboot_build_files_and_architecture.png      | Bin
+ .../Output/15_uboot_qemu_boot_shell_and_bdinfo.png | Bin
+ .../Output/16_uboot_bdinfo_and_environment.png     | Bin
+ .../Output/17_uboot_printenv_output.png            | Bin
+ .../Output/18_set_bootargs_bootcmd_and_saveenv.png | Bin
+ .../Output/19_kernel_boot_without_rootfs.png       | Bin
+ .../20_busybox_build_fpu_error_and_reconfigure.png | Bin
+ .../21_busybox_build_install_and_static_verify.png | Bin
+ .../22_rootfs_structure_and_busybox_copy.png       | Bin
+ ...23_create_init_inittab_rcs_and_device_nodes.png | Bin
+ .../23_package_initramfs_and_verify_size.png       | Bin
+ .../Output/24_final_initramfs_output_present.png   | Bin
+ ...l_lab1_output_files_and_config_verification.png | Bin
+ .../source/ioctl_test.c                            |   0
+ .../source/lab2_driver.c                           |   0
+ .../source/lab2_driver.ko                          | Bin
+ .../source/test_all20.sh                           |   0
+ .../Output/08_qemu_missing_initramfs_error.png     | Bin
+ .../09_device_access_before_driver_fix_error.png   | Bin
+ .../01_environment_setup_rootfs_copy_and_tools.png | Bin
+ ..._driver_source_header_and_module_definition.png | Bin
+ .../03_driver_file_operations_source_check.png     | Bin
+ ...4_module_makefile_and_initial_build_attempt.png | Bin
+ .../05_armv7_kcflags_and_kernel_config_check.png   | Bin
+ ...06_module_build_success_modinfo_and_readelf.png | Bin
+ ..._module_modinfo_and_arm_architecture_verify.png | Bin
+ .../Input/29_test_driver_script.png                | Bin
+ ...successful_module_load_write_read_and_dmesg.png | Bin
+ .../Output/11_character_device_dmesg_test.png      | Bin
+ .../Output/12_module_unload_and_lifecycle_log.png  | Bin
+ .../Input/13_procfs_cleanup_source_code.png        | Bin
+ .../14_procfs_source_and_driver_definitions.png    | Bin
+ .../14_sysfs_source_and_driver_definitions.png     | Bin
+ .../Input/15_sysfs_cleanup_source_code.png         | Bin
+ .../Input/30_test_procfs_script.png                | Bin
+ ...16_rebuild_driver_with_procfs_sysfs_success.png | Bin
+ .../17_procfs_before_write_and_sysfs_listing.png   | Bin
+ .../18_procfs_after_write_and_driver_stats.png     | Bin
+ .../Output/19_sysfs_attributes_and_dmesg.png       | Bin
+ .../Output/20_test_procfs_sysfs_passed.png         | Bin
+ .../21_nandsim_load_proc_mtd_and_device_info.png   | Bin
+ .../Output/22_identify_mtd0_as_host_flash.png      | Bin
+ .../Output/23_identify_mtd1_as_nand_simulator.png  | Bin
+ .../Output/24_flash_erase_and_mkfs_jffs2.png       | Bin
+ ..._nandwrite_mount_read_write_and_persistence.png | Bin
+ .../Output/26_nanddump_hexdump_and_cleanup.png     | Bin
+ .../Input/27_rcs_autoload_module_script.png        | Bin
+ .../Input/28_rcs_tail_and_autoload_messages.png    | Bin
+ .../Input/28_inittab_and_rcs_configuration.png     | Bin
+ ..._verify_rootfs_structure_and_pack_initramfs.png | Bin
+ .../32_pack_initramfs_and_qemu_launch_command.png  | Bin
+ .../31_qemu_boot_module_autoload_success.png       | Bin
+ .../Output/33_post_boot_driver_test_result.png     | Bin
+ .../Output/34_post_boot_procfs_sysfs_result.png    | Bin
+ .../Output/33_full_test_driver_passed.png          | Bin
+ ...34_full_test_procfs_sysfs_and_manual_checks.png | Bin
+ {Lab02 => SE203134_Lab02}/driver/Makefile          |   0
+ {Lab02 => SE203134_Lab02}/driver/lab2_driver.c     |   0
+ {Lab02 => SE203134_Lab02}/driver/lab2_driver.ko    | Bin
+ {Lab02 => SE203134_Lab02}/scripts/inittab          |   0
+ {Lab02 => SE203134_Lab02}/scripts/rcS              |   0
+ {Lab02 => SE203134_Lab02}/scripts/test_driver.sh   |   0
+ {Lab02 => SE203134_Lab02}/scripts/test_procfs.sh   |   0
+ SE204186_Lab02-Practice-20Q/source/Makefile        |  13 [32m++[m
+ SE204186_Lab02-Practice-20Q/source/Module.symvers  |   0
+ SE204186_Lab02-Practice-20Q/source/asgn1_driver.c  | 246 [32m+++++++++++++++++++++[m
+ .../source/asgn1_driver.c.bak                      | 122 [32m++++++++++[m
+ SE204186_Lab02-Practice-20Q/source/asgn1_driver.ko | Bin [31m0[m -> [32m143324[m bytes
+ .../source/asgn1_driver.mod                        |   2 [32m+[m
+ .../source/asgn1_driver.mod.c                      |  31 [32m+++[m
+ .../source/asgn1_driver.mod.o                      | Bin [31m0[m -> [32m28932[m bytes
+ SE204186_Lab02-Practice-20Q/source/asgn1_driver.o  | Bin [31m0[m -> [32m115412[m bytes
+ SE204186_Lab02-Practice-20Q/source/asgn1_ioctl.h   |  27 [32m+++[m
+ SE204186_Lab02-Practice-20Q/source/modules.order   |   1 [32m+[m
+ SE204186_Lab02-Practice-20Q/source/test_ioctl      | Bin [31m0[m -> [32m490856[m bytes
+ SE204186_Lab02-Practice-20Q/source/test_ioctl.c    | 145 [32m++++++++++++[m
+ 93 files changed, 600 insertions(+), 113 deletions(-)
+ delete mode 100644 .gitignore
+ delete mode 100644 README_SORTING.txt
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Extra - Troubleshooting and Debugging/Output/03_kernel_build_float_abi_error.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Extra - Troubleshooting and Debugging/Output/05_make_run_from_wrong_directory_error.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Extra - Troubleshooting and Debugging/Output/06_kernel_build_configuration_prompt_debug.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question A.1 - Cross-Compile Environment/Output/09_cross_compile_environment_and_target_check.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question A.1 - Cross-Compile Environment/Output/10_compiler_architecture_flags_diagnostic.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question A.2 - Load Default Kernel Configuration/Output/02_verify_vexpress_config.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question A.2 - Load Default Kernel Configuration/Output/08_defconfig_attempt_and_platform_check.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question A.2 - Load Default Kernel Configuration/Output/09_defconfig_and_vexpress_verification.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question A.3 - Configure Kernel with menuconfig/Input/01_menuconfig_kernel_configuration.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question A.3 - Configure Kernel with menuconfig/Output/04_verify_cpu_v7_and_smp_config.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question A.3 - Configure Kernel with menuconfig/Output/07_verify_initramfs_smp_and_pl011_options.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question A.4 - Build Kernel and Verify ARMv7/Output/11_kernel_zimage_build_success.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question A.4 - Build Kernel and Verify ARMv7/Output/12_copy_and_verify_zimage_dtb_armv7.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question B.1 - Build U-Boot for vexpress-a9/Input/13_uboot_defconfig_and_build_command.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question B.1 - Build U-Boot for vexpress-a9/Output/14_uboot_build_files_and_architecture.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question B.2 - Boot U-Boot on QEMU/Output/15_uboot_qemu_boot_shell_and_bdinfo.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question B.3 - U-Boot Commands bootargs and bootcmd/Output/16_uboot_bdinfo_and_environment.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question B.3 - U-Boot Commands bootargs and bootcmd/Output/17_uboot_printenv_output.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question B.3 - U-Boot Commands bootargs and bootcmd/Output/18_set_bootargs_bootcmd_and_saveenv.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question B.4 - Boot Kernel Without Rootfs/Output/19_kernel_boot_without_rootfs.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question C.1 - Build BusyBox Static ARMv7/Output/20_busybox_build_fpu_error_and_reconfigure.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question C.1 - Build BusyBox Static ARMv7/Output/21_busybox_build_install_and_static_verify.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question C.2 - Create Root Filesystem/Output/22_rootfs_structure_and_busybox_copy.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question C.3 - Create init inittab rcS and Device Nodes/Input/23_create_init_inittab_rcs_and_device_nodes.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question C.4 - Package initramfs/Output/23_package_initramfs_and_verify_size.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question C.4 - Package initramfs/Output/24_final_initramfs_output_present.png (100%)
+ rename {Lab01 => SE203134_Lab01}/Lab01 - Question C.5 - Complete QEMU Boot and Verify System/Output/24_final_lab1_output_files_and_config_verification.png (100%)
+ rename {Lab02-Practice-20Q => SE203134_Lab02-Practice-20Q}/source/ioctl_test.c (100%)
+ rename {Lab02-Practice-20Q => SE203134_Lab02-Practice-20Q}/source/lab2_driver.c (100%)
+ rename {Lab02-Practice-20Q => SE203134_Lab02-Practice-20Q}/source/lab2_driver.ko (100%)
+ rename {Lab02-Practice-20Q => SE203134_Lab02-Practice-20Q}/source/test_all20.sh (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Extra - Troubleshooting and Debugging/Output/08_qemu_missing_initramfs_error.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Extra - Troubleshooting and Debugging/Output/09_device_access_before_driver_fix_error.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question 0 - Environment and Prerequisite Setup/Output/01_environment_setup_rootfs_copy_and_tools.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question A.1 - Character Device Driver Source/Input/02_driver_source_header_and_module_definition.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question A.1 - Character Device Driver Source/Input/03_driver_file_operations_source_check.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question A.2 - Kernel Module Makefile/Input/04_module_makefile_and_initial_build_attempt.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question A.3 - Build and Verify Module/Input/05_armv7_kcflags_and_kernel_config_check.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question A.3 - Build and Verify Module/Output/06_module_build_success_modinfo_and_readelf.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question A.3 - Build and Verify Module/Output/07_module_modinfo_and_arm_architecture_verify.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question A.4 - Test Character Device/Input/29_test_driver_script.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question A.4 - Test Character Device/Output/10_successful_module_load_write_read_and_dmesg.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question A.4 - Test Character Device/Output/11_character_device_dmesg_test.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question A.4 - Test Character Device/Output/12_module_unload_and_lifecycle_log.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question B.1 - Add procfs Interface/Input/13_procfs_cleanup_source_code.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question B.1 - Add procfs Interface/Input/14_procfs_source_and_driver_definitions.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question B.2 - Add sysfs Interface/Input/14_sysfs_source_and_driver_definitions.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question B.2 - Add sysfs Interface/Input/15_sysfs_cleanup_source_code.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question B.3 - Rebuild and Test procfs sysfs/Input/30_test_procfs_script.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question B.3 - Rebuild and Test procfs sysfs/Output/16_rebuild_driver_with_procfs_sysfs_success.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question B.3 - Rebuild and Test procfs sysfs/Output/17_procfs_before_write_and_sysfs_listing.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question B.3 - Rebuild and Test procfs sysfs/Output/18_procfs_after_write_and_driver_stats.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question B.3 - Rebuild and Test procfs sysfs/Output/19_sysfs_attributes_and_dmesg.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question B.3 - Rebuild and Test procfs sysfs/Output/20_test_procfs_sysfs_passed.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question C.2 - Enable nandsim and Check MTD/Output/21_nandsim_load_proc_mtd_and_device_info.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question C.2 - Enable nandsim and Check MTD/Output/22_identify_mtd0_as_host_flash.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question C.2 - Enable nandsim and Check MTD/Output/23_identify_mtd1_as_nand_simulator.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question C.3 - Erase Flash and Create JFFS2 Image/Output/24_flash_erase_and_mkfs_jffs2.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question C.4 - Mount Read Write and Verify Persistence/Output/25_nandwrite_mount_read_write_and_persistence.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question C.5 - Dump MTD Raw Data/Output/26_nanddump_hexdump_and_cleanup.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question D.1 - Update rcS for Module Auto-load/Input/27_rcs_autoload_module_script.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question D.1 - Update rcS for Module Auto-load/Input/28_rcs_tail_and_autoload_messages.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question D.2 - Update inittab/Input/28_inittab_and_rcs_configuration.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question D.3 - Verify Rootfs Structure/Output/32_verify_rootfs_structure_and_pack_initramfs.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question D.4 - Package initramfs and Boot QEMU/Input/32_pack_initramfs_and_qemu_launch_command.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question D.4 - Package initramfs and Boot QEMU/Output/31_qemu_boot_module_autoload_success.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question D.4 - Package initramfs and Boot QEMU/Output/33_post_boot_driver_test_result.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question D.4 - Package initramfs and Boot QEMU/Output/34_post_boot_procfs_sysfs_result.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question D.5 - Full QEMU Validation/Output/33_full_test_driver_passed.png (100%)
+ rename {Lab02 => SE203134_Lab02}/Lab02 - Question D.5 - Full QEMU Validation/Output/34_full_test_procfs_sysfs_and_manual_checks.png (100%)
+ rename {Lab02 => SE203134_Lab02}/driver/Makefile (100%)
+ rename {Lab02 => SE203134_Lab02}/driver/lab2_driver.c (100%)
+ rename {Lab02 => SE203134_Lab02}/driver/lab2_driver.ko (100%)
+ rename {Lab02 => SE203134_Lab02}/scripts/inittab (100%)
+ rename {Lab02 => SE203134_Lab02}/scripts/rcS (100%)
+ rename {Lab02 => SE203134_Lab02}/scripts/test_driver.sh (100%)
+ rename {Lab02 => SE203134_Lab02}/scripts/test_procfs.sh (100%)
+ create mode 100644 SE204186_Lab02-Practice-20Q/source/Makefile
+ create mode 100644 SE204186_Lab02-Practice-20Q/source/Module.symvers
+ create mode 100644 SE204186_Lab02-Practice-20Q/source/asgn1_driver.c
+ create mode 100644 SE204186_Lab02-Practice-20Q/source/asgn1_driver.c.bak
+ create mode 100644 SE204186_Lab02-Practice-20Q/source/asgn1_driver.ko
+ create mode 100644 SE204186_Lab02-Practice-20Q/source/asgn1_driver.mod
+ create mode 100644 SE204186_Lab02-Practice-20Q/source/asgn1_driver.mod.c
+ create mode 100644 SE204186_Lab02-Practice-20Q/source/asgn1_driver.mod.o
+ create mode 100644 SE204186_Lab02-Practice-20Q/source/asgn1_driver.o
+ create mode 100644 SE204186_Lab02-Practice-20Q/source/asgn1_ioctl.h
+ create mode 100644 SE204186_Lab02-Practice-20Q/source/modules.order
+ create mode 100644 SE204186_Lab02-Practice-20Q/source/test_ioctl
+ create mode 100644 SE204186_Lab02-Practice-20Q/source/test_ioctl.c
+[?2004h]0;minh@hayaminlinux: ~/LOS201_IC2009[01;32mminh@hayaminlinux[00m:[01;34m~/LOS201_IC2009[00m$ [7mmkdir -p SE203134_Assignment01/{task1_ioctl,t[27m[7ma[27m[7msk2_misc,logs,output,bao_cao}[27m[A]0;minh@hayaminlinux: ~/LOS201_IC2009[01;32mminh@hayaminlinux[00m:[01;34m~/LOS201_IC2009[00m$ mkdir -p SE203134_Assignment01/{task1_ioctl,task2_misc,logs,output,bao_cao}
+[?2004l[?2004h]0;minh@hayaminlinux: ~/LOS201_IC2009[01;32mminh@hayaminlinux[00m:[01;34m~/LOS201_IC2009[00m$ [7mcp ~/embedded_asgn1/task1_ioctl/{asgn1_driver[27m[7m.[27m[7mc,asgn1_ioctl.h,Makefile,asgn1_driver.ko,test_asgn1.c,test_asgn1,test_asgn1.sh}[27m[7m [27m[7m\ [27m
+[7mSE203134_Assignment01/task1_ioctl/[27m[A[A[A]0;minh@hayaminlinux: ~/LOS201_IC2009[01;32mminh@hayaminlinux[00m:[01;34m~/LOS201_IC2009[00m$ cp ~/embedded_asgn1/task1_ioctl/{asgn1_driver.c,asgn1_ioctl.h,Makefile,asgn1_driver.ko,test_asgn1.c,test_asgn1,test_asgn1.sh} \
+SE203134_Assignment01/task1_ioctl/
+[?2004l[?2004h]0;minh@hayaminlinux: ~/LOS201_IC2009[01;32mminh@hayaminlinux[00m:[01;34m~/LOS201_IC2009[00m$ [7mcp ~/embedded_asgn1/task2_misc/{counter_drive[27m[7mr[27m[7m.c,Makefile,counter_driver.ko,test_counter.sh} \ [27m
+[7mSE203134_Assignment01/task2_misc/[27m[A[A]0;minh@hayaminlinux: ~/LOS201_IC2009[01;32mminh@hayaminlinux[00m:[01;34m~/LOS201_IC2009[00m$ cp ~/embedded_asgn1/task2_misc/{counter_driver.c,Makefile,counter_driver.ko,test_counter.sh} \
+SE203134_Assignment01/task2_misc/
+[?2004l[?2004h]0;minh@hayaminlinux: ~/LOS201_IC2009[01;32mminh@hayaminlinux[00m:[01;34m~/LOS201_IC2009[00m$ [7mcp ~/embedded_asgn1/logs/{task1_qemu_session.[27m[7mt[27m[7mxt,test_counter_output.txt} \ [27m
+[7mSE203134_Assignment01/logs/[27m[A[A]0;minh@hayaminlinux: ~/LOS201_IC2009[01;32mminh@hayaminlinux[00m:[01;34m~/LOS201_IC2009[00m$ cp ~/embedded_asgn1/logs/{task1_qemu_session.txt,test_counter_output.txt} \
+SE203134_Assignment01/logs/
+[?2004l

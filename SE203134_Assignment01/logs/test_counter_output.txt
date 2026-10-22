@@ -1,0 +1,73 @@
+/ # /usr/bin/test_counter.sh
+======================================
+    ASSIGNMENT 01 - COUNTER TEST
+======================================
+
+[1] Loading counter_driver...
+counter_driver: loading out-of-tree module taints kernel.
+counter_driver: loaded successfully
+
+[2] Creating device node...
+crw-r--r--    1 root     0          10, 125 Oct 12 01:45 /dev/counter
+
+[3] Checking initial statistics...
+=== ASSIGNMENT 01 COUNTER INFO ===
+Current counter : 0
+Total reads     : 0
+Total writes    : 0
+
+[4] Testing auto-increment READ...
+counter_driver: read value 0
+counter_driver: read value 1
+First read  : 0
+Second read : 1
+PASS: Auto-increment works.
+
+[5] Testing WRITE 100...
+counter_driver: counter set to 100
+counter_driver: read value 100
+Read after write: 100
+PASS: Counter set to 100.
+
+[6] Statistics after WRITE...
+=== ASSIGNMENT 01 COUNTER INFO ===
+Current counter : 101
+Total reads     : 3
+Total writes    : 1
+
+[7] Testing RESET...
+counter_driver: counter set to 0
+counter_driver: read value 0
+Read after reset: 0
+PASS: Reset works.
+
+[8] Statistics after RESET...
+=== ASSIGNMENT 01 COUNTER INFO ===
+Current counter : 1
+Total reads     : 4
+Total writes    : 2
+
+[9] Testing invalid input...
+PASS: Negative value rejected.
+PASS: Invalid text rejected.
+
+[10] Unloading driver...
+counter_driver: unloaded successfully
+
+[11] Kernel log...
+counter_driver: loading out-of-tree module taints kernel.
+counter_driver: loaded successfully
+counter_driver: read value 0
+counter_driver: read value 1
+counter_driver: counter set to 100
+counter_driver: read value 100
+counter_driver: counter set to 0
+counter_driver: read value 0
+counter_driver: unloaded successfully
+
+======================================
+   ALL COUNTER TESTS PASSED
+======================================
+/ # 
+
+
