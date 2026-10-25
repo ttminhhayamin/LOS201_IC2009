@@ -1,36 +1,50 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <string.h>
 #include <sys/ioctl.h>
-#include <errno.h>
 
 #include "asgn1_ioctl.h"
 
-#define DEVICE_PATH "/dev/asgn1"
+#define DEVICE "/dev/asgn1"
+
+static void print_stats(struct asgn1_stats *stats)
+{
+    printf("\n=== ASGN1 Statistics ===\n");
+    printf("Open count      : %d\n", stats->open_count);
+    printf("Write count     : %d\n", stats->write_count);
+    printf("Read count      : %d\n", stats->read_count);
+    printf("Buffer length   : %d\n", stats->buffer_len);
+    printf("Last write size : %d\n", stats->last_write_size);
+}
 
 int main(void)
 {
     int fd;
     int mode;
-    char version[64] = {0};
-    char write_buf[] = "Hello IOCTL";
-    char read_buf[128] = {0};
+    char version[ASGN1_VERSION_SIZE];
     struct asgn1_stats stats;
-    ssize_t bytes;
 
-    fd = open(DEVICE_PATH, O_RDWR);
+    printf("========================================\n");
+    printf("      ASGN1 IOCTL TEST PROGRAM\n");
+    printf("========================================\n");
 
+    /* Open device */
+    fd = open(DEVICE, O_RDWR);
     if (fd < 0) {
         perror("open /dev/asgn1");
         return 1;
     }
 
-    printf("Device opened successfully.\n\n");
+    printf("\n[1] Device opened successfully\n");
 
-    /* Test 1: GET_VERSION */
-    printf("TEST 1: ASGN1_GET_VERSION\n");
+    /*
+     * GET_VERSION
+     */
+    memset(version, 0, sizeof(version));
+
+    printf("\n[2] Testing ASGN1_GET_VERSION...\n");
 
     if (ioctl(fd, ASGN1_GET_VERSION, version) < 0) {
         perror("ASGN1_GET_VERSION");
@@ -38,69 +52,29 @@ int main(void)
         return 1;
     }
 
-    printf("Driver version: %s\n\n", version);
+    printf("Version: %s\n", version);
 
-    /* Test 2: SET_MODE */
-    printf("TEST 2: ASGN1_SET_MODE\n");
+    /*
+     * SET_MODE -> ECHO
+     */
+    printf("\n[3] Testing ASGN1_SET_MODE -> ECHO mode\n");
 
-    mode = 0;
+    mode = ASGN1_MODE_ECHO;
 
     if (ioctl(fd, ASGN1_SET_MODE, &mode) < 0) {
-        perror("ASGN1_SET_MODE");
+        perror("ASGN1_SET_MODE ECHO");
         close(fd);
         return 1;
     }
 
-    printf("Mode changed to %d.\n\n", mode);
+    printf("Mode set to ECHO (%d)\n", mode);
 
-    /* Test 3: RESET_BUFFER */
-    printf("TEST 3: ASGN1_RESET_BUFFER\n");
+    /*
+     * GET_STATS
+     */
+    printf("\n[4] Testing ASGN1_GET_STATS...\n");
 
-    if (ioctl(fd, ASGN1_RESET_BUFFER) < 0) {
-        perror("ASGN1_RESET_BUFFER");
-        close(fd);
-        return 1;
-    }
-
-    printf("Buffer and read/write statistics reset.\n\n");
-
-    /* Write data */
-    printf("Writing data: %s\n", write_buf);
-
-    bytes = write(fd, write_buf, strlen(write_buf));
-
-    if (bytes < 0) {
-        perror("write");
-        close(fd);
-        return 1;
-    }
-
-    printf("Written %zd bytes.\n", bytes);
-
-    /* Read data */
-printf("\nReading data:\n");
-
-close(fd);
-
-fd = open(DEVICE_PATH, O_RDWR);
-if (fd < 0) {
-    perror("open");
-    return 1;
-}
-
-bytes = read(fd, read_buf, sizeof(read_buf) - 1);
-if (bytes < 0) {
-    perror("read");
-    close(fd);
-    return 1;
-}
-
-read_buf[bytes] = '\0';
-printf("Read %zd bytes: [%s]\n\n", bytes, read_buf);
-
-
-    /* Test 4: GET_STATS */
-    printf("TEST 4: ASGN1_GET_STATS\n");
+    memset(&stats, 0, sizeof(stats));
 
     if (ioctl(fd, ASGN1_GET_STATS, &stats) < 0) {
         perror("ASGN1_GET_STATS");
@@ -108,14 +82,27 @@ printf("Read %zd bytes: [%s]\n\n", bytes, read_buf);
         return 1;
     }
 
-    printf("Open count       : %d\n", stats.open_count);
-    printf("Write count      : %d\n", stats.write_count);
-    printf("Read count       : %d\n", stats.read_count);
-    printf("Buffer length    : %d\n", stats.buffer_len);
-    printf("Last write size  : %d\n\n", stats.last_write_size);
+    print_stats(&stats);
 
-    /* Reset buffer again */
-    printf("Resetting buffer again...\n");
+    /*
+     * SET_MODE -> KERNEL PREFIX
+     */
+    printf("\n[5] Testing ASGN1_SET_MODE -> KERNEL mode\n");
+
+    mode = ASGN1_MODE_KERNEL;
+
+    if (ioctl(fd, ASGN1_SET_MODE, &mode) < 0) {
+        perror("ASGN1_SET_MODE KERNEL");
+        close(fd);
+        return 1;
+    }
+
+    printf("Mode set to KERNEL (%d)\n", mode);
+
+    /*
+     * RESET_BUFFER
+     */
+    printf("\n[6] Testing ASGN1_RESET_BUFFER...\n");
 
     if (ioctl(fd, ASGN1_RESET_BUFFER) < 0) {
         perror("ASGN1_RESET_BUFFER");
@@ -123,23 +110,31 @@ printf("Read %zd bytes: [%s]\n\n", bytes, read_buf);
         return 1;
     }
 
-    printf("Final statistics:\n");
+    printf("Buffer reset successfully\n");
+
+    /*
+     * Check statistics after reset
+     */
+    printf("\n[7] Checking statistics after RESET...\n");
+
+    memset(&stats, 0, sizeof(stats));
 
     if (ioctl(fd, ASGN1_GET_STATS, &stats) < 0) {
-        perror("ASGN1_GET_STATS");
+        perror("ASGN1_GET_STATS after RESET");
         close(fd);
         return 1;
     }
 
-    printf("Open count       : %d\n", stats.open_count);
-    printf("Write count      : %d\n", stats.write_count);
-    printf("Read count       : %d\n", stats.read_count);
-    printf("Buffer length    : %d\n", stats.buffer_len);
-    printf("Last write size  : %d\n", stats.last_write_size);
+    print_stats(&stats);
 
+    /*
+     * Close device
+     */
     close(fd);
 
-    printf("\nAll IOCTL tests completed.\n");
+    printf("\n========================================\n");
+    printf("        IOCTL TEST COMPLETED\n");
+    printf("========================================\n");
 
     return 0;
 }
