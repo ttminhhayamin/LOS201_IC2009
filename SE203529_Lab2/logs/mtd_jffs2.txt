@@ -1,0 +1,141 @@
++ rmmod nandsim
++ modprobe nandsim first_id_byte=0x20 second_id_byte=0x35
++ modprobe mtdblock
++ modprobe jffs2
++ cat /proc/mtd
+dev:    size   erasesize  name
+mtd0: 00800000 00001000 "BIOS"
+mtd1: 02000000 00004000 "NAND simulator partition 0"
++ ls /dev/mtd0 /dev/mtd0ro /dev/mtd1 /dev/mtd1ro /dev/mtdblock0 /dev/mtdblock1 /dev/mtdblock0 /dev/mtdblock1
+/dev/mtd0
+/dev/mtd0ro
+/dev/mtd1
+/dev/mtd1ro
+/dev/mtdblock0
+/dev/mtdblock0
+/dev/mtdblock1
+/dev/mtdblock1
+++ awk '/NAND simulator partition 0/{sub(":","",$1); print $1}' /proc/mtd
++ MTD=mtd1
++ N=1
++ DEV=/dev/mtd1
++ BLK=/dev/mtdblock1
++ echo 'Dung: /dev/mtd1 / /dev/mtdblock1'
+Dung: /dev/mtd1 / /dev/mtdblock1
++ mtdinfo /dev/mtd1
+mtd1
+Name:                           NAND simulator partition 0
+Type:                           nand
+Eraseblock size:                16384 bytes, 16.0 KiB
+Amount of eraseblocks:          2048 (33554432 bytes, 32.0 MiB)
+Minimum input/output unit size: 512 bytes
+Sub-page size:                  256 bytes
+OOB size:                       16 bytes
+Character device major/minor:   90:2
+Bad blocks are allowed:         true
+Device is writable:             true
+
++ mtdinfo -a
+Count of MTD devices:           2
+Present MTD devices:            mtd0, mtd1
+Sysfs interface supported:      yes
+
+mtd0
+Name:                           BIOS
+Type:                           nor
+Eraseblock size:                4096 bytes, 4.0 KiB
+Amount of eraseblocks:          2048 (8388608 bytes, 8.0 MiB)
+Minimum input/output unit size: 1 byte
+Sub-page size:                  1 byte
+Character device major/minor:   90:0
+Bad blocks are allowed:         false
+Device is writable:             false
+
+mtd1
+Name:                           NAND simulator partition 0
+Type:                           nand
+Eraseblock size:                16384 bytes, 16.0 KiB
+Amount of eraseblocks:          2048 (33554432 bytes, 32.0 MiB)
+Minimum input/output unit size: 512 bytes
+Sub-page size:                  256 bytes
+OOB size:                       16 bytes
+Character device major/minor:   90:2
+Bad blocks are allowed:         true
+Device is writable:             true
+
++ flash_erase /dev/mtd1 0 0
+Erasing 32768 Kibyte @ 0 --  0 % complete Erasing 32768 Kibyte @ 0 -- 100 % complete 
++ rm -rf /tmp/jffs2_data /tmp/rootfs.jffs2
++ mkdir -p /tmp/jffs2_data/logs
++ echo 'Hello from JFFS2!'
++ echo 'Embedded Linux Lab2'
++ date
++ mkfs.jffs2 --root=/tmp/jffs2_data --eraseblock=0x4000 --pagesize=0x200 --no-cleanmarkers --pad --output=/tmp/rootfs.jffs2
++ ls -lh /tmp/rootfs.jffs2
+-rw-r--r-- 1 root root 16K Thg 10  1 10:50 /tmp/rootfs.jffs2
++ nandwrite -p /dev/mtd1 /tmp/rootfs.jffs2
+Writing data to block 0 at offset 0x0
++ mkdir -p /mnt/jffs2
++ mount -t jffs2 /dev/mtdblock1 /mnt/jffs2
++ ls -la /mnt/jffs2/
+total 5
+drwxr-xr-x 4 root root    0 Thg 1   1  1970 .
+drwxr-xr-x 3 root root 4096 Thg 10  1 10:50 ..
+-rw-r--r-- 1 root root   18 Thg 10  1 10:50 hello.txt
+-rw-r--r-- 1 root root   20 Thg 10  1 10:50 info.txt
+drwxr-xr-x 2 root root    0 Thg 10  1 10:50 logs
++ cat /mnt/jffs2/hello.txt
+Hello from JFFS2!
++ cat /mnt/jffs2/info.txt
+Embedded Linux Lab2
++ cat /mnt/jffs2/logs/boot.log
+Thứ năm, 01 Tháng 10 năm 2026 10:50:20 +07
++ sh -c 'echo "Written at $(date)" >> /mnt/jffs2/logs/boot.log'
++ sh -c 'echo "New runtime file" > /mnt/jffs2/runtime.txt'
++ cat /mnt/jffs2/logs/boot.log
+Thứ năm, 01 Tháng 10 năm 2026 10:50:20 +07
+Written at Thứ năm, 01 Tháng 10 năm 2026 10:50:20 +07
++ umount /mnt/jffs2
++ mount -t jffs2 /dev/mtdblock1 /mnt/jffs2
++ echo '--- SAU KHI UMOUNT/MOUNT LAI (persistence) ---'
+--- SAU KHI UMOUNT/MOUNT LAI (persistence) ---
++ cat /mnt/jffs2/logs/boot.log
+Thứ năm, 01 Tháng 10 năm 2026 10:50:20 +07
+Written at Thứ năm, 01 Tháng 10 năm 2026 10:50:20 +07
++ cat /mnt/jffs2/runtime.txt
+New runtime file
++ umount /mnt/jffs2
++ nanddump -o -l 512 -f /tmp/dump.bin /dev/mtd1
+ECC failed: 0
+ECC corrected: 0
+Number of bad blocks: 0
+Number of bbt blocks: 0
+Block size 16384, page size 512, OOB size 16
+Dumping data starting at 0x00000000 and ending at 0x00000200...
++ head -20
++ hexdump -C /tmp/dump.bin
+00000000  85 19 01 e0 31 00 00 00  1d d9 82 42 01 00 00 00  |....1......B....|
+00000010  00 00 00 00 02 00 00 00  7c d8 bd 6a 09 08 00 00  |........|..j....|
+00000020  51 1d 42 ec 15 da 69 f4  68 65 6c 6c 6f 2e 74 78  |Q.B...i.hello.tx|
+00000030  74 ff ff ff 85 19 02 e0  56 00 00 00 09 64 e7 62  |t.......V....d.b|
+00000040  02 00 00 00 01 00 00 00  a4 81 00 00 00 00 00 00  |................|
+00000050  12 00 00 00 7c d8 bd 6a  7c d8 bd 6a 7c d8 bd 6a  |....|..j|..j|..j|
+00000060  00 00 00 00 12 00 00 00  12 00 00 00 00 00 00 00  |................|
+00000070  ee dd 4b b3 93 29 a0 aa  48 65 6c 6c 6f 20 66 72  |..K..)..Hello fr|
+00000080  6f 6d 20 4a 46 46 53 32  21 0a ff ff 85 19 01 e0  |om JFFS2!.......|
+00000090  30 00 00 00 78 be 3e fa  01 00 00 00 01 00 00 00  |0...x.>.........|
+000000a0  03 00 00 00 7c d8 bd 6a  08 08 00 00 ca a7 33 61  |....|..j......3a|
+000000b0  a9 de 79 72 69 6e 66 6f  2e 74 78 74 85 19 02 e0  |..yrinfo.txt....|
+000000c0  58 00 00 00 3a 13 38 82  03 00 00 00 01 00 00 00  |X...:.8.........|
+000000d0  a4 81 00 00 00 00 00 00  14 00 00 00 7c d8 bd 6a  |............|..j|
+000000e0  7c d8 bd 6a 7c d8 bd 6a  00 00 00 00 14 00 00 00  ||..j|..j........|
+000000f0  14 00 00 00 00 00 00 00  8a 74 43 dd 17 7e 0c f7  |.........tC..~..|
+00000100  45 6d 62 65 64 64 65 64  20 4c 69 6e 75 78 20 4c  |Embedded Linux L|
+00000110  61 62 32 0a 85 19 01 e0  2c 00 00 00 5f 56 f1 e0  |ab2.....,..._V..|
+00000120  01 00 00 00 02 00 00 00  04 00 00 00 7c d8 bd 6a  |............|..j|
+00000130  04 04 00 00 6b bc af 7f  40 19 cb d1 6c 6f 67 73  |....k...@...logs|
++ rmmod mtdblock
++ rmmod nandsim
++ ls /dev/mtd0 /dev/mtd0ro
+/dev/mtd0
+/dev/mtd0ro

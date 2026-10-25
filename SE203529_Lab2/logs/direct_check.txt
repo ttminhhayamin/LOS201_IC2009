@@ -1,0 +1,60 @@
+##### BEGIN direct_check
+$ lsmod
+lab2_driver 16384 0 - Live 0x7f000000 (O)
+$ ls -la /dev/lab2
+crw-rw-rw-    1 root     0         240,   0 Oct  1 03:49 [1;35m/dev/lab2[m
+$ cat /proc/lab2_info
+LAB-02 Driver Statistics
+======================
+Driver name   : lab2
+Major number  : 240
+Buffer size   : 1024 bytes
+Data length   : 30 bytes
+Open count    : 9
+Last data     : [Embedded Linux Lab2 Test Data
+]
+$ ls /sys/class/lab2_class/lab2/
+[0;0mbuffer_len[m  [0;0mlast_data[m   [1;34mpower[m       [0;0muevent[m
+[0;0mdev[m         [0;0mopen_count[m  [1;36msubsystem[m
+$ cat /sys/class/lab2_class/lab2/buffer_len
+30
+$ cat /sys/class/lab2_class/lab2/open_count
+9
+$ cat /sys/class/lab2_class/lab2/last_data
+Embedded Linux Lab2 Test Data
+
+$ cat /proc/devices | grep lab2
+240 lab2
+$ dmesg | grep lab2
+lab2_driver: loading out-of-tree module taints kernel.
+lab2_driver: initializing module
+lab2_driver: /proc/lab2_info created
+lab2_driver: loaded, major=240
+lab2_driver: device opened (count=1)
+lab2_driver: received 30 bytes: [Hello from userspace, LAB-02!
+lab2_driver: device closed
+lab2_driver: device opened (count=2)
+lab2_driver: sent 30 bytes to user
+lab2_driver: device closed
+lab2_driver: device opened (count=3)
+lab2_driver: received 10 bytes: [Message_1
+lab2_driver: device closed
+lab2_driver: device opened (count=4)
+lab2_driver: sent 10 bytes to user
+lab2_driver: device closed
+lab2_driver: device opened (count=5)
+lab2_driver: received 10 bytes: [Message_2
+lab2_driver: device closed
+lab2_driver: device opened (count=6)
+lab2_driver: sent 10 bytes to user
+lab2_driver: device closed
+lab2_driver: device opened (count=7)
+lab2_driver: received 10 bytes: [Message_3
+lab2_driver: device closed
+lab2_driver: device opened (count=8)
+lab2_driver: sent 10 bytes to user
+lab2_driver: device closed
+lab2_driver: device opened (count=9)
+lab2_driver: received 30 bytes: [Embedded Linux Lab2 Test Data
+lab2_driver: device closed
+##### END direct_check
