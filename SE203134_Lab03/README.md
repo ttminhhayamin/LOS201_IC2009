@@ -1,6 +1,6 @@
 # SE203134 — LAB 03 | Debugging Kernel & Performance Analysis
 
-**Người thực hành:** SE203134  
+**Người thực hành:** SE203134  - Tran Tuan Minh
 **Đề gốc:** LAB-03 Embedded Linux Systems — Debugging Kernel & Phân tích Hiệu năng, các mục IV–VI.  
 **Nguồn dữ liệu:** 2 archive người dùng cung cấp ngày 26/10/2026. Đây là bản phân loại bằng chứng, **không tự bổ sung số liệu hay ảnh**.
 
