@@ -1,0 +1,39 @@
+===== LAB 03 FINAL SUMMARY =====
+Student ID: SE203134
+Mon Oct 26 06:22:55 PM +07 2026
+
+===== HOST KERNEL =====
+Linux hayaminlinux 6.8.0-138-generic #138~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Aug  7 13:43:15 UTC  x86_64 x86_64 x86_64 GNU/Linux
+
+===== PREEMPT CONFIG =====
+CONFIG_PREEMPT_BUILD=y
+# CONFIG_PREEMPT_NONE is not set
+CONFIG_PREEMPT_VOLUNTARY=y
+# CONFIG_PREEMPT is not set
+CONFIG_PREEMPT_COUNT=y
+CONFIG_PREEMPTION=y
+CONFIG_PREEMPT_DYNAMIC=y
+CONFIG_PREEMPT_RCU=y
+CONFIG_PREEMPT_NOTIFIERS=y
+# CONFIG_PREEMPT_TRACER is not set
+# CONFIG_PREEMPTIRQ_DELAY_TEST is not set
+
+===== VALGRIND BEFORE =====
+==14806==    definitely lost: 16,900 bytes in 250 blocks
+==14806== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+
+===== VALGRIND AFTER =====
+==15152== All heap blocks were freed -- no leaks are possible
+==15152== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+===== CYCLICTEST NORMAL =====
+# Min Latencies: 00002 00001 00002 00001
+# Avg Latencies: 00002 00002 00002 00002
+# Max Latencies: 00124 00016 00257 00293
+# Histogram Overflows: 00000 00000 00005 00003
+
+===== CYCLICTEST STRESS =====
+# Min Latencies: 00001 00001 00001 00001
+# Avg Latencies: 00003 00003 00003 00003
+# Max Latencies: 00194 00110 00701 00107
+# Histogram Overflows: 00000 00000 00002 00000

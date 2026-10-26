@@ -1,0 +1,38 @@
+=== LAB 03 - PERFORMANCE ANALYSIS ===
+[1] CPU-intensive computation...
+Result: 2286616633215.121094
+[2] Linear search (1000 times)...
+Search checksum: 99999000
+[3] I/O intensive (10000 lines)...
+Done.
+
+ Performance counter stats for './perf_target_profile':
+
+          3,890.88 msec task-clock                       #    0.999 CPUs utilized             
+                68      context-switches                 #   17.477 /sec                      
+                17      cpu-migrations                   #    4.369 /sec                      
+               371      page-faults                      #   95.351 /sec                      
+    11,018,065,734      cpu_atom/cycles/                 #    2.832 GHz                         (0.36%)
+    14,709,721,733      cpu_core/cycles/                 #    3.781 GHz                         (99.49%)
+    30,056,188,299      cpu_atom/instructions/           #    2.73  insn per cycle              (0.43%)
+    73,258,084,435      cpu_core/instructions/           #    4.98  insn per cycle              (99.49%)
+     4,132,641,134      cpu_atom/branches/               #    1.062 G/sec                       (0.44%)
+    10,036,826,143      cpu_core/branches/               #    2.580 G/sec                       (99.49%)
+         2,191,634      cpu_atom/branch-misses/          #    0.05% of all branches             (0.46%)
+            66,231      cpu_core/branch-misses/          #    0.00% of all branches             (99.49%)
+             TopdownL1 (cpu_core)                 #     10.6 %  tma_backend_bound      
+                                                  #      0.0 %  tma_bad_speculation    
+                                                  #      4.7 %  tma_frontend_bound     
+                                                  #     84.7 %  tma_retiring             (99.49%)
+             TopdownL1 (cpu_atom)                 #      0.9 %  tma_bad_speculation    
+                                                  #     56.6 %  tma_retiring             (0.46%)
+                                                  #     18.3 %  tma_backend_bound      
+                                                  #     18.3 %  tma_backend_bound_aux  
+                                                  #     24.3 %  tma_frontend_bound       (0.46%)
+
+       3.894387170 seconds time elapsed
+
+       3.888377000 seconds user
+       0.004002000 seconds sys
+
+

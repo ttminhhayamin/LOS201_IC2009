@@ -1,0 +1,35 @@
+==14806== Memcheck, a memory error detector
+==14806== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==14806== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==14806== Command: ./leaky_app
+==14806== Parent PID: 14658
+==14806== 
+==14806== 
+==14806== HEAP SUMMARY:
+==14806==     in use at exit: 16,900 bytes in 250 blocks
+==14806==   total heap usage: 352 allocs, 102 frees, 21,124 bytes allocated
+==14806== 
+==14806== 2,000 bytes in 100 blocks are definitely lost in loss record 1 of 3
+==14806==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14806==    by 0x1092B4: create_record (leaky_app.c:43)
+==14806==    by 0x10948F: main (leaky_app.c:119)
+==14806== 
+==14806== 2,100 bytes in 100 blocks are definitely lost in loss record 2 of 3
+==14806==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14806==    by 0x10925E: create_record (leaky_app.c:34)
+==14806==    by 0x10948F: main (leaky_app.c:119)
+==14806== 
+==14806== 12,800 bytes in 50 blocks are definitely lost in loss record 3 of 3
+==14806==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14806==    by 0x109380: process_messages (leaky_app.c:83)
+==14806==    by 0x10956C: main (leaky_app.c:144)
+==14806== 
+==14806== LEAK SUMMARY:
+==14806==    definitely lost: 16,900 bytes in 250 blocks
+==14806==    indirectly lost: 0 bytes in 0 blocks
+==14806==      possibly lost: 0 bytes in 0 blocks
+==14806==    still reachable: 0 bytes in 0 blocks
+==14806==         suppressed: 0 bytes in 0 blocks
+==14806== 
+==14806== For lists of detected and suppressed errors, rerun with: -s
+==14806== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)

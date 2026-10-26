@@ -1,0 +1,68 @@
+Breakpoint 2 at 0x400682: file buggy_app.c, line 7.
+Continuing.
+
+Breakpoint 2, process_data (data=0x7efffcf8, len=5) at buggy_app.c:7
+7	    int sum = 0;
+data = 0x7efffcf8
+len = 5
+$1 = {10, 20, 30, 40, 50}
+Breakpoint 3 at 0x40068c: file buggy_app.c, line 10.
+Continuing.
+
+Breakpoint 3, process_data (data=0x7efffcf8, len=5) at buggy_app.c:10
+10	        sum += data[i];
+$2 = 5
+$3 = 5
+#0  process_data (data=0x7efffcf8, len=5) at buggy_app.c:10
+#1  0x00400770 in main () at buggy_app.c:45
+Breakpoint 4 at 0x4006cc: file buggy_app.c, line 18.
+Continuing.
+
+Breakpoint 4, create_message (text=0x400920 "Hello Embedded Linux") at buggy_app.c:18
+18	    char *buf = malloc(strlen(text) + 1);
+17	char *create_message(const char *text) {
+18	    char *buf = malloc(strlen(text) + 1);
+19	
+20	    strcpy(buf, text);
+21	
+22	    free(buf);
+23	
+24	    return buf;
+25	}
+Breakpoint 5 at 0x4006e8: file buggy_app.c, line 22.
+Continuing.
+
+Breakpoint 5, create_message (text=0x400920 "Hello Embedded Linux") at buggy_app.c:22
+22	    free(buf);
+$4 = 0x413198 "Hello Embedded Linux"
+Undefined command: "$4".  Try "help".
+0x413198:	"Hello Embedded Linux"
+24	    return buf;
+$5 = 0x413198 "\023\004"
+#0  create_message (text=0x400920 "Hello Embedded Linux") at buggy_app.c:24
+#1  0x00400784 in main () at buggy_app.c:50
+Breakpoint 6 at 0x400702: file buggy_app.c, line 29.
+Continuing.
+
+Breakpoint 6, calculate (a=100000, b=100000) at buggy_app.c:29
+29	    int result = a * b;
+a = 100000
+b = 100000
+24	    return buf;
+25	}
+26	
+27	/* Bug 3: Integer overflow */
+28	int calculate(int a, int b) {
+29	    int result = a * b;
+30	
+31	    printf("calculate(%d, %d) = %d\n",
+32	           a, b, result);
+33	
+$6 = 10000000000
+31	    printf("calculate(%d, %d) = %d\n",
+$7 = 1410065408
+#0  calculate (a=100000, b=100000) at buggy_app.c:31
+#1  0x004007b0 in main () at buggy_app.c:57
+pc             0x40070c            0x40070c <calculate+20>
+sp             0x7efffcd8          0x7efffcd8
+lr             0x4007b1            4196273

@@ -1,0 +1,40 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 383  of event 'cpu-clock:u'
+# Event count (approx.): 3868686830
+#
+# Overhead  Command          Shared Object        Symbol                         
+# ........  ...............  ...................  ...............................
+#
+    42.56%  perf_target_pro  libm.so.6            [.] __ieee754_log_fma
+            |
+            ---__ieee754_log_fma
+               main
+               __libc_start_call_main
+
+    42.30%  perf_target_pro  perf_target_profile  [.] heavy_compute
+            |
+            ---heavy_compute
+               main
+               __libc_start_call_main
+
+     7.83%  perf_target_pro  libm.so.6            [.] __log_finite@GLIBC_2.15@plt
+            |
+            ---__log_finite@GLIBC_2.15@plt
+               main
+               __libc_start_call_main
+
+     7.31%  perf_target_pro  perf_target_profile  [.] log@plt
+            |
+            ---log@plt
+               main
+               __libc_start_call_main
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

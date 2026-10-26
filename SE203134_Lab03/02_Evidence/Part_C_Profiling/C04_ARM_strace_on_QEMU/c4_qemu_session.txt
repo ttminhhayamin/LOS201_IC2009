@@ -1,0 +1,920 @@
+Script started on 2026-10-26 18:12:00+07:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="83" LINES="55"]
+[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ [7mqemu-system-arm \[27m
+[7m    -M vexpress-a9 \[27m
+[7m    -cpu cortex-a9 \[27m
+[7m    -m 512M \[27m
+[7m    -smp 2 \[27m
+[7m    -nographic \[27m
+[7m    -kernel ~/embedded_lab1/output/zImage \[27m
+[7m    -dtb ~/embedded_lab1/output/vexpress-v2p-ca9.dtb \[27m
+[7m    -initrd ~/embedded_lab3/output/initramfs_lab3_c4.cpio.gz \[27m
+[7m    -append 'console=ttyAMA0,115200 rdinit=/sbin/init mem=512M'[27m[A[A[A[A[A[A[A[A[Aqemu-system-arm \
+    -M vexpress-a9 \
+    -cpu cortex-a9 \
+    -m 512M \
+    -smp 2 \
+    -nographic \
+    -kernel ~/embedded_lab1/output/zImage \
+    -dtb ~/embedded_lab1/output/vexpress-v2p-ca9.dtb \
+    -initrd ~/embedded_lab3/output/initramfs_lab3_c4.cpio.gz \
+    -append 'console=ttyAMA0,115200 rdinit=/sbin/init mem=512M'
+[?2004lpulseaudio: set_sink_input_volume() failed
+pulseaudio: Reason: Invalid argument
+pulseaudio: set_sink_input_mute() failed
+pulseaudio: Reason: Invalid argument
+Booting Linux on physical CPU 0x0
+Linux version 5.15.0 (minh@minh-LOQ-15IAX9) (arm-linux-gnueabihf-gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #1 SMP Fri Sep 11 21:21:59 +07 2026
+CPU: ARMv7 Processor [410fc090] revision 0 (ARMv7), cr=10c5387d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+OF: fdt: Machine model: V2P-CA9
+Memory policy: Data cache writealloc
+Reserved memory: created DMA memory pool at 0x4c000000, size 8 MiB
+OF: reserved mem: initialized node vram@4c000000, compatible id shared-dma-pool
+cma: Reserved 16 MiB at 0x7f000000
+Zone ranges:
+  Normal   [mem 0x0000000060000000-0x000000007fffffff]
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000060000000-0x000000007fffffff]
+Initmem setup node 0 [mem 0x0000000060000000-0x000000007fffffff]
+percpu: Embedded 15 pages/cpu s30156 r8192 d23092 u61440
+Built 1 zonelists, mobility grouping on.  Total pages: 130048
+Kernel command line: console=ttyAMA0,115200 rdinit=/sbin/init mem=512M
+printk: log_buf_len individual max cpu contribution: 4096 bytes
+printk: log_buf_len total cpu_extra contributions: 12288 bytes
+printk: log_buf_len min size: 16384 bytes
+printk: log_buf_len: 32768 bytes
+printk: early log buf free: 14984(91%)
+Dentry cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+Inode-cache hash table entries: 32768 (order: 5, 131072 bytes, linear)
+mem auto-init: stack:off, heap alloc:off, heap free:off
+Memory: 486852K/524288K available (8192K kernel code, 593K rwdata, 1768K rodata, 1024K init, 150K bss, 21052K reserved, 16384K cma-reserved)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+trace event string verifier disabled
+rcu: Hierarchical RCU implementation.
+rcu: 	RCU event tracing is enabled.
+rcu: 	RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=4.
+rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+L2C: platform modifies aux control register: 0x02020000 -> 0x02420000
+L2C: DT/platform modifies aux control register: 0x02020000 -> 0x02420000
+L2C-310 enabling early BRESP for Cortex-A9
+L2C-310 full line of zeros enabled for Cortex-A9
+L2C-310 dynamic clock gating disabled, standby mode disabled
+L2C-310 cache controller enabled, 8 ways, 128 kB
+L2C-310: CACHE_ID 0x410000c8, AUX_CTRL 0x46420001
+random: get_random_bytes called from start_kernel+0x4e4/0x69c with crng_init=0
+sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 89478484971ns
+clocksource: arm,sp804: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275 ns
+Failed to initialize '/bus@40000000/motherboard-bus@40000000/iofpga@7,00000000/timer@12000': -22
+smp_twd: clock not found -2
+Console: colour dummy device 80x30
+Calibrating local timer... 95.29MHz.
+Calibrating delay loop... 1685.91 BogoMIPS (lpj=8429568)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+CPU: Testing write buffer coherency: ok
+CPU0: Spectre v2: using BPIALL workaround
+CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+Setting up static identity map for 0x60100000 - 0x60100060
+rcu: Hierarchical SRCU implementation.
+smp: Bringing up secondary CPUs ...
+CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+CPU1: Spectre v2: using BPIALL workaround
+CPU2: failed to boot: -38
+CPU3: failed to boot: -38
+smp: Brought up 1 node, 2 CPUs
+SMP: Total of 2 processors activated (3358.72 BogoMIPS).
+CPU: All CPU(s) started in SVC mode.
+devtmpfs: initialized
+VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 0
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+NET: Registered PF_NETLINK/PF_ROUTE protocol family
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+cpuidle: using governor ladder
+hw-breakpoint: debug architecture 0x4 unsupported.
+Serial: AMBA PL011 UART driver
+irq: type mismatch, failed to map hwirq-75 for interrupt-controller@1e001000!
+SCSI subsystem initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+Advanced Linux Sound Architecture Driver Initialized.
+clocksource: Switched to clocksource arm,sp804
+NET: Registered PF_INET protocol family
+IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 6144 bytes, linear)
+TCP established hash table entries: 4096 (order: 2, 16384 bytes, linear)
+TCP bind hash table entries: 4096 (order: 3, 32768 bytes, linear)
+TCP: Hash tables configured (established 4096 bind 4096)
+UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
+UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)
+NET: Registered PF_UNIX/PF_LOCAL protocol family
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+hw perfevents: enabled with armv7_cortex_a9 PMU driver, 5 counters available
+workingset: timestamp_bits=30 max_order=17 bucket_order=0
+Unpacking initramfs...
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+9p: Installing v9fs 9p2000 file system support
+io scheduler mq-deadline registered
+io scheduler kyber registered
+sii902x 0-0060: supply iovcc not found, using dummy regulator
+sii902x 0-0060: supply cvcc12 not found, using dummy regulator
+Freeing initrd memory: 4028K
+physmap-flash 40000000.flash: physmap platform flash device: [mem 0x40000000-0x43ffffff]
+40000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+Intel/Sharp Extended Query Table at 0x0031
+Using buffer write method
+physmap-flash 40000000.flash: physmap platform flash device: [mem 0x44000000-0x47ffffff]
+40000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+Intel/Sharp Extended Query Table at 0x0031
+Using buffer write method
+Concatenating MTD devices:
+(0): "40000000.flash"
+(1): "40000000.flash"
+into device "40000000.flash"
+physmap-flash 48000000.psram: physmap platform flash device: [mem 0x48000000-0x49ffffff]
+libphy: Fixed MDIO Bus: probed
+libphy: smsc911x-mdio: probed
+smsc911x 4e000000.ethernet eth0: MAC Address: 52:54:00:12:34:56
+isp1760 4f000000.usb: isp1760 bus width: 32, oc: digital
+isp1760 4f000000.usb: NXP ISP1760 USB Host Controller
+isp1760 4f000000.usb: new USB bus registered, assigned bus number 1
+isp1760 4f000000.usb: Scratch test failed. 0x00000000
+isp1760 4f000000.usb: can't setup: -19
+isp1760 4f000000.usb: USB bus 1 deregistered
+usbcore: registered new interface driver usb-storage
+ledtrig-cpu: registered to indicate activity on CPUs
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+NET: Registered PF_PACKET protocol family
+9pnet: Installing 9P2000 support
+Registering SWP/SWPB emulation handler
+aaci-pl041 10004000.aaci: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 32
+aaci-pl041 10004000.aaci: FIFO 512 entries
+mmci-pl18x 10005000.mmci: Got CD GPIO
+mmci-pl18x 10005000.mmci: Got WP GPIO
+mmci-pl18x 10005000.mmci: mmc0: PL181 manf 41 rev0 at 0x10005000 irq 33,34 (pio)
+10009000.uart: ttyAMA0 at MMIO 0x10009000 (irq = 37, base_baud = 0) is a PL011 rev1
+printk: console [ttyAMA0] enabled
+1000a000.uart: ttyAMA1 at MMIO 0x1000a000 (irq = 38, base_baud = 0) is a PL011 rev1
+1000b000.uart: ttyAMA2 at MMIO 0x1000b000 (irq = 39, base_baud = 0) is a PL011 rev1
+1000c000.uart: ttyAMA3 at MMIO 0x1000c000 (irq = 40, base_baud = 0) is a PL011 rev1
+rtc-pl031 10017000.rtc: registered as rtc0
+rtc-pl031 10017000.rtc: setting system clock to 2026-10-26T11:12:06 UTC (1793013126)
+amba 10020000.clcd: Fixing up cyclic dependency with 0-0039
+drm-clcd-pl111 10020000.clcd: DVI muxed to daughterboard 1 (core tile) CLCD
+drm-clcd-pl111 10020000.clcd: initializing Versatile Express PL111
+sii902x 0-0039: supply iovcc not found, using dummy regulator
+sii902x 0-0039: supply cvcc12 not found, using dummy regulator
+i2c i2c-0: Added multiplexed i2c bus 2
+drm-clcd-pl111 1001f000.clcd: assigned reserved memory node vram@4c000000
+drm-clcd-pl111 1001f000.clcd: using device-specific reserved memory
+drm-clcd-pl111 1001f000.clcd: core tile graphics present
+drm-clcd-pl111 1001f000.clcd: this device will be deactivated
+drm-clcd-pl111 1001f000.clcd: Versatile Express init failed - -19
+drm-clcd-pl111 10020000.clcd: DVI muxed to daughterboard 1 (core tile) CLCD
+drm-clcd-pl111 10020000.clcd: initializing Versatile Express PL111
+drm-clcd-pl111 10020000.clcd: found bridge on endpoint 0
+drm-clcd-pl111 10020000.clcd: Using non-panel bridge
+[drm] Initialized pl111 1.0.0 20170317 for 10020000.clcd on minor 0
+input: AT Raw Set 2 keyboard as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10006000.kmi/serio0/input/input0
+Console: switching to colour frame buffer device 128x48
+drm-clcd-pl111 10020000.clcd: [drm] fb0: pl111 frame buffer device
+ALSA device list:
+  #0: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 32
+Freeing unused kernel image (initmem) memory: 1024K
+Run /sbin/init as init process
+[ LAB-02 ] Starting system initialization...
+[ LAB-02 ] Loading lab2_driver module...
+lab2_driver: loading out-of-tree module taints kernel.
+lab2_driver: initializing module
+lab2_driver: /proc/lab2_info created
+lab2_driver: loaded, major=240
+[ LAB-02 ] lab2_driver loaded OK
+[ LAB-02 ] /dev/lab2 created (major=240, minor=0)
+[ LAB-02 ] System initialization complete!
+ -> Run test_driver.sh to test character device
+ -> Run test_procfs.sh to test proc/sysfs interfaces
+ -> cat /proc/lab2_info to view driver stats
+
+Please press Enter to activate this console. input: ImExPS/2 Generic Explorer Mouse as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10007000.kmi/serio1/input/input2
+random: fast init done
+
+/ # /usr/bin/perf_target_arm
+=== LAB 03 - PERFORMANCE ANALYSIS ===
+[1] CPU-intensive computation...
+Result: 11433083166.074631
+[2] Linear search (1000 times)...
+Search checksum: 99999000
+[3] I/O intensive (10000 lines)...
+Done.
+/ # /usr/bin/strace -c /usr/bin/perf_target_arm
+=== LAB 03 - PERFORMANCE ANALYSIS ===
+[1] CPU-intensive computation...
+Result: 11433083166.074631
+[2] Linear search (1000 times)...
+Search checksum: 99999000
+[3] I/O intensive (10000 lines)...
+Done.
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+ 68.91    0.004276          56        76           write
+ 29.30    0.001818         909         2           munmap
+  1.79    0.000111         111         1           close
+  0.00    0.000000           0         1           execve
+  0.00    0.000000           0         1           getpid
+  0.00    0.000000           0         4           brk
+  0.00    0.000000           0         1           ioctl
+  0.00    0.000000           0         1           readlink
+  0.00    0.000000           0         1           uname
+  0.00    0.000000           0         1           mprotect
+  0.00    0.000000           0         1           ugetrlimit
+  0.00    0.000000           0         2           mmap2
+  0.00    0.000000           0         1           set_tid_address
+  0.00    0.000000           0         1           openat
+  0.00    0.000000           0         1           set_robust_list
+  0.00    0.000000           0         1         1 getrandom
+  0.00    0.000000           0         2           statx
+  0.00    0.000000           0         1           rseq
+  0.00    0.000000           0         1           clock_gettime64
+  0.00    0.000000           0         1           set_tls
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.006205          61       101         1 total
+/ # time /usr/bin/perf_target_arm
+=== LAB 03 - PERFORMANCE ANALYSIS ===
+[1] CPU-intensive computation...
+Result: 11433083166.074631
+[2] Linear search (1000 times)...
+Search checksum: 99999000
+[3] I/O intensive (10000 lines)...
+Done.
+real	0m 0.71s
+user	0m 0.70s
+sys	0m 0.00s
+/ # QEMU: Terminated
+[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ [7msudo apt update[27m
+
+[7msudo apt install -y \[27m
+[7m    rt-tests \[27m
+[7m    gnuplot \[27m
+[7m    stress-ng[27m[A[A[A[A[A]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ sudo apt update
+
+sudo apt install -y \
+    rt-tests \
+    gnuplot \
+    stress-ng
+[?2004l[sudo] password for minh: 
+[33m0% [Working][0m            Ign:1 cdrom://Ubuntu 22.04.5 LTS _Jammy Jellyfish_ - Release amd64 (20240911) jammy InRelease
+[33m0% [Working][0m            Err:2 cdrom://Ubuntu 22.04.5 LTS _Jammy Jellyfish_ - Release amd64 (20240911) jammy Release
+  Please use apt-cdrom to make this CD-ROM recognized by APT. apt-get update cannot be used to add new CD-ROMs
+[33m0% [Working][0m            Hit:3 http://vn.archive.ubuntu.com/ubuntu jammy InRelease
+[33m0% [Connecting to security.ubuntu.com (2620:2d:4000:1::103)][0m[33m0% [Connecting to security.ubuntu.com (2620:2d:4000:1::103)] [Connected to persist[0m                                                                                  Get:4 https://persistent.oaistatic.com/codex-app-prod/linux/deb stable InRelease [2,797 B]
+[33m                                                                                  0% [Waiting for headers] [4 InRelease 2,797 B/2,797 B 100%][0m[33m                                                           0% [Waiting for headers][0m[33m0% [Waiting for headers][0m                        Get:5 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+[33m0% [5 InRelease 13.9 kB/129 kB 11%] [Waiting for headers][0m                                                         Get:6 https://persistent.oaistatic.com/codex-app-prod/linux/deb stable/main amd64 Packages [779 B]
+[33m0% [5 InRelease 13.9 kB/129 kB 11%] [6 Packages 779 B/779 B 100%][0m[33m                                                                 0% [5 InRelease 13.9 kB/129 kB 11%][0m[33m0% [6 Packages store 0 B] [5 InRelease 13.9 kB/129 kB 11%][0m[33m                                                          0% [5 InRelease 13.9 kB/129 kB 11%][0m[33m0% [5 InRelease 69.3 kB/129 kB 54%][0m[33m                                   0% [Working][0m[33m20% [Working][0m             Get:7 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [3,643 kB]
+[33m20% [7 Packages 18.2 kB/3,643 kB 1%][0m[33m26% [7 Packages 515 kB/3,643 kB 14%][0m[33m55% [7 Packages 3,132 kB/3,643 kB 86%][0m[33m                                      61% [Working][0m[33m61% [7 Packages store 0 B][0m                          Get:8 http://security.ubuntu.com/ubuntu jammy-security/main i386 Packages [927 kB]
+[33m61% [7 Packages store 0 B] [8 Packages 6,861 B/927 kB 1%][0m[33m                                                         71% [7 Packages store 0 B] [Waiting for headers][0m                                                Get:9 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [510 kB]
+[33m71% [7 Packages store 0 B] [9 Translation-en 20.0 kB/510 kB 4%][0m[33m                                                               77% [7 Packages store 0 B][0m                          Get:10 http://security.ubuntu.com/ubuntu jammy-security/main amd64 DEP-11 Metadata [74.3 kB]
+[33m77% [7 Packages store 0 B] [10 Components-amd64 21.1 kB/74.3 kB 28%][0m[33m                                                                    77% [7 Packages store 0 B][0m                          Get:11 http://security.ubuntu.com/ubuntu jammy-security/universe i386 Packages [714 kB]
+[33m78% [7 Packages store 0 B] [11 Packages 24.4 kB/714 kB 3%][0m[33m                                                          82% [11 Packages 428 kB/714 kB 60%][0m[33m82% [8 Packages store 0 B] [11 Packages 428 kB/714 kB 60%][0m[33m                                                          83% [11 Packages 428 kB/714 kB 60%][0m[33m83% [9 Translation-en store 0 B] [11 Packages 428 kB/714 kB 60%][0m[33m                                                                86% [9 Translation-en store 0 B][0m                                Get:12 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1,055 kB]
+[33m86% [9 Translation-en store 0 B] [12 Packages 9,772 B/1,055 kB 1%][0m[33m                                                                  98% [9 Translation-en store 0 B][0m                                Get:13 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 DEP-11 Metadata [127 kB]
+[33m98% [9 Translation-en store 0 B] [13 Components-amd64 19.4 kB/127 kB 15%][0m[33m                                                                         99% [9 Translation-en store 0 B][0m[33m                                99% [Working][0m[33m99% [10 Components-amd64 store 0 B][0m[33m                                   99% [Working][0m[33m99% [11 Packages store 0 B][0m[33m                           99% [Working][0m[33m99% [12 Packages store 0 B][0m[33m                           100% [Working][0m[33m100% [13 Components-amd64 store 0 B][0m[33m                                    100% [Working][0m              Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 2%Reading package lists... 2%Reading package lists... 4%Reading package lists... 4%Reading package lists... 5%Reading package lists... 5%Reading package lists... 5%Reading package lists... 5%Reading package lists... 5%Reading package lists... 5%Reading package lists... 6%Reading package lists... 6%Reading package lists... 30%Reading package lists... 30%Reading package lists... 43%Reading package lists... 43%Reading package lists... 54%Reading package lists... 54%Reading package lists... 54%Reading package lists... 54%Reading package lists... 54%Reading package lists... 54%Reading package lists... 54%Reading package lists... 54%Reading package lists... 69%Reading package lists... 69%Reading package lists... 69%Reading package lists... 69%Reading package lists... 78%Reading package lists... 78%Reading package lists... 86%Reading package lists... 86%Reading package lists... 88%Reading package lists... 88%Reading package lists... 94%Reading package lists... 94%Reading package lists... 96%Reading package lists... 96%Reading package lists... 97%Reading package lists... 97%Reading package lists... 98%Reading package lists... 98%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+[1;31mE: [0mThe repository 'cdrom://Ubuntu 22.04.5 LTS _Jammy Jellyfish_ - Release amd64 (20240911) jammy Release' does not have a Release file.[0m
+[33mN: [0mUpdating from such a repository can't be done securely, and is therefore disabled by default.[0m
+[33mN: [0mSee apt-secure(8) manpage for repository creation and user configuration details.[0m
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+gnuplot is already the newest version (5.4.2+dfsg2-2).
+rt-tests is already the newest version (2.2-1).
+The following packages were automatically installed and are no longer required:
+  libfwupd2 libfwupdplugin5 libgcab-1.0-0 libsmbios-c2
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  libipsec-mb1 libjudydebian1 libsctp1
+Suggested packages:
+  lksctp-tools
+The following NEW packages will be installed:
+  libipsec-mb1 libjudydebian1 libsctp1 stress-ng
+0 upgraded, 4 newly installed, 0 to remove and 20 not upgraded.
+Need to get 3,037 kB of archives.
+After this operation, 16.5 MB of additional disk space will be used.
+[33m0% [Working][0m            Get:1 http://vn.archive.ubuntu.com/ubuntu jammy/universe amd64 libipsec-mb1 amd64 1.2-1 [826 kB]
+[33m0% [1 libipsec-mb1 12.8 kB/826 kB 2%][0m[33m                                     27% [Working][0m             Get:2 http://vn.archive.ubuntu.com/ubuntu jammy/universe amd64 libjudydebian1 amd64 1.0.5-5 [94.6 kB]
+[33m27% [2 libjudydebian1 0 B/94.6 kB 0%][0m[33m                                     34% [Waiting for headers][0m                         Get:3 http://vn.archive.ubuntu.com/ubuntu jammy/main amd64 libsctp1 amd64 1.0.19+dfsg-1build1 [9,370 B]
+[33m35% [3 libsctp1 9,370 B/9,370 B 100%][0m[33m                                     40% [Working][0m             Get:4 http://vn.archive.ubuntu.com/ubuntu jammy/universe amd64 stress-ng amd64 0.13.12-2 [2,107 kB]
+[33m40% [4 stress-ng 0 B/2,107 kB 0%][0m[33m                                 100% [Working][0m              Fetched 3,037 kB in 0s (20.0 MB/s)
+
+7[0;54r8[1ASelecting previously unselected package libipsec-mb1.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 227190 files and directories currently installed.)
+Preparing to unpack .../libipsec-mb1_1.2-1_amd64.deb ...
+7[55;0f[42m[30mProgress: [  0%][49m[39m [.............................................................] 87[55;0f[42m[30mProgress: [  6%][49m[39m [###..........................................................] 8Unpacking libipsec-mb1 (1.2-1) ...
+7[55;0f[42m[30mProgress: [ 12%][49m[39m [#######......................................................] 8Selecting previously unselected package libjudydebian1.
+Preparing to unpack .../libjudydebian1_1.0.5-5_amd64.deb ...
+7[55;0f[42m[30mProgress: [ 18%][49m[39m [##########...................................................] 8Unpacking libjudydebian1 (1.0.5-5) ...
+7[55;0f[42m[30mProgress: [ 24%][49m[39m [##############...............................................] 8Selecting previously unselected package libsctp1:amd64.
+Preparing to unpack .../libsctp1_1.0.19+dfsg-1build1_amd64.deb ...
+7[55;0f[42m[30mProgress: [ 29%][49m[39m [#################............................................] 8Unpacking libsctp1:amd64 (1.0.19+dfsg-1build1) ...
+7[55;0f[42m[30mProgress: [ 35%][49m[39m [#####################........................................] 8Selecting previously unselected package stress-ng.
+Preparing to unpack .../stress-ng_0.13.12-2_amd64.deb ...
+7[55;0f[42m[30mProgress: [ 41%][49m[39m [#########################....................................] 8Unpacking stress-ng (0.13.12-2) ...
+7[55;0f[42m[30mProgress: [ 47%][49m[39m [############################.................................] 8Setting up libjudydebian1 (1.0.5-5) ...
+7[55;0f[42m[30mProgress: [ 53%][49m[39m [################################.............................] 87[55;0f[42m[30mProgress: [ 59%][49m[39m [###################################..........................] 8Setting up libipsec-mb1 (1.2-1) ...
+7[55;0f[42m[30mProgress: [ 65%][49m[39m [#######################################......................] 87[55;0f[42m[30mProgress: [ 71%][49m[39m [###########################################..................] 8Setting up libsctp1:amd64 (1.0.19+dfsg-1build1) ...
+7[55;0f[42m[30mProgress: [ 76%][49m[39m [##############################################...............] 87[55;0f[42m[30mProgress: [ 82%][49m[39m [##################################################...........] 8Setting up stress-ng (0.13.12-2) ...
+7[55;0f[42m[30mProgress: [ 88%][49m[39m [#####################################################........] 87[55;0f[42m[30mProgress: [ 94%][49m[39m [#########################################################....] 8Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.15) ...
+
+7[0;55r8[1A[J[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ [7mcyclictest --version[27m
+[7mgnuplot --version[27m
+[7mstress-ng --version[27m[A[A]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ cyclictest --version
+gnuplot --version
+stress-ng --version
+[?2004lcyclictest: unrecognized option '--version'
+cyclictest V 2.20
+Usage:
+cyclictest <options>
+
+-a [CPUSET] --affinity     Run thread #N on processor #N, if possible, or if CPUSET
+                           given, pin threads to that set of processors in round-
+                           robin order.  E.g. -a 2 pins all threads to CPU 2,
+                           but -a 3-5,0 -t 5 will run the first and fifth
+                           threads on CPU (0),thread #2 on CPU 3, thread #3
+                           on CPU 4, and thread #5 on CPU 5.
+-A USEC  --aligned=USEC    align thread wakeups to a specific offset
+-b USEC  --breaktrace=USEC send break trace command when latency > USEC
+-c CLOCK --clock=CLOCK     select clock
+                           0 = CLOCK_MONOTONIC (default)
+                           1 = CLOCK_REALTIME
+-d DIST  --distance=DIST   distance of thread intervals in us, default=500
+-D       --duration=TIME   specify a length for the test run.
+                           Append 'm', 'h', or 'd' to specify minutes, hours or days.
+	 --latency=PM_QOS  write PM_QOS to /dev/cpu_dma_latency
+-F       --fifo=<path>     create a named pipe at path and write stats to it
+-h       --histogram=US    dump a latency histogram to stdout after the run
+                           US is the max latency time to be tracked in microseconds
+			   This option runs all threads at the same priority.
+-H       --histofall=US    same as -h except with an additional summary column
+	 --histfile=<path> dump the latency histogram to <path> instead of stdout
+-i INTV  --interval=INTV   base interval of thread in us default=1000
+         --json=FILENAME   write final results into FILENAME, JSON formatted
+-l LOOPS --loops=LOOPS     number of loops: default=0(endless)
+	 --laptop	   Save battery when running cyclictest
+			   This will give you poorer realtime results
+			   but will not drain your battery so quickly
+         --mainaffinity=CPUSET
+			   Run the main thread on CPU #N. This only affects
+                           the main thread and not the measurement threads
+-m       --mlockall        lock current and future memory allocations
+-M       --refresh_on_max  delay updating the screen until a new max
+			   latency is hit. Useful for low bandwidth.
+-N       --nsecs           print results in ns instead of us (default us)
+-o RED   --oscope=RED      oscilloscope mode, reduce verbose output by RED
+-p PRIO  --priority=PRIO   priority of highest prio thread
+	 --policy=NAME     policy of measurement thread, where NAME may be one
+                           of: other, normal, batch, idle, fifo or rr.
+	 --priospread      spread priority levels starting at specified value
+-q       --quiet           print a summary only on exit
+-r       --relative        use relative timer instead of absolute
+-R       --resolution      check clock resolution, calling clock_gettime() many
+                           times.  List of clock_gettime() values will be
+                           reported with -X
+         --secaligned [USEC] align thread wakeups to the next full second
+                           and apply the optional offset
+-s       --system          use sys_nanosleep and sys_setitimer
+-S       --smp             Standard SMP testing: options -a -t and same priority
+                           of all threads
+	--spike=<trigger>  record all spikes > trigger
+	--spike-nodes=[num of nodes]
+			   These are the maximum number of spikes we can record.
+			   The default is 1024 if not specified
+         --smi             Enable SMI counting
+-t       --threads         one thread per available processor
+-t [NUM] --threads=NUM     number of threads:
+                           without NUM, threads = max_cpus
+                           without -t default = 1
+         --tracemark       write a trace mark when -b latency is exceeded
+-u       --unbuffered      force unbuffered output for live processing
+-v       --verbose         output values on stdout for statistics
+                           format: n:c:v n=tasknum c=count v=value in us
+	 --dbg_cyclictest  print info useful for debugging cyclictest
+-x	 --posix_timers    use POSIX timers instead of clock_nanosleep.
+gnuplot 5.4 patchlevel 2
+stress-ng, version 0.13.12 (gcc 11.2, x86_64 Linux 6.8.0-138-generic) 💻🔥
+[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ [7mecho "===== HOST KERNEL ====[27m[7m=[27m[7m" [27m
+
+[7muname -a[27m
+
+[7mecho[27m
+[7mecho "===== PREEMPT CONFIG ====="[27m
+
+[7mgrep -E 'CONFIG_PREEMPT|CONFIG_PREEMPT_RT' \[27m
+[7m    /boot/config-$(uname -r)[27m[A[A[A[A[A[A[A[A[A]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ echo "===== HOST KERNEL ====="
+
+uname -a
+
+echo
+echo "===== PREEMPT CONFIG ====="
+
+grep -E 'CONFIG_PREEMPT|CONFIG_PREEMPT_RT' \
+    /boot/config-$(uname -r)
+[?2004l===== HOST KERNEL =====
+Linux hayaminlinux 6.8.0-138-generic #138~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Aug  7 13:43:15 UTC  x86_64 x86_64 x86_64 GNU/Linux
+
+===== PREEMPT CONFIG =====
+[01;31m[KCONFIG_PREEMPT[m[K_BUILD=y
+# [01;31m[KCONFIG_PREEMPT[m[K_NONE is not set
+[01;31m[KCONFIG_PREEMPT[m[K_VOLUNTARY=y
+# [01;31m[KCONFIG_PREEMPT[m[K is not set
+[01;31m[KCONFIG_PREEMPT[m[K_COUNT=y
+[01;31m[KCONFIG_PREEMPT[m[KION=y
+[01;31m[KCONFIG_PREEMPT[m[K_DYNAMIC=y
+[01;31m[KCONFIG_PREEMPT[m[K_RCU=y
+[01;31m[KCONFIG_PREEMPT[m[K_NOTIFIERS=y
+# [01;31m[KCONFIG_PREEMPT[m[K_TRACER is not set
+# [01;31m[KCONFIG_PREEMPT[m[KIRQ_DELAY_TEST is not set
+[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ [7muname -a > ~/embedded_lab3/l[27m[7mo[27m[7mgs/kernel_info.txt[27m[A]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ uname -a > ~/embedded_lab3/logs/kernel_info.txt
+[?2004l[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ [7msudo cyclictest \[27m
+[7m    --mlockall \[27m
+[7m    --threads=4 \[27m
+[7m    --priority=80 \[27m
+[7m    --interval=1000 \[27m
+[7m    --distance=500 \[27m
+[7m    --loops=10000 \[27m
+[7m    --histogram=200 \[27m
+[7m    --histfile="$HOME/embedded_lab3/logs/hist_standard.txt" \[27m
+[7m    --quiet \[27m
+[7m    | tee ~/embedded_lab3/logs/cyclictest_standard.txt[27m[A[A[A[A[A[A[A[A[A[A]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ sudo cyclictest \
+    --mlockall \
+    --threads=4 \
+    --priority=80 \
+    --interval=1000 \
+    --distance=500 \
+    --loops=10000 \
+    --histogram=200 \
+    --histfile="$HOME/embedded_lab3/logs/hist_standard.txt" \
+    --quiet \
+    | tee ~/embedded_lab3/logs/cyclictest_standard.txt
+[?2004lWARN: distance is ignored and set to 0, if histogram enabled
+# /dev/cpu_dma_latency set to 0us
+[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ [7mcat ~/embedded_lab3/logs/cyc[27m[7ml[27m[7mictest_standard.txt[27m[A]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ cat ~/embedded_lab3/logs/cyclictest_standard.txt
+[?2004l# /dev/cpu_dma_latency set to 0us
+[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ [7mhead -20 ~/embedded_lab3/log[27m[7ms[27m[7m/hist_standard.txt[27m[A]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ head -20 ~/embedded_lab3/logs/hist_standard.txt
+[?2004l# Histogram
+000000 000000	000000	000000	000000
+000001 000000	000031	000000	000039
+000002 008042	009049	007863	008691
+000003 001115	000522	001029	000577
+000004 000339	000273	000350	000415
+000005 000219	000073	000284	000167
+000006 000133	000007	000230	000044
+000007 000065	000009	000112	000020
+000008 000026	000006	000041	000008
+000009 000011	000006	000028	000007
+000010 000006	000005	000011	000005
+000011 000003	000009	000009	000008
+000012 000011	000003	000008	000003
+000013 000003	000001	000004	000004
+000014 000002	000004	000002	000001
+000015 000004	000001	000001	000002
+000016 000004	000001	000003	000000
+000017 000000	000000	000002	000000
+000018 000004	000000	000001	000000
+[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ [7mstress-ng \[27m
+[7m    --cpu "$(nproc)" \[27m
+[7m    --io 2 \[27m
+[7m    --vm 1 \[27m
+[7m    --vm-bytes 128M \[27m
+[7m    --timeout 35s \[27m
+[7m    > ~/embedded_lab3/logs/stress_output.txt 2>&1 &[27m
+
+[7mSTRESS_PID=$![27m[A[A[A[A[A[A[A[A]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ stress-ng \
+    --cpu "$(nproc)" \
+    --io 2 \
+    --vm 1 \
+    --vm-bytes 128M \
+    --timeout 35s \
+    > ~/embedded_lab3/logs/stress_output.txt 2>&1 &
+
+STRESS_PID=$!
+[?2004l[1] 18023
+[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ [7msudo cyclictest \[27m
+[7m    --mlockall \[27m
+[7m    --threads=4 \[27m
+[7m    --priority=80 \[27m
+[7m    --interval=1000 \[27m
+[7m    --distance=500 \[27m
+[7m    --loops=10000 \[27m
+[7m    --histogram=200 \[27m
+[7m    --histfile="$HOME/embedded_lab3/logs/hist_stress.txt" \[27m
+[7m    --quiet \[27m
+[7m    | tee ~/embedded_lab3/logs/cyclictest_stress.txt[27m
+
+[7mwait "$STRESS_PID"[27m[A[A[A[A[A[A[A[A[A[A[A[A]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ sudo cyclictest \
+    --mlockall \
+    --threads=4 \
+    --priority=80 \
+    --interval=1000 \
+    --distance=500 \
+    --loops=10000 \
+    --histogram=200 \
+    --histfile="$HOME/embedded_lab3/logs/hist_stress.txt" \
+    --quiet \
+    | tee ~/embedded_lab3/logs/cyclictest_stress.txt
+
+wait "$STRESS_PID"
+[?2004lWARN: distance is ignored and set to 0, if histogram enabled
+# /dev/cpu_dma_latency set to 0us
+
+[1]+  Done                    stress-ng --cpu "$(nproc)" --io 2 --vm 1 --vm-bytes 128M --timeout 35s > ~/embedded_lab3/logs/stress_output.txt 2>&1
+[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ 
+[?2004l[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ [7mgnuplot <<EOF[27m
+[7mset terminal pngcairo size 1200,650[27m
+[7mset output "$HOME/embedded_lab3/logs/latency_histogram.png"[27m
+
+[7mset title "LAB 03 - Standard Kernel Latency"[27m
+[7mset xlabel "Latency (microseconds)"[27m
+[7mset ylabel "Number of occurrences"[27m
+
+[7mset grid[27m
+[7mset key top right[27m
+
+[7mset xrange [0:200][27m
+
+[7mplot "$HOME/embedded_lab3/logs/hist_standard.txt" \[27m
+[7m     using 1:2 with boxes title "Thread 0", \[27m
+[7m     "" using 1:3 with lines title "Thread 1"[27m
+[7mEOF[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ gnuplot <<EOF
+set terminal pngcairo size 1200,650
+set output "$HOME/embedded_lab3/logs/latency_histogram.png"
+
+set title "LAB 03 - Standard Kernel Latency"
+set xlabel "Latency (microseconds)"
+set ylabel "Number of occurrences"
+
+set grid
+set key top right
+
+set xrange [0:200]
+
+plot "$HOME/embedded_lab3/logs/hist_standard.txt" \
+     using 1:2 with boxes title "Thread 0", \
+     "" using 1:3 with lines title "Thread 1"
+EOF
+[?2004l[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ [7mls -lh ~/embedded_lab3/logs/[27m[7ml[27m[7matency_histogram.png[27m[A]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ ls -lh ~/embedded_lab3/logs/latency_histogram.png
+[?2004l-rw-rw-r-- 1 minh minh 31K Oct 26 18:17 [0m[01;35m/home/minh/embedded_lab3/logs/latency_histogram.png[0m
+[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ [7mxdg-open ~/embedded_lab3/log[27m[7ms[27m[7m/latency_histogram.png[27m[A]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ xdg-open ~/embedded_lab3/logs/latency_histogram.png
+[?2004l[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ [7mW="$HOME/embedded_lab3/logs"[27m 
+
+[7mecho "========== STANDARD KERNEL =========="[27m
+
+[7mgrep -E \[27m
+[7m'^# (Min Latencies|Avg Latencies|Max Latencies|Histogram Overflows):' \[27m
+[7m"$W/hist_standard.txt"[27m
+
+[7mecho[27m
+[7mecho "========== UNDER STRESS =========="[27m
+
+[7mgrep -E \[27m
+[7m'^# (Min Latencies|Avg Latencies|Max Latencies|Histogram Overflows):' \[27m
+[7m"$W/hist_stress.txt"[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ W="$HOME/embedded_lab3/logs" 
+
+echo "========== STANDARD KERNEL =========="
+
+grep -E \
+'^# (Min Latencies|Avg Latencies|Max Latencies|Histogram Overflows):' \
+"$W/hist_standard.txt"
+
+echo
+echo "========== UNDER STRESS =========="
+
+grep -E \
+'^# (Min Latencies|Avg Latencies|Max Latencies|Histogram Overflows):' \
+"$W/hist_stress.txt"
+[?2004l========== STANDARD KERNEL ==========
+[01;31m[K# Min Latencies:[m[K 00002 00001 00002 00001
+[01;31m[K# Avg Latencies:[m[K 00002 00002 00002 00002
+[01;31m[K# Max Latencies:[m[K 00124 00016 00257 00293
+[01;31m[K# Histogram Overflows:[m[K 00000 00000 00005 00003
+
+========== UNDER STRESS ==========
+[01;31m[K# Min Latencies:[m[K 00001 00001 00001 00001
+[01;31m[K# Avg Latencies:[m[K 00003 00003 00003 00003
+[01;31m[K# Max Latencies:[m[K 00194 00110 00701 00107
+[01;31m[K# Histogram Overflows:[m[K 00000 00000 00002 00000
+[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ [7mecho "========== STANDARD SU[27m[7mM[27m[7mMARY ==========" [27m
+[7mtail -n 10 ~/embedded_lab3/logs/cyclictest_standard.txt[27m
+
+[7mecho[27m
+[7mecho "========== STRESS SUMMARY =========="[27m
+[7mtail -n 10 ~/embedded_lab3/logs/cyclictest_stress.txt[27m[A[A[A[A[A[A]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ echo "========== STANDARD SUMMARY =========="
+tail -n 10 ~/embedded_lab3/logs/cyclictest_standard.txt
+
+echo
+echo "========== STRESS SUMMARY =========="
+tail -n 10 ~/embedded_lab3/logs/cyclictest_stress.txt
+[?2004l========== STANDARD SUMMARY ==========
+# /dev/cpu_dma_latency set to 0us
+
+========== STRESS SUMMARY ==========
+# /dev/cpu_dma_latency set to 0us
+[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ [7mgnuplot <<EOF[27m
+[7mset terminal pngcairo size 1400,700[27m
+
+[7mset output "$HOME/embedded_lab3/logs/latency_comparison.png"[27m
+
+[7mset title "LAB 03 - Scheduling Latency: Normal vs Stress"[27m
+[7mset xlabel "Latency (microseconds)"[27m
+[7mset ylabel "Number of occurrences"[27m
+
+[7mset grid[27m
+[7mset key top right[27m
+[7mset xrange [0:200][27m
+
+[7mplot \[27m
+[7m"$HOME/embedded_lab3/logs/hist_standard.txt" \[27m
+[7musing 1:2 with lines linewidth 2 title "Normal", \[27m
+[7m"$HOME/embedded_lab3/logs/hist_stress.txt" \[27m
+[7musing 1:2 with lines linewidth 2 title "Under Stress"[27m
+[7mEOF[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ gnuplot <<EOF
+set terminal pngcairo size 1400,700
+
+set output "$HOME/embedded_lab3/logs/latency_comparison.png"
+
+set title "LAB 03 - Scheduling Latency: Normal vs Stress"
+set xlabel "Latency (microseconds)"
+set ylabel "Number of occurrences"
+
+set grid
+set key top right
+set xrange [0:200]
+
+plot \
+"$HOME/embedded_lab3/logs/hist_standard.txt" \
+using 1:2 with lines linewidth 2 title "Normal", \
+"$HOME/embedded_lab3/logs/hist_stress.txt" \
+using 1:2 with lines linewidth 2 title "Under Stress"
+EOF
+[?2004l[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ [7mxdg-open ~/embedded_lab3/log[27m[7ms[27m[7m/latency_comparison.png[27m[A]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ xdg-open ~/embedded_lab3/logs/latency_comparison.png
+[?2004l[?2004h]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ [7mcd ~/embedded_lab3[27m
+
+[7mmkdir -p bao_cao[27m
+
+[7m{[27m
+[7m    echo "===== LAB 03 FINAL SUMMARY ====="[27m
+[7m    echo "Student ID: SE203134"[27m
+[7m    date[27m
+
+[7m    echo[27m
+[7m    echo "===== HOST KERNEL ====="[27m
+[7m    uname -a[27m
+
+[7m    echo[27m
+[7m    echo "===== PREEMPT CONFIG ====="[27m
+[7m    grep -E 'CONFIG_PREEMPT|CONFIG_PREEMPT_RT' \[27m
+[7m        "/boot/config-$(uname -r)" 2>/dev/null[27m
+
+[7m    echo[27m
+[7m    echo "===== VALGRIND BEFORE ====="[27m
+[7m    grep -E 'definitely lost:|ERROR SUMMARY' \[27m
+[7m        logs/valgrind_report.txt[27m
+
+[7m    echo[27m
+[7m    echo "===== VALGRIND AFTER ====="[27m
+[7m    grep -E 'All heap blocks|ERROR SUMMARY' \[27m
+[7m        logs/valgrind_fixed.txt[27m
+
+[7m    echo[27m
+[7m    echo "===== CYCLICTEST NORMAL ====="[27m
+[7m    grep -E '^# (Min Latencies|Avg Latencies|Max Latencies|Histogram Overflows):' \[27m 
+[7m        logs/hist_standard.txt[27m
+
+[7m    echo[27m
+[7m    echo "===== CYCLICTEST STRESS ====="[27m
+[7m    grep -E '^# (Min Latencies|Avg Latencies|Max Latencies|Histogram Overflows):' \[27m 
+[7m        logs/hist_stress.txt[27m
+
+[7m} | tee logs/lab3_final_summary.txt[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A]0;minh@hayaminlinux: ~/embedded_lab3/rootfs/initramfs_c4[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3/rootfs/initramfs_c4[00m$ cd ~/embedded_lab3
+
+mkdir -p bao_cao
+
+{
+    echo "===== LAB 03 FINAL SUMMARY ====="
+    echo "Student ID: SE203134"
+    date
+
+    echo
+    echo "===== HOST KERNEL ====="
+    uname -a
+
+    echo
+    echo "===== PREEMPT CONFIG ====="
+    grep -E 'CONFIG_PREEMPT|CONFIG_PREEMPT_RT' \
+        "/boot/config-$(uname -r)" 2>/dev/null
+
+    echo
+    echo "===== VALGRIND BEFORE ====="
+    grep -E 'definitely lost:|ERROR SUMMARY' \
+        logs/valgrind_report.txt
+
+    echo
+    echo "===== VALGRIND AFTER ====="
+    grep -E 'All heap blocks|ERROR SUMMARY' \
+        logs/valgrind_fixed.txt
+
+    echo
+    echo "===== CYCLICTEST NORMAL ====="
+    grep -E '^# (Min Latencies|Avg Latencies|Max Latencies|Histogram Overflows):' \ 
+        logs/hist_standard.txt
+
+    echo
+    echo "===== CYCLICTEST STRESS ====="
+    grep -E '^# (Min Latencies|Avg Latencies|Max Latencies|Histogram Overflows):' \ 
+        logs/hist_stress.txt
+
+} | tee logs/lab3_final_summary.txt
+[?2004l===== LAB 03 FINAL SUMMARY =====
+Student ID: SE203134
+Mon Oct 26 06:22:55 PM +07 2026
+
+===== HOST KERNEL =====
+Linux hayaminlinux 6.8.0-138-generic #138~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Aug  7 13:43:15 UTC  x86_64 x86_64 x86_64 GNU/Linux
+
+===== PREEMPT CONFIG =====
+CONFIG_PREEMPT_BUILD=y
+# CONFIG_PREEMPT_NONE is not set
+CONFIG_PREEMPT_VOLUNTARY=y
+# CONFIG_PREEMPT is not set
+CONFIG_PREEMPT_COUNT=y
+CONFIG_PREEMPTION=y
+CONFIG_PREEMPT_DYNAMIC=y
+CONFIG_PREEMPT_RCU=y
+CONFIG_PREEMPT_NOTIFIERS=y
+# CONFIG_PREEMPT_TRACER is not set
+# CONFIG_PREEMPTIRQ_DELAY_TEST is not set
+
+===== VALGRIND BEFORE =====
+==14806==    definitely lost: 16,900 bytes in 250 blocks
+==14806== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+
+===== VALGRIND AFTER =====
+==15152== All heap blocks were freed -- no leaks are possible
+==15152== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+===== CYCLICTEST NORMAL =====
+# Min Latencies: 00002 00001 00002 00001
+# Avg Latencies: 00002 00002 00002 00002
+# Max Latencies: 00124 00016 00257 00293
+# Histogram Overflows: 00000 00000 00005 00003
+
+===== CYCLICTEST STRESS =====
+# Min Latencies: 00001 00001 00001 00001
+# Avg Latencies: 00003 00003 00003 00003
+# Max Latencies: 00194 00110 00701 00107
+# Histogram Overflows: 00000 00000 00002 00000
+[?2004h]0;minh@hayaminlinux: ~/embedded_lab3[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3[00m$ [7mcd ~/embedded_lab3[27m
+
+[7mfor f in \[27m
+[7m    apps/buggy_app.c \[27m
+[7m    apps/leaky_app.c \[27m
+[7m    apps/leaky_app_fixed.c \[27m
+[7m    apps/perf_target.c \[27m
+[7m    logs/gdb_session.txt \[27m
+[7m    logs/valgrind_report.txt \[27m
+[7m    logs/valgrind_fixed.txt \[27m
+[7m    logs/strace_summary.txt \[27m
+[7m    logs/perf_report.txt \[27m
+[7m    logs/perf_stat.txt \[27m
+[7m    logs/hist_standard.txt \[27m
+[7m    logs/hist_stress.txt \[27m
+[7m    logs/latency_histogram.png \[27m
+[7m    logs/latency_comparison.png[27m
+[7mdo[27m
+[7m    if [ -f "$f" ]; then[27m
+[7m        echo "[OK] $f"[27m
+[7m    else[27m
+[7m        echo "[MISSING] $f"[27m
+[7m    fi[27m
+[7mdone[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A]0;minh@hayaminlinux: ~/embedded_lab3[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3[00m$ cd ~/embedded_lab3
+
+for f in \
+    apps/buggy_app.c \
+    apps/leaky_app.c \
+    apps/leaky_app_fixed.c \
+    apps/perf_target.c \
+    logs/gdb_session.txt \
+    logs/valgrind_report.txt \
+    logs/valgrind_fixed.txt \
+    logs/strace_summary.txt \
+    logs/perf_report.txt \
+    logs/perf_stat.txt \
+    logs/hist_standard.txt \
+    logs/hist_stress.txt \
+    logs/latency_histogram.png \
+    logs/latency_comparison.png
+do
+    if [ -f "$f" ]; then
+        echo "[OK] $f"
+    else
+        echo "[MISSING] $f"
+    fi
+done
+[?2004l[OK] apps/buggy_app.c
+[OK] apps/leaky_app.c
+[OK] apps/leaky_app_fixed.c
+[OK] apps/perf_target.c
+[OK] logs/gdb_session.txt
+[OK] logs/valgrind_report.txt
+[OK] logs/valgrind_fixed.txt
+[OK] logs/strace_summary.txt
+[OK] logs/perf_report.txt
+[OK] logs/perf_stat.txt
+[OK] logs/hist_standard.txt
+[OK] logs/hist_stress.txt
+[OK] logs/latency_histogram.png
+[OK] logs/latency_comparison.png
+[?2004h]0;minh@hayaminlinux: ~/embedded_lab3[01;32mminh@hayaminlinux[00m:[01;34m~/embedded_lab3[00m$ [7mcd ~/embedded_lab3[27m
+
+[7mFILES=([27m
+[7m    apps/buggy_app.c[27m
+[7m    apps/leaky_app.c[27m
+[7m    apps/leaky_app_fixed.c[27m
+[7m    apps/perf_target.c[27m
+[7m    logs/gdb_session.txt[27m
+[7m    logs/valgrind_report.txt[27m
+[7m    logs/valgrind_fixed.txt[27m
+[7m    logs/strace_summary.txt[27m
+[7m    logs/perf_report.txt[27m
+[7m    logs/perf_stat.txt[27m
+[7m    logs/hist_standard.txt[27m
+[7m    logs/hist_stress.txt[27m
+[7m    logs/latency_histogram.png[27m
+[7m    logs/latency_comparison.png[27m
+[7m    logs/lab3_final_summary.txt[27m
+[7m    logs/b5_qemu_session.txt[27m
+[7m    logs/c4_qemu_session.txt[27m
+[7m)[27m
+
+[7mPRESENT=()[27m
+
+[7mfor f in "${FILES[@]}"; do[27m
+[7m    if [ -f "$f" ]; then[27m
+[7m        PRESENT+=("$f")[27m
+[7m    else[27m
+[7m        echo "[NOT FOUND] $f"[27m
+[7m    fi[27m
+[7mdone[27m
+
+[7mtar -czf \[27m
+[7m    ~/Downloads/SE203134_Lab03_Evidence.tar.gz \[27m
+[7m    "${PRESENT[@]}"[27m
+
+[7mls -lh ~/Downloads/SE203134_Lab03_Evidence.tar.gz[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Acd ~/embedded_lab3
+
+FILES=(
+    apps/buggy_app.c
+    apps/leaky_app.c
+    apps/leaky_app_fixed.c
+    apps/perf_target.c
+    logs/gdb_session.txt
+    logs/valgrind_report.txt
+    logs/valgrind_fixed.txt
+    logs/strace_summary.txt
+    logs/perf_report.txt
+    logs/perf_stat.txt
+    logs/hist_standard.txt
+    logs/hist_stress.txt
+    logs/latency_histogram.png
+    logs/latency_comparison.png
+    logs/lab3_final_summary.txt
+    logs/b5_qemu_session.txt
+    logs/c4_qemu_session.txt
+)
+
+PRESENT=()
+
+for f in "${FILES[@]}"; do
+    if [ -f "$f" ]; then
+        PRESENT+=("$f")
+    else
+        echo "[NOT FOUND] $f"
+    fi
+done
+
+tar -czf \
+    ~/Downloads/SE203134_Lab03_Evidence.tar.gz \
+    "${PRESENT[@]}"
+
+ls -lh ~/Downloads/SE203134_Lab03_Evidence.tar.gz
+[?2004l
