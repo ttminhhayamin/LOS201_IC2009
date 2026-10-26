@@ -4,7 +4,7 @@
 **Đề gốc:** LAB-03 Embedded Linux Systems — Debugging Kernel & Phân tích Hiệu năng, các mục IV–VI.  
 **Nguồn dữ liệu:** 2 archive người dùng cung cấp ngày 26/10/2026. Đây là bản phân loại bằng chứng, **không tự bổ sung số liệu hay ảnh**.
 
-## Cấu trúc (file được TÁCH RIÊNG)
+## Cấu trúc 
 
 - `01_Source/`: mã nguồn `.c` xếp theo Part A/B/C.
 - `02_Evidence/`: log, số liệu, biểu đồ **gốc** xếp theo từng bài/tiểu mục.
