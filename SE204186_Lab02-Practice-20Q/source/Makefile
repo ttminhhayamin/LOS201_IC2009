@@ -1,13 +1,13 @@
-# Đường dẫn đến kernel source đã build ở LAB-01
 KDIR := $(HOME)/embedded_lab1/kernel/linux-5.15
 ARCH := arm
 CROSS_COMPILE := arm-linux-gnueabihf-
 
-obj-m += asgn1_driver.o
+obj-m := asgn1_driver.o
+
 all:
-	$(MAKE) -C $(KDIR) M=$(PWD) ARCH=$(ARCH) \
-		CROSS_COMPILE=$(CROSS_COMPILE) modules
+	$(MAKE) -C $(KDIR) M=$(CURDIR) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) modules
 
 clean:
-	$(MAKE) -C $(KDIR) M=$(PWD) ARCH=$(ARCH) \
-		CROSS_COMPILE=$(CROSS_COMPILE) clean
+	$(MAKE) -C $(KDIR) M=$(CURDIR) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) clean
+
+.PHONY: all clean
