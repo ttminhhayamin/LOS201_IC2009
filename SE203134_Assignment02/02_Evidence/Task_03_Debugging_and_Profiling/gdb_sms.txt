@@ -1,0 +1,138 @@
+Breakpoint 1 at 0x37fd: file /home/minh/embedded_asgn2/app/circular_buffer.c, line 62.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[New Thread 0x7eef41bff640 (LWP 16144)]
+[New Thread 0x7eef3bfff640 (LWP 16145)]
+[New Thread 0x7eef413fe640 (LWP 16146)]
+[New Thread 0x7eef40bfd640 (LWP 16147)]
+[INFO] SCHED_FIFO unavailable (Operation not permitted), continuing SCHED_OTHER
+[Switching to Thread 0x7eef413fe640 (LWP 16146)]
+===== TASK 3 GDB: Processor reads shared buffer UNDER MUTEX =====
+  Id   Target Id                                           Frame 
+  1    Thread 0x7eef41f73740 (LWP 16140) "sms_app_x86_moc" 0x00007eef41ce57b8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=0x7ffe524efd80, rem=0x7ffe524efd80) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+  2    Thread 0x7eef41bff640 (LWP 16144) "sms_app_x86_moc" ___mq_timedreceive_time64 (abs_timeout=0x7eef41bfed00, msg_prio=0x0, msg_len=192, msg_ptr=0x7eef41bfed80 "", mqdes=4) at ../sysdeps/unix/sysv/linux/mq_timedreceive.c:35
+  3    Thread 0x7eef3bfff640 (LWP 16145) "sms_app_x86_moc" ___mq_timedreceive_time64 (abs_timeout=0x0, msg_prio=0x0, msg_len=192, msg_ptr=0x7eef3bffed80 "", mqdes=3) at ../sysdeps/unix/sysv/linux/mq_timedreceive.c:35
+* 4    Thread 0x7eef413fe640 (LWP 16146) "sms_app_x86_moc" cb_pop (b=0x5991f0e730a0 <shared_buffer>, out=0x7eef413fdca0) at /home/minh/embedded_asgn2/app/circular_buffer.c:62
+  5    Thread 0x7eef40bfd640 (LWP 16147) "sms_app_x86_moc" 0x00007eef41ce57b8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=0x7eef40bfcd10, rem=0x7eef40bfcd10) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+
+Thread 5 (Thread 0x7eef40bfd640 (LWP 16147) "sms_app_x86_moc"):
+#0  0x00007eef41ce57b8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=0x7eef40bfcd10, rem=0x7eef40bfcd10) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+#1  0x00007eef41cea637 in __GI___nanosleep (req=<optimized out>, rem=<optimized out>) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+#2  0x00005991f0e6e876 in ms_sleep (millis=100) at /home/minh/embedded_asgn2/app/sms_app.c:47
+#3  0x00005991f0e6fc30 in sensor_thread (unused=0x0) at /home/minh/embedded_asgn2/app/sensor_thread.c:42
+#4  0x00007eef41c94a83 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#5  0x00007eef41d268e0 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 4 (Thread 0x7eef413fe640 (LWP 16146) "sms_app_x86_moc"):
+#0  cb_pop (b=0x5991f0e730a0 <shared_buffer>, out=0x7eef413fdca0) at /home/minh/embedded_asgn2/app/circular_buffer.c:62
+#1  0x00005991f0e701a6 in processor_thread (unused=0x0) at /home/minh/embedded_asgn2/app/processor_thread.c:20
+#2  0x00007eef41c94a83 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#3  0x00007eef41d268e0 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 3 (Thread 0x7eef3bfff640 (LWP 16145) "sms_app_x86_moc"):
+#0  ___mq_timedreceive_time64 (abs_timeout=0x0, msg_prio=0x0, msg_len=192, msg_ptr=0x7eef3bffed80 "", mqdes=3) at ../sysdeps/unix/sysv/linux/mq_timedreceive.c:35
+#1  ___mq_timedreceive_time64 (mqdes=3, msg_ptr=0x7eef3bffed80 "", msg_len=192, msg_prio=0x0, abs_timeout=0x0) at ../sysdeps/unix/sysv/linux/mq_timedreceive.c:26
+#2  0x00005991f0e7020c in alert_thread (unused=0x0) at /home/minh/embedded_asgn2/app/alert_thread.c:18
+#3  0x00007eef41c94a83 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#4  0x00007eef41d268e0 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 2 (Thread 0x7eef41bff640 (LWP 16144) "sms_app_x86_moc"):
+#0  ___mq_timedreceive_time64 (abs_timeout=0x7eef41bfed00, msg_prio=0x0, msg_len=192, msg_ptr=0x7eef41bfed80 "", mqdes=4) at ../sysdeps/unix/sysv/linux/mq_timedreceive.c:35
+#1  ___mq_timedreceive_time64 (mqdes=4, msg_ptr=0x7eef41bfed80 "", msg_len=192, msg_prio=0x0, abs_timeout=0x7eef41bfed00) at ../sysdeps/unix/sysv/linux/mq_timedreceive.c:26
+#2  0x00005991f0e70497 in logger_thread (unused=0x0) at /home/minh/embedded_asgn2/app/logger_thread.c:29
+#3  0x00007eef41c94a83 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#4  0x00007eef41d268e0 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 1 (Thread 0x7eef41f73740 (LWP 16140) "sms_app_x86_moc"):
+#0  0x00007eef41ce57b8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=0x7ffe524efd80, rem=0x7ffe524efd80) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+#1  0x00007eef41cea637 in __GI___nanosleep (req=<optimized out>, rem=<optimized out>) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+#2  0x00005991f0e6e876 in ms_sleep (millis=100) at /home/minh/embedded_asgn2/app/sms_app.c:47
+#3  0x00005991f0e6f1be in main (argc=5, argv=0x7ffe524f00a8) at /home/minh/embedded_asgn2/app/sms_app.c:145
+===== BUFFER SNAPSHOT WHILE MUTEX HELD =====
+$1 = 0
+$2 = 1
+$3 = 1
+$4 = 1
+$5 = 0
+$6 = 64
+===== GDB SNAPSHOT COMPLETE =====
+[ALERT][6217696] TEMP_SPIKE: VALUE=24.06 THRESHOLD=5.00
+[ALERT][6217796] HUMID_HIGH: VALUE=89.77 THRESHOLD=80.00
+[ALERT][6217796] TEMP_SPIKE: VALUE=35.00 THRESHOLD=5.00
+[ALERT][6217896] TEMP_SPIKE: VALUE=21.43 THRESHOLD=5.00
+[ALERT][6217996] TEMP_HIGH: VALUE=41.53 THRESHOLD=40.00
+[ALERT][6217996] TEMP_SPIKE: VALUE=41.53 THRESHOLD=5.00
+[ALERT][6218096] TEMP_SPIKE: VALUE=35.45 THRESHOLD=5.00
+[ALERT][6218296] TEMP_SPIKE: VALUE=22.66 THRESHOLD=5.00
+[ALERT][6218397] TEMP_SPIKE: VALUE=17.17 THRESHOLD=5.00
+[ALERT][6218497] TEMP_SPIKE: VALUE=24.45 THRESHOLD=5.00
+[ALERT][6218897] TEMP_SPIKE: VALUE=37.75 THRESHOLD=5.00
+[ALERT][6218998] HUMID_HIGH: VALUE=85.30 THRESHOLD=80.00
+[ALERT][6218998] TEMP_SPIKE: VALUE=20.86 THRESHOLD=5.00
+[ALERT][6219098] TEMP_SPIKE: VALUE=26.90 THRESHOLD=5.00
+[ALERT][6219298] TEMP_SPIKE: VALUE=33.92 THRESHOLD=5.00
+[ALERT][6219398] HUMID_HIGH: VALUE=81.35 THRESHOLD=80.00
+[ALERT][6219398] TEMP_SPIKE: VALUE=25.94 THRESHOLD=5.00
+[ALERT][6219499] TEMP_SPIKE: VALUE=33.08 THRESHOLD=5.00
+[ALERT][6219599] HUMID_HIGH: VALUE=88.56 THRESHOLD=80.00
+[ALERT][6219699] TEMP_SPIKE: VALUE=17.02 THRESHOLD=5.00
+[ALERT][6219999] HUMID_HIGH: VALUE=82.96 THRESHOLD=80.00
+[ALERT][6219999] TEMP_SPIKE: VALUE=31.42 THRESHOLD=5.00
+[ALERT][6220099] HUMID_HIGH: VALUE=87.85 THRESHOLD=80.00
+[ALERT][6220099] TEMP_SPIKE: VALUE=23.46 THRESHOLD=5.00
+[ALERT][6220200] TEMP_SPIKE: VALUE=31.73 THRESHOLD=5.00
+[ALERT][6220300] HUMID_HIGH: VALUE=86.14 THRESHOLD=80.00
+[ALERT][6220701] TEMP_SPIKE: VALUE=24.99 THRESHOLD=5.00
+[ALERT][6220901] TEMP_SPIKE: VALUE=17.40 THRESHOLD=5.00
+[ALERT][6221001] TEMP_SPIKE: VALUE=26.70 THRESHOLD=5.00
+[ALERT][6221101] TEMP_SPIKE: VALUE=15.73 THRESHOLD=5.00
+[ALERT][6221302] TEMP_SPIKE: VALUE=38.72 THRESHOLD=5.00
+[ALERT][6221402] TEMP_HIGH: VALUE=40.03 THRESHOLD=40.00
+[ALERT][6221502] TEMP_SPIKE: VALUE=24.10 THRESHOLD=5.00
+[ALERT][6221702] TEMP_HIGH: VALUE=42.00 THRESHOLD=40.00
+[ALERT][6221702] TEMP_SPIKE: VALUE=42.00 THRESHOLD=5.00
+[ALERT][6221902] TEMP_SPIKE: VALUE=23.50 THRESHOLD=5.00
+[ALERT][6222003] TEMP_SPIKE: VALUE=35.01 THRESHOLD=5.00
+[ALERT][6222103] TEMP_SPIKE: VALUE=18.87 THRESHOLD=5.00
+[ALERT][6222203] TEMP_SPIKE: VALUE=29.21 THRESHOLD=5.00
+[ALERT][6222303] HUMID_HIGH: VALUE=87.11 THRESHOLD=80.00
+[ALERT][6222303] TEMP_SPIKE: VALUE=36.17 THRESHOLD=5.00
+[ALERT][6222403] TEMP_SPIKE: VALUE=27.65 THRESHOLD=5.00
+[ALERT][6222704] TEMP_SPIKE: VALUE=29.47 THRESHOLD=5.00
+[ALERT][6222804] TEMP_HIGH: VALUE=41.88 THRESHOLD=40.00
+[ALERT][6222804] TEMP_SPIKE: VALUE=41.88 THRESHOLD=5.00
+[ALERT][6222904] TEMP_HIGH: VALUE=43.40 THRESHOLD=40.00
+[ALERT][6222904] HUMID_HIGH: VALUE=86.43 THRESHOLD=80.00
+[ALERT][6223004] TEMP_SPIKE: VALUE=19.16 THRESHOLD=5.00
+[ALERT][6223104] TEMP_HIGH: VALUE=43.19 THRESHOLD=40.00
+[ALERT][6223104] TEMP_SPIKE: VALUE=43.19 THRESHOLD=5.00
+[ALERT][6223204] TEMP_HIGH: VALUE=41.13 THRESHOLD=40.00
+[ALERT][6223305] TEMP_SPIKE: VALUE=24.67 THRESHOLD=5.00
+[ALERT][6223605] TEMP_SPIKE: VALUE=16.58 THRESHOLD=5.00
+[ALERT][6223806] TEMP_SPIKE: VALUE=35.50 THRESHOLD=5.00
+[ALERT][6223906] HUMID_HIGH: VALUE=80.48 THRESHOLD=80.00
+[ALERT][6223906] TEMP_SPIKE: VALUE=15.67 THRESHOLD=5.00
+[ALERT][6224006] TEMP_SPIKE: VALUE=33.45 THRESHOLD=5.00
+[ALERT][6224106] HUMID_HIGH: VALUE=81.87 THRESHOLD=80.00
+[ALERT][6224406] HUMID_HIGH: VALUE=88.35 THRESHOLD=80.00
+[ALERT][6224607] HUMID_HIGH: VALUE=85.29 THRESHOLD=80.00
+[ALERT][6224607] TEMP_SPIKE: VALUE=28.96 THRESHOLD=5.00
+[ALERT][6224707] TEMP_HIGH: VALUE=41.29 THRESHOLD=40.00
+[ALERT][6224707] TEMP_SPIKE: VALUE=41.29 THRESHOLD=5.00
+[ALERT][6224807] TEMP_SPIKE: VALUE=18.28 THRESHOLD=5.00
+[ALERT][6224907] TEMP_SPIKE: VALUE=29.88 THRESHOLD=5.00
+[ALERT][6225007] TEMP_SPIKE: VALUE=39.14 THRESHOLD=5.00
+[ALERT][6225108] TEMP_SPIKE: VALUE=33.38 THRESHOLD=5.00
+[ALERT][6225208] TEMP_SPIKE: VALUE=15.86 THRESHOLD=5.00
+[ALERT][6225308] TEMP_HIGH: VALUE=43.86 THRESHOLD=40.00
+[ALERT][6225308] TEMP_SPIKE: VALUE=43.86 THRESHOLD=5.00
+[ALERT][6225408] TEMP_SPIKE: VALUE=35.80 THRESHOLD=5.00
+[ALERT][6225508] HUMID_HIGH: VALUE=85.61 THRESHOLD=80.00
+[ALERT][6225508] TEMP_SPIKE: VALUE=15.75 THRESHOLD=5.00
+[Thread 0x7eef40bfd640 (LWP 16147) exited]
+[Thread 0x7eef413fe640 (LWP 16146) exited]
+[Thread 0x7eef3bfff640 (LWP 16145) exited]
+[Thread 0x7eef41bff640 (LWP 16144) exited]
+[SUMMARY] produced=80 consumed=80 size=0 overflow=0
+[SUMMARY] alerts_total=73 TEMP_HIGH=9 HUMID_HIGH=14 TEMP_SPIKE=50 uptime_sec=8.01
+[Inferior 1 (process 16140) exited normally]

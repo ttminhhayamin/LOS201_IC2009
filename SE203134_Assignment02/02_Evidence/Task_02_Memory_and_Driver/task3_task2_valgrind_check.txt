@@ -1,0 +1,6 @@
+===== TASK 2 VALGRIND CROSS-CHECK =====
+==15773== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==15773== HEAP SUMMARY:
+==15773==     in use at exit: 0 bytes in 0 blocks
+==15773== All heap blocks were freed -- no leaks are possible
+==15773== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

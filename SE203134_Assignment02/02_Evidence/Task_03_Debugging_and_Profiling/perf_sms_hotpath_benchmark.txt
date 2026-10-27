@@ -1,0 +1,89 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 107  of event 'cpu-clock:u'
+# Event count (approx.): 537688375
+#
+# Overhead  Command          Shared Object      Symbol                               
+# ........  ...............  .................  .....................................
+#
+    31.78%  sms_hotpath_ben  sms_hotpath_bench  [.] process_sms_sample
+            |
+            ---process_sms_sample
+               |          
+               |--28.04%--main
+               |          __libc_start_call_main
+               |          
+                --3.74%--__libc_start_call_main
+
+    23.36%  sms_hotpath_ben  sms_hotpath_bench  [.] compute_rolling_average
+            |
+            ---compute_rolling_average
+               main
+               __libc_start_call_main
+
+    18.69%  sms_hotpath_ben  sms_hotpath_bench  [.] cb_push
+            |
+            ---cb_push
+               process_sms_sample
+               main
+               __libc_start_call_main
+
+     8.41%  sms_hotpath_ben  sms_hotpath_bench  [.] cb_pop
+            |
+            ---cb_pop
+               |          
+               |--7.48%--process_sms_sample
+               |          main
+               |          __libc_start_call_main
+               |          
+                --0.93%--main
+                          __libc_start_call_main
+
+     7.48%  sms_hotpath_ben  libc.so.6          [.] pthread_mutex_lock@@GLIBC_2.2.5
+            |
+            ---pthread_mutex_lock@@GLIBC_2.2.5
+               process_sms_sample
+               main
+               __libc_start_call_main
+
+     4.67%  sms_hotpath_ben  libc.so.6          [.] pthread_mutex_unlock@@GLIBC_2.2.5
+            |
+            ---pthread_mutex_unlock@@GLIBC_2.2.5
+               process_sms_sample
+               main
+               __libc_start_call_main
+
+     1.87%  sms_hotpath_ben  libc.so.6          [.] pthread_cond_signal@@GLIBC_2.3.2
+            |
+            ---pthread_cond_signal@@GLIBC_2.3.2
+               process_sms_sample
+               main
+               __libc_start_call_main
+
+     1.87%  sms_hotpath_ben  sms_hotpath_bench  [.] main
+            |
+            ---main
+               __libc_start_call_main
+
+     0.93%  sms_hotpath_ben  sms_hotpath_bench  [.] pthread_mutex_lock@plt
+            |
+            ---pthread_mutex_lock@plt
+               process_sms_sample
+               main
+               __libc_start_call_main
+
+     0.93%  sms_hotpath_ben  sms_hotpath_bench  [.] pthread_mutex_unlock@plt
+            |
+            ---pthread_mutex_unlock@plt
+               process_sms_sample
+               main
+               __libc_start_call_main
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

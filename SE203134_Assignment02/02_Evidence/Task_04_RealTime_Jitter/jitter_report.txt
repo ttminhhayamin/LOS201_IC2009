@@ -1,0 +1,13 @@
+[RT_REPORT] requested=OTHER effective=OTHER priority=0 mlock=OK period_ms=100 n=1249 min_us=222 avg_us=5248.87 max_us=66163 p99_us=9939
+[RT_REPORT] requested=FIFO effective=FIFO priority=50 mlock=OK period_ms=100 n=1248 min_us=244 avg_us=5184.17 max_us=9901 p99_us=9736
+
+===== HISTOGRAM (chronological output) =====
+[JITTER_HIST] 0-99us=0 100-499us=15 500-999us=67 >=1000us=1167
+[JITTER_HIST] 0-99us=0 100-499us=6 500-999us=63 >=1000us=1179
+
+OTHER verification: samples=1249 effective_policy=OTHER priority=0 -> PASS
+FIFO verification: samples=1248 effective_policy=FIFO priority=50 -> PASS
+P99 improvement FIFO versus OTHER: 2.04% (positive=improved, negative=worse)
+TASK4_JITTER_SAMPLES_AND_POLICIES_PASS
+Measurements use 100ms interval for speed. Task1 500ms result is a separate experiment.
+QEMU is virtualized, so measurements do not establish hard RT guarantees on hardware.

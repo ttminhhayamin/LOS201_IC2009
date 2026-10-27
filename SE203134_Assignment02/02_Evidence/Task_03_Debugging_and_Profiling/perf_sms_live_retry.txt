@@ -1,0 +1,26 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1  of event 'cpu-clock:u'
+# Event count (approx.): 5025125
+#
+# Children      Self  Command          Shared Object           Symbol             IPC   [IPC Coverage]
+# ........  ........  ...............  ......................  .................  ....................
+#
+   100.00%   100.00%  sms_app_x86_moc  sms_app_x86_mock_fixed  [.] logger_thread  -      -            
+            |
+            ---start_thread
+               logger_thread
+
+   100.00%     0.00%  sms_app_x86_moc  libc.so.6               [.] start_thread   -      -            
+            |
+            ---start_thread
+               logger_thread
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

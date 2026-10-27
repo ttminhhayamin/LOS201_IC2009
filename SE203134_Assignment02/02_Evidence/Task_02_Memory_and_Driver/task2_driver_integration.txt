@@ -1,0 +1,13 @@
+[OK] ioctl 500ms
+
+[OK] ioctl 0 -> EINVAL
+
+[OK] unsupported ioctl -> ENOTTY
+
+[OK] read 17 bytes: 8523,16.73,45.27
+
+[OK] EOF second read same descriptor
+
+[OK] immediate second open -> EAGAIN
+
+DRIVER TEST PASS

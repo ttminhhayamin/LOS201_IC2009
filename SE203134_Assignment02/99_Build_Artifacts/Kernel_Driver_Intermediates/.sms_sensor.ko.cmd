@@ -1,0 +1,1 @@
+cmd_/home/minh/embedded_asgn2/driver/sms_sensor.ko := arm-linux-gnueabihf-ld -r -EL --build-id=sha1  -T scripts/module.lds -o /home/minh/embedded_asgn2/driver/sms_sensor.ko /home/minh/embedded_asgn2/driver/sms_sensor.o /home/minh/embedded_asgn2/driver/sms_sensor.mod.o;  true

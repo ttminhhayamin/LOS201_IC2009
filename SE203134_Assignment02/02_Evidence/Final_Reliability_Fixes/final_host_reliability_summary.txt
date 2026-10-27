@@ -1,0 +1,3 @@
+Normal host/mock exit: 0
+Injected bad logger path exit: 1
+RESULT=PASS

@@ -1,0 +1,15 @@
+read_count: 1
+
+total_bytes_read: 17
+
+last_temperature: 16.73
+
+last_humidity: 45.27
+
+uptime: 1
+
+interval_ms: 500
+
+min_temperature: 16.73
+
+max_temperature: 16.73

@@ -1,0 +1,14 @@
+===== TASK 3: TOP 5 SYSCALLS BY CALL COUNT (HOST MOCK) =====
+calls  %syscall_time  syscall
+ 1015       17.56%  futex
+  958       35.28%  mq_timedreceive
+  958        2.50%  mq_timedsend
+  639        1.53%  lseek
+  637       38.90%  clock_nanosleep
+
+===== NOTES =====
+This is the real SMS app multithreaded userspace logic with a test-only x86 sensor backend.
+The simulated backend opens /dev/null instead of an ARM character device.
+Therefore Host strace cannot prove the exact ARM device-driver system-call pattern.
+Perf CPU sampling may be sparse because most threads are sleeping or blocked.
+Interpret syscall time percentages as fractions of syscall time, not overall CPU time.

@@ -1,0 +1,11 @@
+Name:	sms_app
+
+VmSize:	   35596 kB
+
+VmRSS:	       4 kB
+
+VmData:	   33188 kB
+
+VmStk:	     132 kB
+
+Threads:	5

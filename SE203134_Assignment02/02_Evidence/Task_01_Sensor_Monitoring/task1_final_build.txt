@@ -1,0 +1,2 @@
+gcc -std=gnu11 -O0 -g -Wall -Wextra -pthread -o sms_app_x86 sms_app.c circular_buffer.c sensor_thread.c processor_thread.c alert_thread.c logger_thread.c -pthread -lrt
+arm-linux-gnueabihf-gcc -std=gnu11 -O0 -g -Wall -Wextra -pthread -march=armv7-a -mfpu=neon-vfpv3 -mfloat-abi=hard -static -o sms_app sms_app.c circular_buffer.c sensor_thread.c processor_thread.c alert_thread.c logger_thread.c -pthread -lrt

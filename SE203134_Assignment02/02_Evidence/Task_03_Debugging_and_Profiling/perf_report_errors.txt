@@ -1,0 +1,2 @@
+Error:
+The /home/minh/embedded_asgn2/logs/perf_sms.data data has no samples!

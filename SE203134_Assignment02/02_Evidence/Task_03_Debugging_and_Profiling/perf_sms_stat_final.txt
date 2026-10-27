@@ -1,0 +1,15 @@
+# started on Tue Oct 27 12:47:09 2026
+
+
+ Performance counter stats for 'sudo -u minh /home/minh/embedded_asgn2/final_fixes/sms_app_x86_mock_fixed -i 100 -d 35':
+
+            127.18 msec task-clock                       #    0.004 CPUs utilized             
+             2,106      context-switches                 #   16.560 K/sec                     
+               765      page-faults                      #    6.015 K/sec                     
+
+      34.140759274 seconds time elapsed
+
+       0.009286000 seconds user
+       0.024144000 seconds sys
+
+

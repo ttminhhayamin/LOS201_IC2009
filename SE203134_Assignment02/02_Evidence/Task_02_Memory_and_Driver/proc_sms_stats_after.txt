@@ -1,0 +1,17 @@
+read_count: 114
+
+total_bytes_read: 2050
+
+last_temperature: 34.65
+
+last_humidity: 69.29
+
+uptime: 60
+
+interval_ms: 500
+
+min_temperature: 15.26
+
+max_temperature: 45.00
+
+DRIVER_READ_DELTA=113

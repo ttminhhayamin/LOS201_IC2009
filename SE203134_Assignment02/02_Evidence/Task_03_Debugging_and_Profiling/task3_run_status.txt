@@ -1,0 +1,10 @@
+===== TASK 3: GDB (automated scenario A) =====
+[OK] GDB captured thread list, all-thread backtraces, and protected buffer snapshot
+===== TASK 3: STRACE (32s to cover >=30 real seconds) =====
+[OK] strace -f -c completed (Host mock sensor)
+===== TASK 3: PERF RECORD (~35s) =====
+[INFO] Regular-user perf failed; trying with sudo privileges
+[OK] perf record ran with sudo; application executed as your regular user
+[OK] perf report saved
+===== TASK 3 FILES =====
+===== DONE: review warnings in task3_run_status.txt (not an unconditional PASS) =====

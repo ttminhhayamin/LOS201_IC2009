@@ -1,0 +1,21 @@
+NORMAL_EXIT=0: FOUND
+ROTATION_PASS: FOUND
+ERROR_PATH_NONZERO_PASS: FOUND
+QEMU_FINAL_RELIABILITY=PASS
+HOST:
+Normal host/mock exit: 0
+Injected bad logger path exit: 1
+RESULT=PASS
+
+PERF:
+Assignment02 Task3 perf supplement -- honest interpretation
+- perf_sms_live_fixed.txt is the REAL app using the x86 simulated sensor, waiting on its queues.
+- perf_sms_hotpath_benchmark.txt profiles a SEPARATE CPU-bound harness exercising the
+  identical circular_buffer.c functions plus a representative rolling-average computation.
+  This is NOT a perf profile of sms_app itself; only use as supplementary evidence.
+- A live app report with no CPU samples is expected in an I/O-/wait-bound workload.
+- Do NOT rename benchmark data as the app's report or claim benchmark hotspots as app hotspots.
+- Original GDB and 32s strace results remain under logs/.
+LIVE_HOTSPOTS_FOUND=False
+BENCH_HOTSPOTS_FOUND=True
+
