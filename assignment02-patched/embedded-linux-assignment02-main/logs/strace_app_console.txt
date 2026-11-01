@@ -1,0 +1,18 @@
+[Alert] Thread started
+[Logger] Writing logs to /tmp/sms.log
+[Processor] Started; rolling window=10 samples
+[Main] SCHED_FIFO unavailable (Operation not permitted); using default scheduling policy
+[Sensor] Cannot open /dev/sms_sensor: No such file or directory
+[Main] Beginning orderly shutdown
+[Processor] Thread stopped
+[Alert] Thread stopped
+[Logger] Thread stopped
+[Main] Shutdown complete
+========================================
+ Sensor Monitoring System
+ Student: Hoang Trung Hai
+ Student ID: SS204779
+ Device: /dev/sms_sensor
+ Sampling interval: 500 ms
+========================================
+[Main] All threads started. Press Ctrl+C to stop.

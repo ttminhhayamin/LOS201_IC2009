@@ -1,0 +1,7 @@
+Assignment 02 - strace execution record
+Command: strace -f -tt -T ./app/sms_app -i 500 -d /dev/sms_sensor
+Environment: Ubuntu host, native x86-64 application
+Result: Application started its threads, but /dev/sms_sensor was unavailable on the host.
+Shutdown: Application performed orderly shutdown; trace contains exit_group(0).
+Note: timeout returned 124 because the 8-second timeout expired.
+Limitation: This run did not validate successful sensor sampling.

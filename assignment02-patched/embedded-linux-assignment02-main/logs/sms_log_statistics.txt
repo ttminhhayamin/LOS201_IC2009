@@ -1,0 +1,29 @@
+Embedded Linux Assignment 02
+SMS Sensor Monitoring System
+Runtime Log Statistics
+
+Source:
+  /tmp/sms.log inside the QEMU BusyBox environment
+
+Environment:
+  QEMU machine: vexpress-a9
+  Linux kernel: 5.15.0
+  Sampling interval: 500 ms
+
+Observed log statistics:
+  Log size: approximately 27.3 KB
+  Total lines: 280
+  Sensor samples: 129
+  WARNING lines: 151
+
+Warning categories:
+  HIGH TEMPERATURE: 26
+  HIGH HUMIDITY: 32
+  RAPID TEMPERATURE CHANGE: 94
+
+Note:
+  These values were observed in the QEMU guest.
+  The raw /tmp/sms.log file has not been copied to the host.
+  The warning category counts total 152, while the reported
+  WARNING line count is 151. Verify this discrepancy before
+  treating the statistics as final.

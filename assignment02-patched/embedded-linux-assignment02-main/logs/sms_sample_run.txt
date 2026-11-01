@@ -1,0 +1,526 @@
+==============================================
+ Assignment 02 - Embedded Linux
+ Student: Hoang Trung Hai
+ Student ID: SS204779
+==============================================
+[INFO] Kernel:    /home/blackwater/embedded_lab1/kernel/linux-5.15/arch/arm/boot/zImage
+[INFO] DTB:       /home/blackwater/embedded_lab1/kernel/linux-5.15/arch/arm/boot/dts/vexpress-v2p-ca9.dtb
+[INFO] Initramfs: /home/blackwater/SS204779_HoangTrungHai_Asgn02/output/initramfs_asgn2_app.cpio.gz
+[INFO] Starting QEMU...
+[INFO] Exit QEMU with Ctrl+A, then X.
+==============================================
+Booting Linux on physical CPU 0x0
+Linux version 5.15.0 (blackwater@blackwater-ASUS-TUF-Gaming-F15-FX507ZC4-FX507ZC4) (arm-linux-gnueabihf-gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, GNU ld (GNU Binutils for Ubuntu) 2.46) #5 SMP Tue Oct 13 14:19:58 +07 2026
+CPU: ARMv7 Processor [410fc090] revision 0 (ARMv7), cr=10c5387d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+OF: fdt: Machine model: V2P-CA9
+Memory policy: Data cache writealloc
+Reserved memory: created DMA memory pool at 0x4c000000, size 8 MiB
+OF: reserved mem: initialized node vram@4c000000, compatible id shared-dma-pool
+cma: Reserved 16 MiB at 0x7f000000
+Zone ranges:
+  Normal   [mem 0x0000000060000000-0x000000007fffffff]
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000060000000-0x000000007fffffff]
+Initmem setup node 0 [mem 0x0000000060000000-0x000000007fffffff]
+percpu: Embedded 15 pages/cpu s30156 r8192 d23092 u61440
+Built 1 zonelists, mobility grouping on.  Total pages: 130048
+Kernel command line: console=ttyAMA0,115200 rdinit=/init mem=512M
+printk: log_buf_len individual max cpu contribution: 4096 bytes
+printk: log_buf_len total cpu_extra contributions: 12288 bytes
+printk: log_buf_len min size: 16384 bytes
+printk: log_buf_len: 32768 bytes
+printk: early log buf free: 14956(91%)
+Dentry cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+Inode-cache hash table entries: 32768 (order: 5, 131072 bytes, linear)
+mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+Memory: 487960K/524288K available (8192K kernel code, 594K rwdata, 1788K rodata, 1024K init, 150K bss, 19944K reserved, 16384K cma-reserved)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+trace event string verifier disabled
+rcu: Hierarchical RCU implementation.
+rcu: 	RCU event tracing is enabled.
+rcu: 	RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=4.
+rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+L2C: platform modifies aux control register: 0x02020000 -> 0x02420000
+L2C: DT/platform modifies aux control register: 0x02020000 -> 0x02420000
+L2C-310 enabling early BRESP for Cortex-A9
+L2C-310 full line of zeros enabled for Cortex-A9
+L2C-310 dynamic clock gating disabled, standby mode disabled
+L2C-310 cache controller enabled, 8 ways, 128 kB
+L2C-310: CACHE_ID 0x410000c8, AUX_CTRL 0x46420001
+random: get_random_bytes called from start_kernel+0x4f8/0x6ac with crng_init=0
+sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 89478484971ns
+clocksource: arm,sp804: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275 ns
+Failed to initialize '/bus@40000000/motherboard-bus@40000000/iofpga@7,00000000/timer@12000': -22
+smp_twd: clock not found -2
+Console: colour dummy device 80x30
+Calibrating local timer... 95.91MHz.
+Calibrating delay loop... 1987.37 BogoMIPS (lpj=9936896)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+CPU: Testing write buffer coherency: ok
+CPU0: Spectre v2: using BPIALL workaround
+CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+Setting up static identity map for 0x60100000 - 0x60100060
+rcu: Hierarchical SRCU implementation.
+smp: Bringing up secondary CPUs ...
+CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+CPU1: Spectre v2: using BPIALL workaround
+CPU2: failed to boot: -38
+CPU3: failed to boot: -38
+smp: Brought up 1 node, 2 CPUs
+SMP: Total of 2 processors activated (3955.09 BogoMIPS).
+CPU: All CPU(s) started in SVC mode.
+devtmpfs: initialized
+VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 0
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+NET: Registered PF_NETLINK/PF_ROUTE protocol family
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+cpuidle: using governor ladder
+hw-breakpoint: debug architecture 0x4 unsupported.
+Serial: AMBA PL011 UART driver
+irq: type mismatch, failed to map hwirq-75 for interrupt-controller@1e001000!
+SCSI subsystem initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+Advanced Linux Sound Architecture Driver Initialized.
+clocksource: Switched to clocksource arm,sp804
+NET: Registered PF_INET protocol family
+IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 6144 bytes, linear)
+TCP established hash table entries: 4096 (order: 2, 16384 bytes, linear)
+TCP bind hash table entries: 4096 (order: 3, 32768 bytes, linear)
+TCP: Hash tables configured (established 4096 bind 4096)
+UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
+UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)
+NET: Registered PF_UNIX/PF_LOCAL protocol family
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+Unpacking initramfs...
+hw perfevents: enabled with armv7_cortex_a9 PMU driver, 7 counters available
+workingset: timestamp_bits=30 max_order=17 bucket_order=0
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+9p: Installing v9fs 9p2000 file system support
+io scheduler mq-deadline registered
+io scheduler kyber registered
+sii902x 0-0060: supply iovcc not found, using dummy regulator
+sii902x 0-0060: supply cvcc12 not found, using dummy regulator
+Freeing initrd memory: 2920K
+physmap-flash 40000000.flash: physmap platform flash device: [mem 0x40000000-0x43ffffff]
+40000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+Intel/Sharp Extended Query Table at 0x0031
+Using buffer write method
+physmap-flash 40000000.flash: physmap platform flash device: [mem 0x44000000-0x47ffffff]
+40000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+Intel/Sharp Extended Query Table at 0x0031
+Using buffer write method
+Concatenating MTD devices:
+(0): "40000000.flash"
+(1): "40000000.flash"
+into device "40000000.flash"
+physmap-flash 48000000.psram: physmap platform flash device: [mem 0x48000000-0x49ffffff]
+libphy: Fixed MDIO Bus: probed
+libphy: smsc911x-mdio: probed
+smsc911x 4e000000.ethernet eth0: MAC Address: 52:54:00:12:34:56
+isp1760 4f000000.usb: isp1760 bus width: 32, oc: digital
+isp1760 4f000000.usb: NXP ISP1760 USB Host Controller
+isp1760 4f000000.usb: new USB bus registered, assigned bus number 1
+isp1760 4f000000.usb: Scratch test failed. 0x00000000
+isp1760 4f000000.usb: can't setup: -19
+isp1760 4f000000.usb: USB bus 1 deregistered
+usbcore: registered new interface driver usb-storage
+ledtrig-cpu: registered to indicate activity on CPUs
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+NET: Registered PF_PACKET protocol family
+9pnet: Installing 9P2000 support
+Registering SWP/SWPB emulation handler
+aaci-pl041 10004000.aaci: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 32
+aaci-pl041 10004000.aaci: FIFO 512 entries
+mmci-pl18x 10005000.mmci: Got CD GPIO
+mmci-pl18x 10005000.mmci: Got WP GPIO
+mmci-pl18x 10005000.mmci: mmc0: PL181 manf 41 rev0 at 0x10005000 irq 33,34 (pio)
+10009000.uart: ttyAMA0 at MMIO 0x10009000 (irq = 37, base_baud = 0) is a PL011 rev1
+printk: console [ttyAMA0] enabled
+1000a000.uart: ttyAMA1 at MMIO 0x1000a000 (irq = 38, base_baud = 0) is a PL011 rev1
+1000b000.uart: ttyAMA2 at MMIO 0x1000b000 (irq = 39, base_baud = 0) is a PL011 rev1
+1000c000.uart: ttyAMA3 at MMIO 0x1000c000 (irq = 40, base_baud = 0) is a PL011 rev1
+rtc-pl031 10017000.rtc: registered as rtc0
+rtc-pl031 10017000.rtc: setting system clock to 2026-10-16T12:59:03 UTC (1792155543)
+amba 10020000.clcd: Fixing up cyclic dependency with 0-0039
+drm-clcd-pl111 10020000.clcd: DVI muxed to daughterboard 1 (core tile) CLCD
+drm-clcd-pl111 10020000.clcd: initializing Versatile Express PL111
+sii902x 0-0039: supply iovcc not found, using dummy regulator
+sii902x 0-0039: supply cvcc12 not found, using dummy regulator
+i2c i2c-0: Added multiplexed i2c bus 2
+drm-clcd-pl111 1001f000.clcd: assigned reserved memory node vram@4c000000
+drm-clcd-pl111 1001f000.clcd: using device-specific reserved memory
+drm-clcd-pl111 1001f000.clcd: core tile graphics present
+drm-clcd-pl111 1001f000.clcd: this device will be deactivated
+drm-clcd-pl111 1001f000.clcd: Versatile Express init failed - -19
+drm-clcd-pl111 10020000.clcd: DVI muxed to daughterboard 1 (core tile) CLCD
+drm-clcd-pl111 10020000.clcd: initializing Versatile Express PL111
+drm-clcd-pl111 10020000.clcd: found bridge on endpoint 0
+drm-clcd-pl111 10020000.clcd: Using non-panel bridge
+[drm] Initialized pl111 1.0.0 20170317 for 10020000.clcd on minor 0
+input: AT Raw Set 2 keyboard as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10006000.kmi/serio0/input/input0
+Console: switching to colour frame buffer device 128x48
+drm-clcd-pl111 10020000.clcd: [drm] fb0: pl111 frame buffer device
+ALSA device list:
+  #0: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 32
+Freeing unused kernel image (initmem) memory: 1024K
+Run /init as init process
+[SMS] Loading sensor driver...
+sms_sensor_driver: loading out-of-tree module taints kernel.
+sms_sensor_driver: loaded successfully
+sms_sensor_driver: device=sms_sensor, major=248, minor=0
+sms_sensor_driver: default interval=100 ms
+sms_sensor_driver: proc interface=/sms_stats
+[SMS] insmod exit code: 0
+input: ImExPS/2 Generic Explorer Mouse as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10007000.kmi/serio1/input/input2
+mount: mounting none on /sys failed: Device or resource busy
+Boot completed! Welcome to Embedded Linux Lab 1
+
+Please press Enter to activate this console. random: fast init done
+
+/ # /usr/bin/sms_app -i 500 -d /dev/sms_sensor
+========================================
+ Sensor Monitoring System
+ Student: Hoang Trung Hai
+ Student ID: SS204779
+ Device: /dev/sms_sensor
+ Sampling interval: 500 ms
+========================================
+[Logger] Writing logs to /tmp/sms.log
+[Main] Sensor Thread uses SCHED_FIFO priority 50
+[Main] All threads started. Press Ctrl+C to stop.
+sms_sensor_driver: interval configured to 500 ms
+[Sensor] Opened /dev/sms_sensor; interval=500 ms
+[Alert] Thread started
+[Processor] Started; rolling window=10 samples
+[Sensor] t=20319 ms, temperature=16.1 C, humidity=70.2%
+[Processor] timestamp=20319 ms, T=16.1 C, H=70.2%, avg_T=16.1 C, avg_H=70.2%, delta_T=0.0 C
+[Sensor] t=20828 ms, temperature=31.4 C, humidity=66.1%
+[Processor] timestamp=20828 ms, T=31.4 C, H=66.1%, avg_T=23.7 C, avg_H=68.1%, delta_T=15.3 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=20828 ms | temperature=31.4 C | humidity=66.1% | delta_T=15.3 C
+[Sensor] t=21337 ms, temperature=43.5 C, humidity=69.9%
+[Processor] timestamp=21337 ms, T=43.5 C, H=69.9%, avg_T=30.3 C, avg_H=68.7%, delta_T=12.1 C
+[Alert] HIGH TEMPERATURE | timestamp=21337 ms | temperature=43.5 C | humidity=69.9% | delta_T=12.1 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=21337 ms | temperature=43.5 C | humidity=69.9% | delta_T=12.1 C
+[Sensor] t=21844 ms, temperature=43.2 C, humidity=81.7%
+[Processor] timestamp=21844 ms, T=43.2 C, H=81.7%, avg_T=33.5 C, avg_H=71.9%, delta_T=0.3 C
+[Alert] HIGH TEMPERATURE | timestamp=21844 ms | temperature=43.2 C | humidity=81.7% | delta_T=0.3 C
+[Alert] HIGH HUMIDITY | timestamp=21844 ms | temperature=43.2 C | humidity=81.7% | delta_T=0.3 C
+[Sensor] t=22353 ms, temperature=21.0 C, humidity=31.3%
+[Processor] timestamp=22353 ms, T=21.0 C, H=31.3%, avg_T=31.0 C, avg_H=63.8%, delta_T=-22.2 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=22353 ms | temperature=21.0 C | humidity=31.3% | delta_T=-22.2 C
+[Sensor] t=22861 ms, temperature=33.9 C, humidity=63.0%
+[Processor] timestamp=22861 ms, T=33.9 C, H=63.0%, avg_T=31.5 C, avg_H=63.7%, delta_T=12.9 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=22861 ms | temperature=33.9 C | humidity=63.0% | delta_T=12.9 C
+[Sensor] t=23370 ms, temperature=23.0 C, humidity=51.1%
+[Processor] timestamp=23370 ms, T=23.0 C, H=51.1%, avg_T=30.3 C, avg_H=61.9%, delta_T=-10.9 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=23370 ms | temperature=23.0 C | humidity=51.1% | delta_T=-10.9 C
+[Sensor] t=23878 ms, temperature=28.4 C, humidity=34.5%
+[Processor] timestamp=23878 ms, T=28.4 C, H=34.5%, avg_T=30.0 C, avg_H=58.4%, delta_T=5.4 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=23878 ms | temperature=28.4 C | humidity=34.5% | delta_T=5.4 C
+[Sensor] t=24386 ms, temperature=24.9 C, humidity=79.7%
+[Processor] timestamp=24386 ms, T=24.9 C, H=79.7%, avg_T=29.4 C, avg_H=60.8%, delta_T=-3.5 C
+[Sensor] t=24895 ms, temperature=34.9 C, humidity=49.5%
+[Processor] timestamp=24895 ms, T=34.9 C, H=49.5%, avg_T=30.0 C, avg_H=59.7%, delta_T=10.0 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=24895 ms | temperature=34.9 C | humidity=49.5% | delta_T=10.0 C
+[Sensor] t=25403 ms, temperature=43.1 C, humidity=62.3%
+[Processor] timestamp=25403 ms, T=43.1 C, H=62.3%, avg_T=32.7 C, avg_H=58.9%, delta_T=8.2 C
+[Alert] HIGH TEMPERATURE | timestamp=25403 ms | temperature=43.1 C | humidity=62.3% | delta_T=8.2 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=25403 ms | temperature=43.1 C | humidity=62.3% | delta_T=8.2 C
+[Sensor] t=25911 ms, temperature=38.4 C, humidity=32.9%
+[Processor] timestamp=25911 ms, T=38.4 C, H=32.9%, avg_T=33.4 C, avg_H=55.5%, delta_T=-4.7 C
+[Sensor] t=26420 ms, temperature=42.2 C, humidity=41.2%
+[Processor] timestamp=26420 ms, T=42.2 C, H=41.2%, avg_T=33.3 C, avg_H=52.7%, delta_T=3.8 C
+[Alert] HIGH TEMPERATURE | timestamp=26420 ms | temperature=42.2 C | humidity=41.2% | delta_T=3.8 C
+[Sensor] t=26928 ms, temperature=21.1 C, humidity=84.2%
+[Processor] timestamp=26928 ms, T=21.1 C, H=84.2%, avg_T=31.0 C, avg_H=52.9%, delta_T=-21.1 C
+[Alert] HIGH HUMIDITY | timestamp=26928 ms | temperature=21.1 C | humidity=84.2% | delta_T=-21.1 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=26928 ms | temperature=21.1 C | humidity=84.2% | delta_T=-21.1 C
+[Sensor] t=27436 ms, temperature=40.7 C, humidity=33.0%
+[Processor] timestamp=27436 ms, T=40.7 C, H=33.0%, avg_T=33.0 C, avg_H=53.1%, delta_T=19.6 C
+[Alert] HIGH TEMPERATURE | timestamp=27436 ms | temperature=40.7 C | humidity=33.0% | delta_T=19.6 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=27436 ms | temperature=40.7 C | humidity=33.0% | delta_T=19.6 C
+[Sensor] t=27945 ms, temperature=31.9 C, humidity=77.6%
+[Processor] timestamp=27945 ms, T=31.9 C, H=77.6%, avg_T=32.8 C, avg_H=54.6%, delta_T=-8.8 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=27945 ms | temperature=31.9 C | humidity=77.6% | delta_T=-8.8 C
+[Sensor] t=28453 ms, temperature=28.3 C, humidity=39.2%
+[Processor] timestamp=28453 ms, T=28.3 C, H=39.2%, avg_T=33.3 C, avg_H=53.4%, delta_T=-3.6 C
+[Sensor] t=28961 ms, temperature=33.9 C, humidity=46.4%
+[Processor] timestamp=28961 ms, T=33.9 C, H=46.4%, avg_T=33.9 C, avg_H=54.6%, delta_T=5.6 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=28961 ms | temperature=33.9 C | humidity=46.4% | delta_T=5.6 C
+[Sensor] t=29470 ms, temperature=26.0 C, humidity=86.0%
+[Processor] timestamp=29470 ms, T=26.0 C, H=86.0%, avg_T=34.0 C, avg_H=55.2%, delta_T=-7.9 C
+[Alert] HIGH HUMIDITY | timestamp=29470 ms | temperature=26.0 C | humidity=86.0% | delta_T=-7.9 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=29470 ms | temperature=26.0 C | humidity=86.0% | delta_T=-7.9 C
+[Sensor] t=29978 ms, temperature=39.4 C, humidity=68.2%
+[Processor] timestamp=29978 ms, T=39.4 C, H=68.2%, avg_T=34.5 C, avg_H=57.1%, delta_T=13.4 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=29978 ms | temperature=39.4 C | humidity=68.2% | delta_T=13.4 C
+[Sensor] t=30486 ms, temperature=20.5 C, humidity=66.5%
+[Processor] timestamp=30486 ms, T=20.5 C, H=66.5%, avg_T=32.2 C, avg_H=57.5%, delta_T=-18.9 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=30486 ms | temperature=20.5 C | humidity=66.5% | delta_T=-18.9 C
+[Sensor] t=30995 ms, temperature=30.3 C, humidity=52.3%
+[Processor] timestamp=30995 ms, T=30.3 C, H=52.3%, avg_T=31.4 C, avg_H=59.4%, delta_T=9.8 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=30995 ms | temperature=30.3 C | humidity=52.3% | delta_T=9.8 C
+[Sensor] t=31503 ms, temperature=21.3 C, humidity=60.8%
+[Processor] timestamp=31503 ms, T=21.3 C, H=60.8%, avg_T=29.3 C, avg_H=61.4%, delta_T=-9.0 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=31503 ms | temperature=21.3 C | humidity=60.8% | delta_T=-9.0 C
+[Sensor] t=32011 ms, temperature=15.4 C, humidity=54.1%
+[Processor] timestamp=32011 ms, T=15.4 C, H=54.1%, avg_T=28.7 C, avg_H=58.4%, delta_T=-5.9 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=32011 ms | temperature=15.4 C | humidity=54.1% | delta_T=-5.9 C
+[Sensor] t=32520 ms, temperature=38.6 C, humidity=76.8%
+[Processor] timestamp=32520 ms, T=38.6 C, H=76.8%, avg_T=28.5 C, avg_H=62.7%, delta_T=23.2 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=32520 ms | temperature=38.6 C | humidity=76.8% | delta_T=23.2 C
+[Sensor] t=33028 ms, temperature=42.7 C, humidity=50.3%
+[Processor] timestamp=33028 ms, T=42.7 C, H=50.3%, avg_T=29.6 C, avg_H=60.0%, delta_T=4.1 C
+[Alert] HIGH TEMPERATURE | timestamp=33028 ms | temperature=42.7 C | humidity=50.3% | delta_T=4.1 C
+[Sensor] t=33536 ms, temperature=17.9 C, humidity=89.9%
+[Processor] timestamp=33536 ms, T=17.9 C, H=89.9%, avg_T=28.6 C, avg_H=65.1%, delta_T=-24.8 C
+[Alert] HIGH HUMIDITY | timestamp=33536 ms | temperature=17.9 C | humidity=89.9% | delta_T=-24.8 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=33536 ms | temperature=17.9 C | humidity=89.9% | delta_T=-24.8 C
+[Sensor] t=34045 ms, temperature=34.0 C, humidity=79.2%
+[Processor] timestamp=34045 ms, T=34.0 C, H=79.2%, avg_T=28.6 C, avg_H=68.4%, delta_T=16.1 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=34045 ms | temperature=34.0 C | humidity=79.2% | delta_T=16.1 C
+[Sensor] t=34553 ms, temperature=42.3 C, humidity=56.3%
+[Processor] timestamp=34553 ms, T=42.3 C, H=56.3%, avg_T=30.2 C, avg_H=65.4%, delta_T=8.3 C
+[Alert] HIGH TEMPERATURE | timestamp=34553 ms | temperature=42.3 C | humidity=56.3% | delta_T=8.3 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=34553 ms | temperature=42.3 C | humidity=56.3% | delta_T=8.3 C
+[Sensor] t=35061 ms, temperature=26.5 C, humidity=53.9%
+[Processor] timestamp=35061 ms, T=26.5 C, H=53.9%, avg_T=28.9 C, avg_H=64.0%, delta_T=-15.8 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=35061 ms | temperature=26.5 C | humidity=53.9% | delta_T=-15.8 C
+[Sensor] t=35570 ms, temperature=28.9 C, humidity=34.0%
+[Processor] timestamp=35570 ms, T=28.9 C, H=34.0%, avg_T=29.7 C, avg_H=60.7%, delta_T=2.4 C
+[Sensor] t=36078 ms, temperature=31.3 C, humidity=32.4%
+[Processor] timestamp=36078 ms, T=31.3 C, H=32.4%, avg_T=29.8 C, avg_H=58.7%, delta_T=2.4 C
+[Sensor] t=36586 ms, temperature=31.1 C, humidity=45.7%
+[Processor] timestamp=36586 ms, T=31.1 C, H=45.7%, avg_T=30.8 C, avg_H=57.2%, delta_T=0.2 C
+[Sensor] t=37095 ms, temperature=35.0 C, humidity=58.4%
+[Processor] timestamp=37095 ms, T=35.0 C, H=58.4%, avg_T=32.8 C, avg_H=57.6%, delta_T=3.9 C
+[Sensor] t=37602 ms, temperature=19.0 C, humidity=76.0%
+[Processor] timestamp=37602 ms, T=19.0 C, H=76.0%, avg_T=30.8 C, avg_H=57.6%, delta_T=-16.0 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=37602 ms | temperature=19.0 C | humidity=76.0% | delta_T=-16.0 C
+[Sensor] t=38111 ms, temperature=26.8 C, humidity=48.7%
+[Processor] timestamp=38111 ms, T=26.8 C, H=48.7%, avg_T=29.2 C, avg_H=57.4%, delta_T=7.8 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=38111 ms | temperature=26.8 C | humidity=48.7% | delta_T=7.8 C
+[Sensor] t=38620 ms, temperature=36.0 C, humidity=55.9%
+[Processor] timestamp=38620 ms, T=36.0 C, H=55.9%, avg_T=31.0 C, avg_H=54.0%, delta_T=9.2 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=38620 ms | temperature=36.0 C | humidity=55.9% | delta_T=9.2 C
+[Sensor] t=39128 ms, temperature=30.1 C, humidity=44.6%
+[Processor] timestamp=39128 ms, T=30.1 C, H=44.6%, avg_T=30.7 C, avg_H=50.5%, delta_T=-5.9 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=39128 ms | temperature=30.1 C | humidity=44.6% | delta_T=-5.9 C
+[Sensor] t=39637 ms, temperature=41.9 C, humidity=44.0%
+[Processor] timestamp=39637 ms, T=41.9 C, H=44.0%, avg_T=30.6 C, avg_H=49.3%, delta_T=11.8 C
+[Alert] HIGH TEMPERATURE | timestamp=39637 ms | temperature=41.9 C | humidity=44.0% | delta_T=11.8 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=39637 ms | temperature=41.9 C | humidity=44.0% | delta_T=11.8 C
+[Sensor] t=40145 ms, temperature=17.9 C, humidity=62.1%
+[Processor] timestamp=40145 ms, T=17.9 C, H=62.1%, avg_T=29.8 C, avg_H=50.1%, delta_T=-24.0 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=40145 ms | temperature=17.9 C | humidity=62.1% | delta_T=-24.0 C
+[Sensor] t=40653 ms, temperature=42.2 C, humidity=67.0%
+[Processor] timestamp=40653 ms, T=42.2 C, H=67.0%, avg_T=31.1 C, avg_H=53.4%, delta_T=24.3 C
+[Alert] HIGH TEMPERATURE | timestamp=40653 ms | temperature=42.2 C | humidity=67.0% | delta_T=24.3 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=40653 ms | temperature=42.2 C | humidity=67.0% | delta_T=24.3 C
+[Sensor] t=41162 ms, temperature=44.1 C, humidity=57.8%
+[Processor] timestamp=41162 ms, T=44.1 C, H=57.8%, avg_T=32.4 C, avg_H=56.0%, delta_T=1.9 C
+[Alert] HIGH TEMPERATURE | timestamp=41162 ms | temperature=44.1 C | humidity=57.8% | delta_T=1.9 C
+[Sensor] t=41670 ms, temperature=23.8 C, humidity=36.3%
+[Processor] timestamp=41670 ms, T=23.8 C, H=36.3%, avg_T=31.6 C, avg_H=55.0%, delta_T=-20.3 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=41670 ms | temperature=23.8 C | humidity=36.3% | delta_T=-20.3 C
+[Sensor] t=42178 ms, temperature=39.0 C, humidity=54.2%
+[Processor] timestamp=42178 ms, T=39.0 C, H=54.2%, avg_T=32.0 C, avg_H=54.6%, delta_T=15.2 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=42178 ms | temperature=39.0 C | humidity=54.2% | delta_T=15.2 C
+[Sensor] t=42687 ms, temperature=17.4 C, humidity=57.6%
+[Processor] timestamp=42687 ms, T=17.4 C, H=57.6%, avg_T=31.9 C, avg_H=52.8%, delta_T=-21.6 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=42687 ms | temperature=17.4 C | humidity=57.6% | delta_T=-21.6 C
+[Sensor] t=43195 ms, temperature=34.2 C, humidity=37.3%
+[Processor] timestamp=43195 ms, T=34.2 C, H=37.3%, avg_T=32.6 C, avg_H=51.6%, delta_T=16.8 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=43195 ms | temperature=34.2 C | humidity=37.3% | delta_T=16.8 C
+[Sensor] t=43703 ms, temperature=29.1 C, humidity=42.1%
+[Processor] timestamp=43703 ms, T=29.1 C, H=42.1%, avg_T=31.9 C, avg_H=50.3%, delta_T=-5.1 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=43703 ms | temperature=29.1 C | humidity=42.1% | delta_T=-5.1 C
+[Sensor] t=44212 ms, temperature=25.7 C, humidity=42.5%
+[Processor] timestamp=44212 ms, T=25.7 C, H=42.5%, avg_T=31.5 C, avg_H=50.0%, delta_T=-3.4 C
+[Sensor] t=44720 ms, temperature=43.5 C, humidity=48.4%
+[Processor] timestamp=44720 ms, T=43.5 C, H=48.4%, avg_T=31.6 C, avg_H=50.5%, delta_T=17.8 C
+[Alert] HIGH TEMPERATURE | timestamp=44720 ms | temperature=43.5 C | humidity=48.4% | delta_T=17.8 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=44720 ms | temperature=43.5 C | humidity=48.4% | delta_T=17.8 C
+[Sensor] t=45228 ms, temperature=29.7 C, humidity=62.5%
+[Processor] timestamp=45228 ms, T=29.7 C, H=62.5%, avg_T=32.8 C, avg_H=50.5%, delta_T=-13.8 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=45228 ms | temperature=29.7 C | humidity=62.5% | delta_T=-13.8 C
+[Sensor] t=45736 ms, temperature=41.7 C, humidity=86.3%
+[Processor] timestamp=45736 ms, T=41.7 C, H=86.3%, avg_T=32.8 C, avg_H=52.5%, delta_T=12.0 C
+[Alert] HIGH TEMPERATURE | timestamp=45736 ms | temperature=41.7 C | humidity=86.3% | delta_T=12.0 C
+[Alert] HIGH HUMIDITY | timestamp=45736 ms | temperature=41.7 C | humidity=86.3% | delta_T=12.0 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=45736 ms | temperature=41.7 C | humidity=86.3% | delta_T=12.0 C
+[Sensor] t=46245 ms, temperature=28.6 C, humidity=30.1%
+[Processor] timestamp=46245 ms, T=28.6 C, H=30.1%, avg_T=31.2 C, avg_H=49.7%, delta_T=-13.1 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=46245 ms | temperature=28.6 C | humidity=30.1% | delta_T=-13.1 C
+[Sensor] t=46753 ms, temperature=22.3 C, humidity=61.3%
+[Processor] timestamp=46753 ms, T=22.3 C, H=61.3%, avg_T=31.1 C, avg_H=52.2%, delta_T=-6.3 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=46753 ms | temperature=22.3 C | humidity=61.3% | delta_T=-6.3 C
+[Sensor] t=47262 ms, temperature=23.1 C, humidity=53.6%
+[Processor] timestamp=47262 ms, T=23.1 C, H=53.6%, avg_T=29.5 C, avg_H=52.1%, delta_T=0.8 C
+[Sensor] t=47770 ms, temperature=40.0 C, humidity=84.4%
+[Processor] timestamp=47770 ms, T=40.0 C, H=84.4%, avg_T=31.7 C, avg_H=54.8%, delta_T=16.9 C
+[Alert] HIGH HUMIDITY | timestamp=47770 ms | temperature=40.0 C | humidity=84.4% | delta_T=16.9 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=47770 ms | temperature=40.0 C | humidity=84.4% | delta_T=16.9 C
+[Sensor] t=48278 ms, temperature=27.5 C, humidity=58.1%
+[Processor] timestamp=48278 ms, T=27.5 C, H=58.1%, avg_T=31.1 C, avg_H=56.9%, delta_T=-12.5 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=48278 ms | temperature=27.5 C | humidity=58.1% | delta_T=-12.5 C
+[Sensor] t=48786 ms, temperature=15.1 C, humidity=87.8%
+[Processor] timestamp=48786 ms, T=15.1 C, H=87.8%, avg_T=29.7 C, avg_H=61.5%, delta_T=-12.4 C
+[Alert] HIGH HUMIDITY | timestamp=48786 ms | temperature=15.1 C | humidity=87.8% | delta_T=-12.4 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=48786 ms | temperature=15.1 C | humidity=87.8% | delta_T=-12.4 C
+[Sensor] t=49295 ms, temperature=19.7 C, humidity=87.1%
+[Processor] timestamp=49295 ms, T=19.7 C, H=87.1%, avg_T=29.1 C, avg_H=65.9%, delta_T=4.6 C
+[Alert] HIGH HUMIDITY | timestamp=49295 ms | temperature=19.7 C | humidity=87.1% | delta_T=4.6 C
+[Sensor] t=49803 ms, temperature=20.8 C, humidity=36.0%
+[Processor] timestamp=49803 ms, T=20.8 C, H=36.0%, avg_T=26.8 C, avg_H=64.7%, delta_T=1.1 C
+[Sensor] t=50312 ms, temperature=29.0 C, humidity=48.3%
+[Processor] timestamp=50312 ms, T=29.0 C, H=48.3%, avg_T=26.7 C, avg_H=63.3%, delta_T=8.2 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=50312 ms | temperature=29.0 C | humidity=48.3% | delta_T=8.2 C
+[Sensor] t=50820 ms, temperature=16.2 C, humidity=73.3%
+[Processor] timestamp=50820 ms, T=16.2 C, H=73.3%, avg_T=24.2 C, avg_H=62.0%, delta_T=-12.8 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=50820 ms | temperature=16.2 C | humidity=73.3% | delta_T=-12.8 C
+[Sensor] t=51328 ms, temperature=31.0 C, humidity=70.5%
+[Processor] timestamp=51328 ms, T=31.0 C, H=70.5%, avg_T=24.4 C, avg_H=66.0%, delta_T=14.8 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=51328 ms | temperature=31.0 C | humidity=70.5% | delta_T=14.8 C
+[Sensor] t=51837 ms, temperature=23.1 C, humidity=78.5%
+[Processor] timestamp=51837 ms, T=23.1 C, H=78.5%, avg_T=24.5 C, avg_H=67.7%, delta_T=-7.9 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=51837 ms | temperature=23.1 C | humidity=78.5% | delta_T=-7.9 C
+[Sensor] t=52345 ms, temperature=28.0 C, humidity=47.5%
+[Processor] timestamp=52345 ms, T=28.0 C, H=47.5%, avg_T=25.0 C, avg_H=67.1%, delta_T=4.9 C
+[Sensor] t=52853 ms, temperature=34.3 C, humidity=89.8%
+[Processor] timestamp=52853 ms, T=34.3 C, H=89.8%, avg_T=24.4 C, avg_H=67.6%, delta_T=6.3 C
+[Alert] HIGH HUMIDITY | timestamp=52853 ms | temperature=34.3 C | humidity=89.8% | delta_T=6.3 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=52853 ms | temperature=34.3 C | humidity=89.8% | delta_T=6.3 C
+[Sensor] t=53361 ms, temperature=15.7 C, humidity=58.1%
+[Processor] timestamp=53361 ms, T=15.7 C, H=58.1%, avg_T=23.2 C, avg_H=67.6%, delta_T=-18.6 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=53361 ms | temperature=15.7 C | humidity=58.1% | delta_T=-18.6 C
+[Sensor] t=53870 ms, temperature=21.8 C, humidity=86.4%
+[Processor] timestamp=53870 ms, T=21.8 C, H=86.4%, avg_T=23.9 C, avg_H=67.5%, delta_T=6.1 C
+[Alert] HIGH HUMIDITY | timestamp=53870 ms | temperature=21.8 C | humidity=86.4% | delta_T=6.1 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=53870 ms | temperature=21.8 C | humidity=86.4% | delta_T=6.1 C
+[Sensor] t=54378 ms, temperature=31.6 C, humidity=65.1%
+[Processor] timestamp=54378 ms, T=31.6 C, H=65.1%, avg_T=25.1 C, avg_H=65.3%, delta_T=9.8 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=54378 ms | temperature=31.6 C | humidity=65.1% | delta_T=9.8 C
+[Sensor] t=54887 ms, temperature=22.8 C, humidity=85.3%
+[Processor] timestamp=54887 ms, T=22.8 C, H=85.3%, avg_T=25.3 C, avg_H=70.2%, delta_T=-8.8 C
+[Alert] HIGH HUMIDITY | timestamp=54887 ms | temperature=22.8 C | humidity=85.3% | delta_T=-8.8 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=54887 ms | temperature=22.8 C | humidity=85.3% | delta_T=-8.8 C
+[Sensor] t=55395 ms, temperature=31.8 C, humidity=64.5%
+[Processor] timestamp=55395 ms, T=31.8 C, H=64.5%, avg_T=25.6 C, avg_H=71.9%, delta_T=9.0 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=55395 ms | temperature=31.8 C | humidity=64.5% | delta_T=9.0 C
+[Sensor] t=55903 ms, temperature=34.1 C, humidity=36.3%
+[Processor] timestamp=55903 ms, T=34.1 C, H=36.3%, avg_T=27.4 C, avg_H=68.2%, delta_T=2.3 C
+[Sensor] t=56411 ms, temperature=21.4 C, humidity=62.5%
+[Processor] timestamp=56411 ms, T=21.4 C, H=62.5%, avg_T=26.4 C, avg_H=67.4%, delta_T=-12.7 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=56411 ms | temperature=21.4 C | humidity=62.5% | delta_T=-12.7 C
+[Sensor] t=56920 ms, temperature=19.4 C, humidity=82.8%
+[Processor] timestamp=56920 ms, T=19.4 C, H=82.8%, avg_T=26.0 C, avg_H=67.8%, delta_T=-2.0 C
+[Alert] HIGH HUMIDITY | timestamp=56920 ms | temperature=19.4 C | humidity=82.8% | delta_T=-2.0 C
+[Sensor] t=57428 ms, temperature=29.6 C, humidity=60.4%
+[Processor] timestamp=57428 ms, T=29.6 C, H=60.4%, avg_T=26.2 C, avg_H=69.1%, delta_T=10.2 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=57428 ms | temperature=29.6 C | humidity=60.4% | delta_T=10.2 C
+[Sensor] t=57936 ms, temperature=34.1 C, humidity=55.2%
+[Processor] timestamp=57936 ms, T=34.1 C, H=55.2%, avg_T=26.2 C, avg_H=65.6%, delta_T=4.5 C
+[Sensor] t=58445 ms, temperature=32.8 C, humidity=39.8%
+[Processor] timestamp=58445 ms, T=32.8 C, H=39.8%, avg_T=27.9 C, avg_H=63.8%, delta_T=-1.3 C
+[Sensor] t=58953 ms, temperature=43.3 C, humidity=80.7%
+[Processor] timestamp=58953 ms, T=43.3 C, H=80.7%, avg_T=30.0 C, avg_H=63.2%, delta_T=10.5 C
+[Alert] HIGH TEMPERATURE | timestamp=58953 ms | temperature=43.3 C | humidity=80.7% | delta_T=10.5 C
+[Alert] HIGH HUMIDITY | timestamp=58953 ms | temperature=43.3 C | humidity=80.7% | delta_T=10.5 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=58953 ms | temperature=43.3 C | humidity=80.7% | delta_T=10.5 C
+[Sensor] t=59461 ms, temperature=21.4 C, humidity=75.2%
+[Processor] timestamp=59461 ms, T=21.4 C, H=75.2%, avg_T=29.0 C, avg_H=64.2%, delta_T=-21.9 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=59461 ms | temperature=21.4 C | humidity=75.2% | delta_T=-21.9 C
+[Sensor] t=59970 ms, temperature=20.6 C, humidity=81.6%
+[Processor] timestamp=59970 ms, T=20.6 C, H=81.6%, avg_T=28.8 C, avg_H=63.9%, delta_T=0.8 C
+[Alert] HIGH HUMIDITY | timestamp=59970 ms | temperature=20.6 C | humidity=81.6% | delta_T=0.8 C
+[Sensor] t=60478 ms, temperature=30.0 C, humidity=41.7%
+[Processor] timestamp=60478 ms, T=30.0 C, H=41.7%, avg_T=28.6 C, avg_H=61.6%, delta_T=9.4 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=60478 ms | temperature=30.0 C | humidity=41.7% | delta_T=9.4 C
+[Sensor] t=60987 ms, temperature=22.3 C, humidity=80.4%
+[Processor] timestamp=60987 ms, T=22.3 C, H=80.4%, avg_T=27.4 C, avg_H=66.0%, delta_T=-7.7 C
+[Alert] HIGH HUMIDITY | timestamp=60987 ms | temperature=22.3 C | humidity=80.4% | delta_T=-7.7 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=60987 ms | temperature=22.3 C | humidity=80.4% | delta_T=-7.7 C
+[Sensor] t=61495 ms, temperature=29.4 C, humidity=60.0%
+[Processor] timestamp=61495 ms, T=29.4 C, H=60.0%, avg_T=28.2 C, avg_H=65.7%, delta_T=7.1 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=61495 ms | temperature=29.4 C | humidity=60.0% | delta_T=7.1 C
+[Sensor] t=62004 ms, temperature=34.1 C, humidity=35.7%
+[Processor] timestamp=62004 ms, T=34.1 C, H=35.7%, avg_T=29.7 C, avg_H=61.0%, delta_T=4.7 C
+[Sensor] t=62512 ms, temperature=36.5 C, humidity=62.6%
+[Processor] timestamp=62512 ms, T=36.5 C, H=62.6%, avg_T=30.4 C, avg_H=61.2%, delta_T=2.4 C
+[Sensor] t=63020 ms, temperature=18.3 C, humidity=44.0%
+[Processor] timestamp=63020 ms, T=18.3 C, H=44.0%, avg_T=28.8 C, avg_H=60.1%, delta_T=-18.2 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=63020 ms | temperature=18.3 C | humidity=44.0% | delta_T=-18.2 C
+[Sensor] t=63528 ms, temperature=20.4 C, humidity=35.3%
+[Processor] timestamp=63528 ms, T=20.4 C, H=35.3%, avg_T=27.6 C, avg_H=59.7%, delta_T=2.1 C
+[Sensor] t=64037 ms, temperature=43.5 C, humidity=45.4%
+[Processor] timestamp=64037 ms, T=43.5 C, H=45.4%, avg_T=27.6 C, avg_H=56.1%, delta_T=23.1 C
+[Alert] HIGH TEMPERATURE | timestamp=64037 ms | temperature=43.5 C | humidity=45.4% | delta_T=23.1 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=64037 ms | temperature=43.5 C | humidity=45.4% | delta_T=23.1 C
+[Sensor] t=64545 ms, temperature=36.2 C, humidity=43.1%
+[Processor] timestamp=64545 ms, T=36.2 C, H=43.1%, avg_T=29.1 C, avg_H=52.9%, delta_T=-7.3 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=64545 ms | temperature=36.2 C | humidity=43.1% | delta_T=-7.3 C
+[Sensor] t=65053 ms, temperature=20.5 C, humidity=79.2%
+[Processor] timestamp=65053 ms, T=20.5 C, H=79.2%, avg_T=29.1 C, avg_H=52.7%, delta_T=-15.7 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=65053 ms | temperature=20.5 C | humidity=79.2% | delta_T=-15.7 C
+[Sensor] t=65562 ms, temperature=31.8 C, humidity=80.4%
+[Processor] timestamp=65562 ms, T=31.8 C, H=80.4%, avg_T=29.3 C, avg_H=56.6%, delta_T=11.3 C
+[Alert] HIGH HUMIDITY | timestamp=65562 ms | temperature=31.8 C | humidity=80.4% | delta_T=11.3 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=65562 ms | temperature=31.8 C | humidity=80.4% | delta_T=11.3 C
+[Sensor] t=66070 ms, temperature=22.0 C, humidity=66.3%
+[Processor] timestamp=66070 ms, T=22.0 C, H=66.3%, avg_T=29.2 C, avg_H=55.2%, delta_T=-9.8 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=66070 ms | temperature=22.0 C | humidity=66.3% | delta_T=-9.8 C
+[Sensor] t=66579 ms, temperature=24.3 C, humidity=38.8%
+[Processor] timestamp=66579 ms, T=24.3 C, H=38.8%, avg_T=28.7 C, avg_H=53.0%, delta_T=2.3 C
+[Sensor] t=67087 ms, temperature=15.7 C, humidity=81.1%
+[Processor] timestamp=67087 ms, T=15.7 C, H=81.1%, avg_T=26.9 C, avg_H=57.6%, delta_T=-8.6 C
+[Alert] HIGH HUMIDITY | timestamp=67087 ms | temperature=15.7 C | humidity=81.1% | delta_T=-8.6 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=67087 ms | temperature=15.7 C | humidity=81.1% | delta_T=-8.6 C
+[Sensor] t=67595 ms, temperature=44.3 C, humidity=60.2%
+[Processor] timestamp=67595 ms, T=44.3 C, H=60.2%, avg_T=27.7 C, avg_H=57.3%, delta_T=28.6 C
+[Alert] HIGH TEMPERATURE | timestamp=67595 ms | temperature=44.3 C | humidity=60.2% | delta_T=28.6 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=67595 ms | temperature=44.3 C | humidity=60.2% | delta_T=28.6 C
+[Sensor] t=68103 ms, temperature=29.8 C, humidity=86.2%
+[Processor] timestamp=68103 ms, T=29.8 C, H=86.2%, avg_T=28.8 C, avg_H=61.6%, delta_T=-14.5 C
+[Alert] HIGH HUMIDITY | timestamp=68103 ms | temperature=29.8 C | humidity=86.2% | delta_T=-14.5 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=68103 ms | temperature=29.8 C | humidity=86.2% | delta_T=-14.5 C
+[Sensor] t=68611 ms, temperature=25.6 C, humidity=36.8%
+[Processor] timestamp=68611 ms, T=25.6 C, H=36.8%, avg_T=29.3 C, avg_H=61.7%, delta_T=-4.2 C
+[Sensor] t=69119 ms, temperature=16.0 C, humidity=75.5%
+[Processor] timestamp=69119 ms, T=16.0 C, H=75.5%, avg_T=26.6 C, avg_H=64.7%, delta_T=-9.6 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=69119 ms | temperature=16.0 C | humidity=75.5% | delta_T=-9.6 C
+[Sensor] t=69628 ms, temperature=32.7 C, humidity=67.9%
+[Processor] timestamp=69628 ms, T=32.7 C, H=67.9%, avg_T=26.2 C, avg_H=67.2%, delta_T=16.7 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=69628 ms | temperature=32.7 C | humidity=67.9% | delta_T=16.7 C
+[Sensor] t=70136 ms, temperature=33.4 C, humidity=45.5%
+[Processor] timestamp=70136 ms, T=33.4 C, H=45.5%, avg_T=27.5 C, avg_H=63.8%, delta_T=0.7 C
+[Sensor] t=70645 ms, temperature=23.6 C, humidity=41.4%
+[Processor] timestamp=70645 ms, T=23.6 C, H=41.4%, avg_T=26.7 C, avg_H=59.9%, delta_T=-9.8 C
+[Alert] RAPID TEMPERATURE CHANGE | timestamp=70645 ms | temperature=23.6 C | humidity=41.4% | delta_T=-9.8 C
+^C[Main] Beginning orderly shutdown
+[Timing] final report: samples=100, jitter min=7454.000 us, max=9815.000 us, mean=8359.070 us, stddev=359.514 us
+[Sensor] Thread stopped
+[Processor] Thread stopped
+[Alert] Thread stopped
+[Logger] Thread stopped
+[Main] Shutdown complete
+/ # x[JQEMU: Terminated
+

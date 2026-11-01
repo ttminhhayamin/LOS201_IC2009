@@ -1,0 +1,114 @@
+============================================================
+ASSIGNMENT 02 - SYSTEM DEMONSTRATION RESULTS
+Student: Hoang Trung Hai
+Student ID: SS204779
+Project: SMS Sensor Monitoring System
+Platform: ARM vexpress-a9 / QEMU
+============================================================
+
+1. PROJECT STRUCTURE
+Main directories:
+- driver/
+- app/
+- tests/
+- output/
+- demo/
+
+Main components:
+- Kernel sensor driver
+- Sensor Thread
+- Processor Thread
+- Alert Thread
+- Logger Thread
+- Thread-safe circular buffer
+- POSIX message queues
+
+2. KERNEL DRIVER
+Device: /dev/sms_sensor
+Statistics interface: /proc/sms_stats
+Configuration interface: SMS_SET_INTERVAL ioctl
+
+Observed status: PASS
+- Device node was available in QEMU.
+- Driver statistics were accessible through /proc/sms_stats.
+- Sampling interval was configured to 100 ms during validation.
+
+3. USERSPACE APPLICATION
+Executable: /usr/bin/sms_app
+
+Observed status: PASS
+- Application started and acquired sensor samples.
+- Processor, Alert, and Logger threads operated during the demo.
+- Application produced sensor and alarm log messages.
+
+4. MULTITHREADING
+Threads:
+- Sensor Thread
+- Processor Thread
+- Alert Thread
+- Logger Thread
+
+Observed status: PASS
+- Sensor samples were processed by the application.
+- Alert messages were generated for detected threshold violations.
+- Thread shutdown messages were observed.
+
+5. TIMING BENCHMARK
+
+Sampling interval: 100 ms
+
+Primary benchmark:
+- Samples: 1642
+- Minimum reported jitter: 4115.000 us
+- Maximum reported jitter: 9000.000 us
+- Mean reported jitter: 5493.395 us
+- Standard deviation: 527.422 us
+
+Intermediate report:
+- Samples: 1000
+- Minimum reported jitter: 4115.000 us
+- Maximum reported jitter: 9000.000 us
+- Mean reported jitter: 5494.798 us
+- Standard deviation: 543.171 us
+
+Additional demo validation:
+- Samples: 162
+- Minimum reported jitter: 4596.000 us
+- Maximum reported jitter: 8230.000 us
+- Mean reported jitter: 5752.728 us
+- Standard deviation: 408.980 us
+
+Measurement note:
+The application calculates the time difference between the completion
+of read() and the scheduled absolute sampling deadline. The application
+labels this measurement as jitter. Interpret the reported values using
+this implementation-specific definition.
+
+6. DRIVER STATISTICS
+Additional demo validation:
+- read_count: 162
+- last_temperature: 31.6
+- last_humidity: 82.5
+- uptime_seconds: 76
+- interval_ms: 100
+- last_read_ms: 49499
+
+These values belong to the additional demo validation run and should
+not be interpreted as statistics from the 1642-sample benchmark.
+
+7. GRACEFUL SHUTDOWN
+Observed messages included:
+- [Main] Beginning orderly shutdown
+- [Processor] Thread stopped
+- [Alert] Thread stopped
+- [Logger] Thread stopped
+- [Main] Shutdown complete
+- [Sensor] Thread stopped
+
+Observed status: PASS
+The application completed its shutdown sequence and returned to the
+QEMU shell.
+
+============================================================
+END OF DEMONSTRATION RESULTS
+============================================================

@@ -1,0 +1,329 @@
+6021  20:02:36.772515 execve("./app/sms_app", ["./app/sms_app", "-i", "500", "-d", "/dev/sms_sensor"], 0x7ffebf23eaf8 /* 54 vars */) = 0 <0.000858>
+6021  20:02:36.774422 brk(NULL)         = 0x57d19b25f000 <0.000022>
+6021  20:02:36.774650 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x767292e77000 <0.000048>
+6021  20:02:36.775073 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory) <0.000022>
+6021  20:02:36.775293 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3 <0.000029>
+6021  20:02:36.775783 fstat(3, {st_mode=S_IFREG|0644, st_size=79415, ...}) = 0 <0.000019>
+6021  20:02:36.775875 mmap(NULL, 79415, PROT_READ, MAP_PRIVATE, 3, 0) = 0x767292e63000 <0.000024>
+6021  20:02:36.775955 close(3)          = 0 <0.000017>
+6021  20:02:36.776034 openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000024>
+6021  20:02:36.776111 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832 <0.000032>
+6021  20:02:36.776198 fstat(3, {st_mode=S_IFREG|0644, st_size=1198376, ...}) = 0 <0.000017>
+6021  20:02:36.776274 mmap(NULL, 1200152, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x767292d3d000 <0.000025>
+6021  20:02:36.776350 mmap(0x767292d4f000, 655360, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x12000) = 0x767292d4f000 <0.000036>
+6021  20:02:36.776434 mmap(0x767292def000, 466944, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xb2000) = 0x767292def000 <0.000028>
+6021  20:02:36.776507 mmap(0x767292e61000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x123000) = 0x767292e61000 <0.000026>
+6021  20:02:36.776610 close(3)          = 0 <0.000017>
+6021  20:02:36.776681 openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000022>
+6021  20:02:36.776755 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \250\2\0\0\0\0\0"..., 832) = 832 <0.000018>
+6021  20:02:36.776824 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840 <0.000017>
+6021  20:02:36.776893 fstat(3, {st_mode=S_IFREG|0755, st_size=2190608, ...}) = 0 <0.000017>
+6021  20:02:36.776962 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840 <0.000016>
+6021  20:02:36.777030 mmap(NULL, 2231696, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x767292a00000 <0.000040>
+6021  20:02:36.777123 mmap(0x767292a28000, 1671168, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x767292a28000 <0.000034>
+6021  20:02:36.777218 mmap(0x767292bc0000, 319488, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c0000) = 0x767292bc0000 <0.000031>
+6021  20:02:36.777304 mmap(0x767292c0e000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x20e000) = 0x767292c0e000 <0.000029>
+6021  20:02:36.777395 mmap(0x767292c14000, 52624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x767292c14000 <0.000024>
+6021  20:02:36.777492 close(3)          = 0 <0.000018>
+6021  20:02:36.777589 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x767292d3a000 <0.000024>
+6021  20:02:36.777673 arch_prctl(ARCH_SET_FS, 0x767292d3a740) = 0 <0.000018>
+6021  20:02:36.777740 set_tid_address(0x767292d3ad68) = 6021 <0.000018>
+6021  20:02:36.777807 set_robust_list(0x767292d3aa20, 24) = 0 <0.000019>
+6021  20:02:36.777874 rseq(0x767292d3a680, 0x21, 0, 0x53053053) = 0 <0.000018>
+6021  20:02:36.778057 mprotect(0x767292c0e000, 16384, PROT_READ) = 0 <0.000032>
+6021  20:02:36.778187 mprotect(0x767292e61000, 4096, PROT_READ) = 0 <0.000024>
+6021  20:02:36.778286 mprotect(0x57d1829fa000, 4096, PROT_READ) = 0 <0.000029>
+6021  20:02:36.778368 mprotect(0x767292ebc000, 8192, PROT_READ) = 0 <0.000030>
+6021  20:02:36.778467 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0 <0.000018>
+6021  20:02:36.778572 getrandom("\x71\xfa\x25\xa5\x6c\x60\xcc\xde", 8, GRND_NONBLOCK) = 8 <0.000018>
+6021  20:02:36.778652 munmap(0x767292e63000, 79415) = 0 <0.000041>
+6021  20:02:36.778779 fstat(1, {st_mode=S_IFREG|0664, st_size=0, ...}) = 0 <0.000020>
+6021  20:02:36.778870 brk(NULL)         = 0x57d19b25f000 <0.000017>
+6021  20:02:36.778931 brk(0x57d19b281000) = 0x57d19b281000 <0.000020>
+6021  20:02:36.779031 mq_unlink("log_queue") = -1 ENOENT (No such file or directory) <0.000031>
+6021  20:02:36.779120 mq_unlink("alarm_queue") = -1 ENOENT (No such file or directory) <0.000027>
+6021  20:02:36.779212 mq_open("log_queue", O_RDONLY|O_CREAT, 0644, {mq_flags=0, mq_maxmsg=10, mq_msgsize=168, mq_curmsgs=0}) = 3 <0.000037>
+6021  20:02:36.779307 mq_open("log_queue", O_WRONLY|O_NONBLOCK) = 4 <0.000020>
+6021  20:02:36.779373 mq_open("alarm_queue", O_RDONLY|O_CREAT, 0644, {mq_flags=0, mq_maxmsg=10, mq_msgsize=40, mq_curmsgs=0}) = 5 <0.000039>
+6021  20:02:36.779463 mq_open("alarm_queue", O_WRONLY|O_NONBLOCK) = 6 <0.000019>
+6021  20:02:36.779529 rt_sigaction(SIGINT, {sa_handler=0x57d1829f5090, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x767292a45cb0}, NULL, 8) = 0 <0.000017>
+6021  20:02:36.779603 rt_sigaction(SIGTERM, {sa_handler=0x57d1829f5090, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x767292a45cb0}, NULL, 8) = 0 <0.000016>
+6021  20:02:36.779669 rt_sigaction(SIGRT_1, {sa_handler=0x767292aa0fe0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x767292a45cb0}, NULL, 8) = 0 <0.000016>
+6021  20:02:36.779733 rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0 <0.000015>
+6021  20:02:36.779796 mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7672921ff000 <0.000021>
+6021  20:02:36.779861 madvise(0x7672921ff000, 4096, MADV_GUARD_INSTALL) = 0 <0.000026>
+6021  20:02:36.779939 rt_sigprocmask(SIG_BLOCK, ~[], [], 8) = 0 <0.000017>
+6021  20:02:36.780008 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7672929ffce8, parent_tid=0x7672929ff990, exit_signal=0, stack=0x7672921ff000, stack_size=0x7fff80, tls=0x7672929ff6c0} => {parent_tid=[6022]}, 88) = 6022 <0.000089>
+6021  20:02:36.780170 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000018>
+6021  20:02:36.780245 mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7672919fe000 <0.000024>
+6021  20:02:36.780317 madvise(0x7672919fe000, 4096, MADV_GUARD_INSTALL) = 0 <0.000087>
+6022  20:02:36.780450 rseq(0x7672929ff600, 0x21, 0, 0x53053053 <unfinished ...>
+6021  20:02:36.780481 rt_sigprocmask(SIG_BLOCK, ~[] <unfinished ...>
+6022  20:02:36.780509 <... rseq resumed>) = 0 <0.000032>
+6021  20:02:36.780527 <... rt_sigprocmask resumed>, [], 8) = 0 <0.000022>
+6022  20:02:36.780549 set_robust_list(0x7672929ff9a0, 24 <unfinished ...>
+6021  20:02:36.780566 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7672921fece8, parent_tid=0x7672921fe990, exit_signal=0, stack=0x7672919fe000, stack_size=0x7fff80, tls=0x7672921fe6c0} <unfinished ...>
+6022  20:02:36.780591 <... set_robust_list resumed>) = 0 <0.000028>
+6022  20:02:36.780690 rt_sigprocmask(SIG_SETMASK, [] <unfinished ...>
+6021  20:02:36.780770 <... clone3 resumed> => {parent_tid=[6023]}, 88) = 6023 <0.000182>
+6022  20:02:36.780808 <... rt_sigprocmask resumed>, NULL, 8) = 0 <0.000045>
+6021  20:02:36.780828 rt_sigprocmask(SIG_SETMASK, [] <unfinished ...>
+6022  20:02:36.780848 mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0 <unfinished ...>
+6021  20:02:36.780870 <... rt_sigprocmask resumed>, NULL, 8) = 0 <0.000025>
+6023  20:02:36.780890 rseq(0x7672921fe600, 0x21, 0, 0x53053053 <unfinished ...>
+6022  20:02:36.780906 <... mmap resumed>) = 0x767289800000 <0.000039>
+6021  20:02:36.780921 mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0 <unfinished ...>
+6022  20:02:36.780939 munmap(0x767289800000, 41943040 <unfinished ...>
+6021  20:02:36.780957 <... mmap resumed>) = 0x767288fff000 <0.000022>
+6023  20:02:36.780978 <... rseq resumed>) = 0 <0.000073>
+6022  20:02:36.780993 <... munmap resumed>) = 0 <0.000040>
+6021  20:02:36.781026 madvise(0x767288fff000, 4096, MADV_GUARD_INSTALL <unfinished ...>
+6022  20:02:36.781045 munmap(0x767290000000, 25165824 <unfinished ...>
+6021  20:02:36.781066 <... madvise resumed>) = 0 <0.000025>
+6023  20:02:36.781081 set_robust_list(0x7672921fe9a0, 24 <unfinished ...>
+6022  20:02:36.781097 <... munmap resumed>) = 0 <0.000037>
+6021  20:02:36.781111 rt_sigprocmask(SIG_BLOCK, ~[] <unfinished ...>
+6022  20:02:36.781132 mprotect(0x76728c000000, 135168, PROT_READ|PROT_WRITE <unfinished ...>
+6021  20:02:36.781178 <... rt_sigprocmask resumed>, [], 8) = 0 <0.000049>
+6023  20:02:36.781200 <... set_robust_list resumed>) = 0 <0.000108>
+6021  20:02:36.781217 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7672897ffce8, parent_tid=0x7672897ff990, exit_signal=0, stack=0x767288fff000, stack_size=0x7fff80, tls=0x7672897ff6c0} <unfinished ...>
+6022  20:02:36.781240 <... mprotect resumed>) = 0 <0.000067>
+6023  20:02:36.781346 rt_sigprocmask(SIG_SETMASK, [] <unfinished ...>
+6022  20:02:36.781395 openat(AT_FDCWD, "/tmp/sms.log", O_WRONLY|O_CREAT|O_APPEND, 0666 <unfinished ...>
+6021  20:02:36.781426 <... clone3 resumed> => {parent_tid=[6024]}, 88) = 6024 <0.000187>
+6024  20:02:36.781453 rseq(0x7672897ff600, 0x21, 0, 0x53053053 <unfinished ...>
+6023  20:02:36.781489 <... rt_sigprocmask resumed>, NULL, 8) = 0 <0.000093>
+6021  20:02:36.781519 rt_sigprocmask(SIG_SETMASK, [] <unfinished ...>
+6024  20:02:36.781540 <... rseq resumed>) = 0 <0.000056>
+6022  20:02:36.781555 <... openat resumed>) = 7 <0.000136>
+6021  20:02:36.781573 <... rt_sigprocmask resumed>, NULL, 8) = 0 <0.000035>
+6024  20:02:36.781611 set_robust_list(0x7672897ff9a0, 24 <unfinished ...>
+6023  20:02:36.781632 write(2, "[Alert] Thread started\n", 23 <unfinished ...>
+6022  20:02:36.781651 lseek(7, 0, SEEK_END <unfinished ...>
+6021  20:02:36.781697 sched_get_priority_min(SCHED_FIFO <unfinished ...>
+6024  20:02:36.781714 <... set_robust_list resumed>) = 0 <0.000088>
+6021  20:02:36.781734 <... sched_get_priority_min resumed>) = 1 <0.000021>
+6023  20:02:36.781748 <... write resumed>) = 23 <0.000098>
+6022  20:02:36.781763 <... lseek resumed>) = 0 <0.000077>
+6021  20:02:36.781781 sched_get_priority_max(SCHED_FIFO <unfinished ...>
+6024  20:02:36.781802 rt_sigprocmask(SIG_SETMASK, [] <unfinished ...>
+6021  20:02:36.781825 <... sched_get_priority_max resumed>) = 99 <0.000025>
+6023  20:02:36.781840 mq_timedreceive(5 <unfinished ...>
+6022  20:02:36.781855 write(2, "[Logger] Writing logs to /tmp/sm"..., 38 <unfinished ...>
+6021  20:02:36.781880 mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0 <unfinished ...>
+6024  20:02:36.781898 <... rt_sigprocmask resumed>, NULL, 8) = 0 <0.000079>
+6021  20:02:36.781917 <... mmap resumed>) = 0x7672911fd000 <0.000020>
+6022  20:02:36.781932 <... write resumed>) = 38 <0.000058>
+6021  20:02:36.781950 madvise(0x7672911fd000, 4096, MADV_GUARD_INSTALL <unfinished ...>
+6024  20:02:36.781969 futex(0x767292c14740, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+6021  20:02:36.781988 <... madvise resumed>) = 0 <0.000020>
+6022  20:02:36.782004 futex(0x767292c14740, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+6021  20:02:36.782023 rt_sigprocmask(SIG_BLOCK, ~[] <unfinished ...>
+6024  20:02:36.782042 <... futex resumed>) = -1 EAGAIN (Resource temporarily unavailable) <0.000059>
+6021  20:02:36.782065 <... rt_sigprocmask resumed>, [], 8) = 0 <0.000025>
+6022  20:02:36.782087 <... futex resumed>) = 0 <0.000070>
+6021  20:02:36.782106 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7672919fdce8, parent_tid=0x7672919fd990, exit_signal=0, stack=0x7672911fd000, stack_size=0x7fff80, tls=0x7672919fd6c0} <unfinished ...>
+6024  20:02:36.782130 write(2, "[Processor] Started; rolling win"..., 47 <unfinished ...>
+6022  20:02:36.782288 mq_timedreceive(3 <unfinished ...>
+6021  20:02:36.782325 <... clone3 resumed> => {parent_tid=[6025]}, 88) = 6025 <0.000197>
+6025  20:02:36.782368 futex(0x7672919fdce0, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+6024  20:02:36.782381 <... write resumed>) = 47 <0.000113>
+6021  20:02:36.782392 sched_setscheduler(6025, SCHED_FIFO, [50] <unfinished ...>
+6024  20:02:36.782405 futex(0x767292c14740, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+6021  20:02:36.782416 <... sched_setscheduler resumed>) = -1 EPERM (Operation not permitted) <0.000013>
+6024  20:02:36.782432 <... futex resumed>) = 0 <0.000019>
+6021  20:02:36.782442 rt_sigprocmask(SIG_SETMASK, [] <unfinished ...>
+6024  20:02:36.782454 futex(0x7ffe86497900, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+6021  20:02:36.782474 <... rt_sigprocmask resumed>, NULL, 8) = 0 <0.000022>
+6021  20:02:36.782548 futex(0x7672919fdce0, FUTEX_WAKE_PRIVATE, 1) = 1 <0.000026>
+6025  20:02:36.782620 <... futex resumed>) = 0 <0.000239>
+6021  20:02:36.782641 futex(0x7672919fdce8, FUTEX_WAIT_BITSET|FUTEX_CLOCK_REALTIME, 2, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+6025  20:02:36.782661 futex(0x7672919fdce0, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000068>
+6025  20:02:36.782783 exit(0)           = ?
+6021  20:02:36.782934 <... futex resumed>) = 0 <0.000274>
+6025  20:02:36.782967 +++ exited with 0 +++
+6021  20:02:36.782986 write(2, "[Main] SCHED_FIFO unavailable (O"..., 89) = 89 <0.000030>
+6021  20:02:36.783070 rt_sigprocmask(SIG_BLOCK, ~[], [], 8) = 0 <0.000016>
+6021  20:02:36.783138 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7672919fdce8, parent_tid=0x7672919fd990, exit_signal=0, stack=0x7672911fd000, stack_size=0x7fff80, tls=0x7672919fd6c0} => {parent_tid=[6026]}, 88) = 6026 <0.000120>
+6026  20:02:36.783334 rseq(0x7672919fd600, 0x21, 0, 0x53053053 <unfinished ...>
+6021  20:02:36.783364 rt_sigprocmask(SIG_SETMASK, [] <unfinished ...>
+6026  20:02:36.783390 <... rseq resumed>) = 0 <0.000030>
+6021  20:02:36.783408 <... rt_sigprocmask resumed>, NULL, 8) = 0 <0.000022>
+6026  20:02:36.783428 set_robust_list(0x7672919fd9a0, 24 <unfinished ...>
+6021  20:02:36.783446 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000} <unfinished ...>
+6026  20:02:36.783469 <... set_robust_list resumed>) = 0 <0.000028>
+6026  20:02:36.783562 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000019>
+6026  20:02:36.783651 openat(AT_FDCWD, "/dev/sms_sensor", O_RDONLY) = -1 ENOENT (No such file or directory) <0.000094>
+6026  20:02:36.783823 mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x767280e00000 <0.000026>
+6026  20:02:36.783911 munmap(0x767280e00000, 52428800) = 0 <0.000086>
+6026  20:02:36.784054 munmap(0x767288000000, 14680064) = 0 <0.000020>
+6026  20:02:36.784124 mprotect(0x767284000000, 135168, PROT_READ|PROT_WRITE) = 0 <0.000021>
+6026  20:02:36.784215 write(2, "[Sensor] Cannot open /dev/sms_se"..., 64) = 64 <0.000028>
+6026  20:02:36.784310 rt_sigprocmask(SIG_BLOCK, ~[RT_1], NULL, 8) = 0 <0.000016>
+6026  20:02:36.784372 madvise(0x7672911fd000, 8368128, MADV_DONTNEED) = 0 <0.000020>
+6026  20:02:36.784434 exit(0)           = ?
+6026  20:02:36.784498 +++ exited with 0 +++
+6021  20:02:36.883831 <... clock_nanosleep resumed>, 0x7ffe86497380) = 0 <0.100342>
+6021  20:02:36.884193 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100404>
+6021  20:02:36.985209 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100502>
+6021  20:02:37.085982 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100280>
+6021  20:02:37.186349 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100290>
+6021  20:02:37.286932 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100428>
+6021  20:02:37.387690 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100264>
+6021  20:02:37.488260 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100231>
+6021  20:02:37.588863 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100266>
+6021  20:02:37.689415 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000} <unfinished ...>
+6023  20:02:37.782099 <... mq_timedreceive resumed>, 0x7672921fdd90, 40, NULL, {tv_sec=1792155757, tv_nsec=781781170}) = -1 ETIMEDOUT (Connection timed out) <1.000220>
+6022  20:02:37.782509 <... mq_timedreceive resumed>, 0x7672929feb80, 168, NULL, {tv_sec=1792155757, tv_nsec=782106116}) = -1 ETIMEDOUT (Connection timed out) <1.000184>
+6023  20:02:37.782748 mq_timedreceive(5 <unfinished ...>
+6022  20:02:37.782847 mq_timedreceive(3 <unfinished ...>
+6021  20:02:37.789728 <... clock_nanosleep resumed>, 0x7ffe86497380) = 0 <0.100228>
+6021  20:02:37.789959 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100269>
+6021  20:02:37.890664 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100204>
+6021  20:02:37.991171 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100302>
+6021  20:02:38.091768 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100393>
+6021  20:02:38.192429 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100305>
+6021  20:02:38.293002 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100218>
+6021  20:02:38.393487 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100168>
+6021  20:02:38.493849 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100210>
+6021  20:02:38.594256 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100194>
+6021  20:02:38.694553 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000} <unfinished ...>
+6023  20:02:38.782735 <... mq_timedreceive resumed>, 0x7672921fdd90, 40, NULL, {tv_sec=1792155758, tv_nsec=782615834}) = -1 ETIMEDOUT (Connection timed out) <0.999889>
+6022  20:02:38.782842 <... mq_timedreceive resumed>, 0x7672929feb80, 168, NULL, {tv_sec=1792155758, tv_nsec=782764037}) = -1 ETIMEDOUT (Connection timed out) <0.999968>
+6023  20:02:38.782945 mq_timedreceive(5 <unfinished ...>
+6022  20:02:38.782992 mq_timedreceive(3 <unfinished ...>
+6021  20:02:38.794715 <... clock_nanosleep resumed>, 0x7ffe86497380) = 0 <0.100121>
+6021  20:02:38.794829 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100310>
+6021  20:02:38.895363 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100340>
+6021  20:02:38.995978 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100270>
+6021  20:02:39.096520 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100287>
+6021  20:02:39.197011 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100212>
+6021  20:02:39.297428 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100279>
+6021  20:02:39.397905 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100283>
+6021  20:02:39.498467 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100216>
+6021  20:02:39.598784 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100233>
+6021  20:02:39.699135 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000} <unfinished ...>
+6022  20:02:39.783021 <... mq_timedreceive resumed>, 0x7672929feb80, 168, NULL, {tv_sec=1792155759, tv_nsec=782876880}) = -1 ETIMEDOUT (Connection timed out) <1.000006>
+6023  20:02:39.783127 <... mq_timedreceive resumed>, 0x7672921fdd90, 40, NULL, {tv_sec=1792155759, tv_nsec=782898981}) = -1 ETIMEDOUT (Connection timed out) <1.000136>
+6023  20:02:39.783312 mq_timedreceive(5 <unfinished ...>
+6022  20:02:39.783358 mq_timedreceive(3 <unfinished ...>
+6021  20:02:39.799418 <... clock_nanosleep resumed>, 0x7ffe86497380) = 0 <0.100234>
+6021  20:02:39.799527 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100290>
+6021  20:02:39.900083 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100206>
+6021  20:02:40.000457 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100142>
+6021  20:02:40.100730 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100217>
+6021  20:02:40.201162 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100165>
+6021  20:02:40.301437 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100154>
+6021  20:02:40.401711 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100132>
+6021  20:02:40.501956 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100193>
+6021  20:02:40.602313 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100134>
+6021  20:02:40.702746 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000} <unfinished ...>
+6023  20:02:40.783391 <... mq_timedreceive resumed>, 0x7672921fdd90, 40, NULL, {tv_sec=1792155760, tv_nsec=783236143}) = -1 ETIMEDOUT (Connection timed out) <1.000028>
+6022  20:02:40.783479 <... mq_timedreceive resumed>, 0x7672929feb80, 168, NULL, {tv_sec=1792155760, tv_nsec=783221343}) = -1 ETIMEDOUT (Connection timed out) <1.000082>
+6023  20:02:40.783627 mq_timedreceive(5 <unfinished ...>
+6022  20:02:40.783692 mq_timedreceive(3 <unfinished ...>
+6021  20:02:40.803207 <... clock_nanosleep resumed>, 0x7ffe86497380) = 0 <0.100383>
+6021  20:02:40.803416 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100193>
+6021  20:02:40.903721 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100123>
+6021  20:02:41.003995 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100281>
+6021  20:02:41.104422 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100224>
+6021  20:02:41.204859 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100262>
+6021  20:02:41.305374 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100326>
+6021  20:02:41.405974 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100217>
+6021  20:02:41.506414 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100124>
+6021  20:02:41.606668 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100189>
+6021  20:02:41.707007 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000} <unfinished ...>
+6023  20:02:41.783882 <... mq_timedreceive resumed>, 0x7672921fdd90, 40, NULL, {tv_sec=1792155761, tv_nsec=783552101}) = -1 ETIMEDOUT (Connection timed out) <1.000181>
+6022  20:02:41.783990 <... mq_timedreceive resumed>, 0x7672929feb80, 168, NULL, {tv_sec=1792155761, tv_nsec=783568154}) = -1 ETIMEDOUT (Connection timed out) <1.000283>
+6023  20:02:41.784193 mq_timedreceive(5 <unfinished ...>
+6022  20:02:41.784288 mq_timedreceive(3 <unfinished ...>
+6021  20:02:41.807352 <... clock_nanosleep resumed>, 0x7ffe86497380) = 0 <0.100290>
+6021  20:02:41.807578 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100194>
+6021  20:02:41.907939 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100219>
+6021  20:02:42.008282 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100106>
+6021  20:02:42.108646 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100246>
+6021  20:02:42.209065 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100071>
+6021  20:02:42.309269 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100243>
+6021  20:02:42.409756 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100485>
+6021  20:02:42.510585 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100292>
+6021  20:02:42.611308 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100411>
+6021  20:02:42.712051 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000} <unfinished ...>
+6023  20:02:42.784438 <... mq_timedreceive resumed>, 0x7672921fdd90, 40, NULL, {tv_sec=1792155762, tv_nsec=784096693}) = -1 ETIMEDOUT (Connection timed out) <1.000140>
+6022  20:02:42.784568 <... mq_timedreceive resumed>, 0x7672929feb80, 168, NULL, {tv_sec=1792155762, tv_nsec=784100209}) = -1 ETIMEDOUT (Connection timed out) <1.000262>
+6023  20:02:42.784736 mq_timedreceive(5 <unfinished ...>
+6022  20:02:42.784776 mq_timedreceive(3 <unfinished ...>
+6021  20:02:42.812463 <... clock_nanosleep resumed>, 0x7ffe86497380) = 0 <0.100320>
+6021  20:02:42.812669 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100446>
+6021  20:02:42.913405 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100203>
+6021  20:02:43.013875 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100391>
+6021  20:02:43.114526 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100299>
+6021  20:02:43.215093 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100411>
+6021  20:02:43.315805 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100357>
+6021  20:02:43.416495 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100468>
+6021  20:02:43.517523 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100342>
+6021  20:02:43.618342 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100443>
+6021  20:02:43.719194 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000} <unfinished ...>
+6023  20:02:43.785099 <... mq_timedreceive resumed>, 0x7672921fdd90, 40, NULL, {tv_sec=1792155763, tv_nsec=784664348}) = -1 ETIMEDOUT (Connection timed out) <1.000297>
+6022  20:02:43.785632 <... mq_timedreceive resumed>, 0x7672929feb80, 168, NULL, {tv_sec=1792155763, tv_nsec=784673880}) = -1 ETIMEDOUT (Connection timed out) <1.000815>
+6023  20:02:43.785860 mq_timedreceive(5 <unfinished ...>
+6022  20:02:43.786205 mq_timedreceive(3 <unfinished ...>
+6021  20:02:43.819626 <... clock_nanosleep resumed>, 0x7ffe86497380) = 0 <0.100319>
+6021  20:02:43.819938 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100515>
+6021  20:02:43.920872 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100361>
+6021  20:02:44.021697 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100563>
+6021  20:02:44.122716 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100524>
+6021  20:02:44.223702 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100511>
+6021  20:02:44.324717 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100615>
+6021  20:02:44.425922 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100554>
+6021  20:02:44.527013 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100741>
+6021  20:02:44.628370 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, 0x7ffe86497380) = 0 <0.100619>
+6021  20:02:44.729801 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, {tv_sec=0, tv_nsec=61938617}) = ? ERESTART_RESTARTBLOCK (Interrupted by signal) <0.038539>
+6024  20:02:44.768718 <... futex resumed>) = ? ERESTARTSYS (To be restarted if SA_RESTART is set) <7.986242>
+6023  20:02:44.768789 <... mq_timedreceive resumed>, 0x7672921fdd90, 40, NULL, {tv_sec=1792155764, tv_nsec=785748570}) = ? ERESTARTSYS (To be restarted if SA_RESTART is set) <0.982909>
+6022  20:02:44.768826 <... mq_timedreceive resumed>, 0x7672929feb80, 168, NULL, {tv_sec=1792155764, tv_nsec=786005300}) = ? ERESTARTSYS (To be restarted if SA_RESTART is set) <0.982494>
+6021  20:02:44.769026 --- SIGINT {si_signo=SIGINT, si_code=SI_USER, si_pid=6016, si_uid=1000} ---
+6021  20:02:44.769350 --- SIGCONT {si_signo=SIGCONT, si_code=SI_USER, si_pid=6016, si_uid=1000} ---
+6024  20:02:44.769428 futex(0x7ffe86497900, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+6023  20:02:44.769469 mq_timedreceive(5 <unfinished ...>
+6022  20:02:44.769495 mq_timedreceive(3 <unfinished ...>
+6021  20:02:44.769525 rt_sigreturn({mask=[]}) = -1 EINTR (Interrupted system call) <0.000180>
+6021  20:02:44.769969 write(2, "[Main] Beginning orderly shutdow"..., 34) = 34 <0.000222>
+6021  20:02:44.770438 futex(0x7ffe86497900, FUTEX_WAKE_PRIVATE, 2147483647) = 1 <0.000174>
+6024  20:02:44.770696 <... futex resumed>) = 0 <0.001231>
+6021  20:02:44.770741 futex(0x7672897ffce8, FUTEX_WAIT_BITSET|FUTEX_CLOCK_REALTIME, 2, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+6024  20:02:44.770815 futex(0x7ffe864978b8, FUTEX_WAKE_PRIVATE, 1) = 0 <0.000109>
+6024  20:02:44.771062 write(2, "[Processor] Thread stopped\n", 27) = 27 <0.000118>
+6024  20:02:44.771334 rt_sigprocmask(SIG_BLOCK, ~[RT_1], NULL, 8) = 0 <0.000077>
+6024  20:02:44.771484 madvise(0x767288fff000, 8368128, MADV_DONTNEED) = 0 <0.000036>
+6024  20:02:44.771586 exit(0)           = ?
+6024  20:02:44.771704 +++ exited with 0 +++
+6021  20:02:44.771758 <... futex resumed>) = 0 <0.000990>
+6021  20:02:44.771803 futex(0x7672921fece8, FUTEX_WAIT_BITSET|FUTEX_CLOCK_REALTIME, 2, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+6023  20:02:44.786096 <... mq_timedreceive resumed>, 0x7672921fdd90, 40, NULL, {tv_sec=1792155764, tv_nsec=785748570}) = -1 ETIMEDOUT (Connection timed out) <0.016573>
+6022  20:02:44.786628 <... mq_timedreceive resumed>, 0x7672929feb80, 168, NULL, {tv_sec=1792155764, tv_nsec=786005300}) = -1 ETIMEDOUT (Connection timed out) <0.017093>
+6023  20:02:44.786835 write(2, "[Alert] Thread stopped\n", 23) = 23 <0.000237>
+6022  20:02:44.787275 mq_timedreceive(3 <unfinished ...>
+6023  20:02:44.787579 rt_sigprocmask(SIG_BLOCK, ~[RT_1], NULL, 8) = 0 <0.000161>
+6023  20:02:44.788112 madvise(0x7672919fe000, 8368128, MADV_DONTNEED) = 0 <0.000170>
+6023  20:02:44.788578 exit(0)           = ?
+6023  20:02:44.788950 +++ exited with 0 +++
+6021  20:02:44.789212 <... futex resumed>) = 0 <0.017362>
+6021  20:02:44.789524 futex(0x7672929ffce8, FUTEX_WAIT_BITSET|FUTEX_CLOCK_REALTIME, 2, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+6022  20:02:45.787271 <... mq_timedreceive resumed>, 0x7672929feb80, 168, NULL, {tv_sec=1792155765, tv_nsec=786981125}) = -1 ETIMEDOUT (Connection timed out) <0.999914>
+6022  20:02:45.787557 close(7)          = 0 <0.000158>
+6022  20:02:45.787917 write(2, "[Logger] Thread stopped\n", 24) = 24 <0.000153>
+6022  20:02:45.788262 rt_sigprocmask(SIG_BLOCK, ~[RT_1], NULL, 8) = 0 <0.000076>
+6022  20:02:45.788512 madvise(0x7672921ff000, 8368128, MADV_DONTNEED) = 0 <0.000032>
+6022  20:02:45.788598 exit(0)           = ?
+6022  20:02:45.788700 +++ exited with 0 +++
+6021  20:02:45.788797 <... futex resumed>) = 0 <0.999218>
+6021  20:02:45.788922 close(3)          = 0 <0.000099>
+6021  20:02:45.789075 close(4)          = 0 <0.000086>
+6021  20:02:45.789225 close(5)          = 0 <0.000074>
+6021  20:02:45.789350 close(6)          = 0 <0.000019>
+6021  20:02:45.789413 mq_unlink("log_queue") = 0 <0.000034>
+6021  20:02:45.789502 mq_unlink("alarm_queue") = 0 <0.000022>
+6021  20:02:45.789576 write(2, "[Main] Shutdown complete\n", 25) = 25 <0.000038>
+6021  20:02:45.789690 write(1, "================================"..., 258) = 258 <0.000023>
+6021  20:02:45.789768 exit_group(0)     = ?
+6021  20:02:45.790398 +++ exited with 0 +++

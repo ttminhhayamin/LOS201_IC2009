@@ -1,0 +1,54 @@
+Assignment 02 - Performance Measurement
+Target: circular buffer unit tests
+Host: Ubuntu x86-64
+
+PERF STAT ATTEMPT
+Result: unavailable; kernel.perf_event_paranoid=4
+Reason: no supported performance events accessible to this user
+
+FALLBACK: /usr/bin/time -v
+Note: These are process resource statistics, not hardware performance counters.
+
+=== Circular Buffer Unit Tests ===
+[PASS] Initialize circular buffer
+[PASS] Push one sample
+[PASS] Pop one sample
+[PASS] Preserve sample data
+[PASS] FIFO order: sample 1
+[PASS] FIFO order: sample 2
+[PASS] FIFO order: sample 3
+[PASS] Fill buffer to capacity
+[PASS] Non-blocking push returns EAGAIN when buffer is full
+[PASS] Drain buffer in FIFO order
+[PASS] Close circular buffer
+[PASS] Non-blocking push rejects a closed buffer
+[PASS] Reject push after close
+[PASS] Return ECANCELED when closed buffer is empty
+[PASS] Destroy circular buffer
+
+=== ALL CIRCULAR BUFFER TESTS PASSED ===
+	Command being timed: "./tests/test_circular_buffer"
+	User time (seconds): 0.00
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1760
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 78
+	Voluntary context switches: 1
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+Test exit code: 0

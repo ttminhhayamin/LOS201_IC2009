@@ -1,0 +1,22 @@
+Assignment 02 - Timing Measurement Report
+Student: Hoang Trung Hai
+Student ID: SS204779
+
+Run configuration:
+  Sampling interval: 500 ms
+  Sensor thread scheduling policy: SCHED_FIFO
+  Sensor thread priority: 50
+
+Measured results from application output:
+  Samples: 99
+  Minimum reported jitter: 3741.000 us
+  Maximum reported jitter: 8934.000 us
+  Mean reported jitter: 7521.222 us
+  Standard deviation: 697.624 us
+
+Notes:
+  These values were copied from the application's final timing report.
+  They describe one specific run only.
+  A SCHED_OTHER comparison has not yet been recorded.
+  Do not interpret these values as pure scheduler wake-up latency unless
+  the measurement implementation explicitly measures that quantity.
